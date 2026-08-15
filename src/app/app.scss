@@ -1,0 +1,27 @@
+.main {
+    display: flex;
+    border: 10px solid blue;
+    height: 100%;
+}
+
+.titulo-painel{
+    display: flex;
+    flex-direction: row;
+    font-size: 21px;
+    font-weight: 400;
+}
+.nome-projeto{
+    
+}
+.painel-projeto{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    border: 5px solid black;
+}
+
+.lista-tarefas{
+    display: flex;
+    flex: 1;
+}
