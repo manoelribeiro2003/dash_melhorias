@@ -1,27 +1,29 @@
 .main {
     display: flex;
-    border: 10px solid blue;
+    flex-direction: column;
     height: 100%;
+
 }
 
-.titulo-painel{
+.titulo-painel {
     display: flex;
     flex-direction: row;
     font-size: 21px;
     font-weight: 400;
 }
-.nome-projeto{
-    
-}
-.painel-projeto{
+
+.painel-projeto {
     padding: 10px;
     display: flex;
     flex-direction: column;
     flex: 1;
-    border: 5px solid black;
 }
 
-.lista-tarefas{
+.lista-tarefas {
     display: flex;
     flex: 1;
+}
+
+router-outlet {
+    height: 100%;
 }

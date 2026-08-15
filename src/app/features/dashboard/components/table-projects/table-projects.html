@@ -1,0 +1,39 @@
+<table mat-table [dataSource]="tarefas" class="projects-table">
+
+  <!-- PROJETO -->
+  <ng-container matColumnDef="nome">
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell">
+      Nome
+    </th>
+
+    <td mat-cell *matCellDef="let tarefa" class="project-cell-wrapper">
+      <div class="project-cell">
+        <!-- [style.background-color]="tarefa.cor" -->
+        <div class="project-icon">
+          {{ tarefa.nome }}
+        </div>
+
+        <!-- <div class="project-info">
+
+                    <span class="project-name">
+                        {{ projeto.categoria }}
+                    </span>
+
+                    <span class="project-description">
+                        {{ projeto.descricao }}
+                    </span>
+
+                </div> -->
+
+      </div>
+    </td>
+  </ng-container>
+
+  <!-- CABEÇALHO -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns" class="project-header-row"></tr>
+
+
+  <!-- LINHAS -->
+  <tr mat-row *matRowDef="let row; columns: displayedColumns" class="project-row"></tr>
+
+</table>

@@ -1,10 +1,6 @@
 <div class="main">
-  <div class="painel-projeto">
-    <span class="titulo-painel">Painel do Projeto</span>
-    <span class="barra">/</span>
-    <span class="nome-projeto">Projeto Alfa - Em Andamento (65%)</span>
-    <div class="lista-tarefas">
-      <span>Lista de Tarefas Detalhada</span>
-    </div>
-  </div>
+  <app-toobar/>
+  <router-outlet>
+    <app-dashboard></app-dashboard>
+  </router-outlet>
 </div>

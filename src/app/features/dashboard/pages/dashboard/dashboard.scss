@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    padding: 15px;
+}
+
+.botoes{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
