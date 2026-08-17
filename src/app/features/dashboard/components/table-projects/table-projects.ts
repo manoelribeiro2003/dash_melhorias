@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import plannerJson from '../../../../../dados.json'
+import { NgClass } from '@angular/common';
 
 interface TarefaJson {
   'Nome da tarefa': string;
@@ -36,10 +37,10 @@ interface Tarefa {
   selector: 'app-table-projects',
   imports: [
     MatTableModule,
-    MatMenuTrigger,
     MatIconModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    NgClass
   ],
   templateUrl: './table-projects.html',
   styleUrl: './table-projects.scss',
@@ -49,40 +50,49 @@ export class TableProjects {
   tarefas: Tarefa[] = this.mapearTarefas(plannerJson)
 
   private mapearTarefas(data: TarefaJson[]): Tarefa[] {
-  return data.map(item => {
-    const [itensConcluidos = 0, totalItens = 0] =
-      (item['Itens concluídos da lista de verificação'] ?? '0/0')
-        .split('/')
-        .map(Number);
+    return data.map(item => {
+      const [itensConcluidos = 0, totalItens = 0] =
+        (item['Itens concluídos da lista de verificação'] ?? '0/0')
+          .split('/')
+          .map(Number);
 
-    return {
-      nome: item['Nome da tarefa'],
-      categoria: item['Categoria'],
-      meta: item['Meta'],
-      status: item['Status'],
-      prioridade: item['Prioridade'],
-      criadoPor: item['Criado por'] ?? "Sem nome",
-      criadoEm: item['Criado em'],
-      dataConclusao: item['Data de conclusão'],
-      itensConcluidos,
-      totalItens,
-      itensChecklist: item['Itens da lista de verificação']?.split(';').map(item => item.trim()) ?? []
-    };
-  });
-}
+      return {
+        nome: item['Nome da tarefa'],
+        categoria: item['Categoria'],
+        meta: item['Meta'],
+        status: item['Status'],
+        prioridade: item['Prioridade'],
+        criadoPor: item['Criado por'] ?? "Sem nome",
+        criadoEm: item['Criado em'],
+        dataConclusao: item['Data de conclusão'],
+        itensConcluidos,
+        totalItens,
+        itensChecklist: item['Itens da lista de verificação']?.split(';').map(item => item.trim()) ?? []
+      };
+    });
+  }
 
-  displayedColumns = [
+  displayedColumns: String[] = [
     'nome',
-    // 'categoria',
-    // 'meta',
-    // 'status',
-    // 'prioridade',
-    // 'criadoPor',
-    // 'criadoEm',
-    // 'dataConclusao',
-    // 'itensConcluidos',
-    // 'totalItens',
-    // 'itensChecklist'
+    'criadoPor',
+    'status',
+    'criadoEm',
+    'dataConclusao',
+    'acoes'
+  ];
+
+  tableColumns: String[] = [
+    'nome',
+    'categoria',
+    'meta',
+    'status',
+    'prioridade',
+    'criadoPor',
+    'criadoEm',
+    'dataConclusao',
+    'itensConcluidos',
+    'totalItens',
+    'itensChecklist'
   ];
 
 }

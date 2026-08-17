@@ -1,39 +1,75 @@
 <table mat-table [dataSource]="tarefas" class="projects-table">
 
-  <!-- PROJETO -->
   <ng-container matColumnDef="nome">
-    <th mat-header-cell *matHeaderCellDef class="project-header-cell">
-      Nome
-    </th>
-
-    <td mat-cell *matCellDef="let tarefa" class="project-cell-wrapper">
-      <div class="project-cell">
-        <!-- [style.background-color]="tarefa.cor" -->
-        <div class="project-icon">
-          {{ tarefa.nome }}
-        </div>
-
-        <!-- <div class="project-info">
-
-                    <span class="project-name">
-                        {{ projeto.categoria }}
-                    </span>
-
-                    <span class="project-description">
-                        {{ projeto.descricao }}
-                    </span>
-
-                </div> -->
-
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell">Projeto</th>
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">
+      <div class="project-info">
+        <span class="project-name">{{ projeto.nome }}</span>
+        <span class="project-description">{{ projeto.categoria }}</span>
       </div>
     </td>
   </ng-container>
 
-  <!-- CABEÇALHO -->
+  <ng-container matColumnDef="criadoPor">
+
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell">Criado por</th>
+
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">
+      <div class="manager-cell">
+        <span class="manager-name">{{ projeto.criadoPor }}</span>
+      </div>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell">Status</th>
+
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">
+      <span class="status" [ngClass]="{
+          'status-andamento': projeto.status === 'Em andamento',
+          'status-concluido': projeto.status === 'Concluído',
+          'status-pausa': projeto.status === 'Em pausa',
+          'status-atrasado': projeto.status === 'Atrasado'
+        }">
+        {{ projeto.status }}
+      </span>
+    </td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="criadoEm">
+
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell"> Início
+    </th>
+
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">
+      {{ projeto.criadoEm }}
+    </td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="dataConclusao">
+
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell">Término</th>
+
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">{{ projeto.dataConclusao }}</td>
+
+  </ng-container>
+
+  <ng-container matColumnDef="acoes">
+
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell actions-header">Ações</th>
+
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell actions-cell">
+      <button mat-icon-button class="project-action-button" aria-label="Ações do projeto">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </td>
+
+  </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="displayedColumns" class="project-header-row"></tr>
 
-
-  <!-- LINHAS -->
   <tr mat-row *matRowDef="let row; columns: displayedColumns" class="project-row"></tr>
 
 </table>

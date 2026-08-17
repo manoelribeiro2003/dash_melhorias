@@ -1,3 +1,7 @@
+/* =========================================
+   TABELA
+   ========================================= */
+
 .projects-table {
   width: 100%;
   background: #ffffff;
@@ -47,8 +51,7 @@
    CÉLULAS
    ========================================= */
 
-.project-data-cell,
-.project-cell-wrapper {
+.project-data-cell {
   padding: 0 16px;
 
   font-size: 13px;
@@ -63,38 +66,13 @@
    PROJETO
    ========================================= */
 
-.project-cell {
-  display: flex;
-  align-items: center;
-
-  gap: 14px;
-
-  min-width: 240px;
-}
-
-.project-icon {
-  width: 36px;
-  height: 36px;
-
-  flex-shrink: 0;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 7px;
-
-  color: #ffffff;
-
-  font-size: 10px;
-  font-weight: 700;
-}
-
 .project-info {
   display: flex;
   flex-direction: column;
 
   gap: 3px;
+
+  min-width: 240px;
 }
 
 .project-name {
@@ -102,37 +80,28 @@
   font-weight: 600;
 
   color: #263044;
+
+  line-height: 18px;
 }
 
 .project-description {
   font-size: 11px;
 
   color: #7c8494;
+
+  line-height: 16px;
 }
 
 
 /* =========================================
-   GERENTE
+   CRIADO POR
    ========================================= */
 
 .manager-cell {
   display: flex;
   align-items: center;
 
-  gap: 9px;
-
   white-space: nowrap;
-}
-
-.manager-avatar {
-  width: 26px;
-  height: 26px;
-
-  flex-shrink: 0;
-
-  border-radius: 50%;
-
-  object-fit: cover;
 }
 
 .manager-name {
@@ -165,6 +134,7 @@
 
 .status-andamento {
   color: #24935c;
+
   background-color: #e5f6ed;
 }
 
@@ -173,6 +143,7 @@
 
 .status-concluido {
   color: #24935c;
+
   background-color: #e5f6ed;
 }
 
@@ -181,6 +152,7 @@
 
 .status-pausa {
   color: #d98a12;
+
   background-color: #fff3dc;
 }
 
@@ -189,46 +161,8 @@
 
 .status-atrasado {
   color: #e34b4b;
+
   background-color: #ffe5e5;
-}
-
-
-/* =========================================
-   PROGRESSO
-   ========================================= */
-
-.progress-cell {
-  width: 90px;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 5px;
-}
-
-.progress-value {
-  font-size: 11px;
-
-  color: #364052;
-}
-
-.progress-bar {
-  width: 90px;
-  height: 5px;
-
-  overflow: hidden;
-
-  border-radius: 10px;
-
-  background-color: #e5e8ed;
-}
-
-.progress-fill {
-  height: 100%;
-
-  border-radius: inherit;
-
-  transition: width 0.3s ease;
 }
 
 
@@ -254,8 +188,8 @@
 }
 
 .project-action-button mat-icon {
-  font-size: 20px;
-
   width: 20px;
   height: 20px;
+
+  font-size: 20px;
 }
