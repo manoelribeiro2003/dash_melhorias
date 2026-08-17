@@ -1,0 +1,250 @@
+ANGULAR — PRINCIPAIS APIs DO @angular/core
+===============================================
+
+1. COMPONENTES, DIRETIVAS E CICLO DE VIDA
+------------------------------------------
+
+Component
+- Define um componente Angular.
+- Usar: sempre que criar um componente.
+
+Directive
+- Cria uma diretiva personalizada.
+- Usar: quando precisar adicionar comportamento a elementos existentes.
+
+Pipe
+- Cria um pipe personalizado.
+- Usar: quando precisar transformar ou formatar dados no template.
+
+Injectable
+- Marca uma classe para ser usada pela injeção de dependência.
+- Usar: ao criar services que serão injetados.
+
+OnInit
+- Hook executado na inicialização do componente.
+- Usar: quando precisar executar lógica depois que o componente foi inicializado.
+
+OnDestroy
+- Hook executado antes da destruição do componente.
+- Usar: para limpar recursos, subscriptions, listeners etc.
+
+OnChanges
+- Detecta mudanças nos inputs.
+- Usar: quando precisar reagir a mudanças vindas do componente pai.
+
+
+2. COMUNICAÇÃO ENTRE COMPONENTES
+--------------------------------
+
+input()
+- Cria uma entrada para receber dados do componente pai.
+- Usar: quando o pai precisa enviar dados para o filho.
+- Fluxo: PAI -> FILHO
+
+output()
+- Cria um evento para comunicar algo ao componente pai.
+- Usar: quando o filho precisa comunicar uma ação ou evento ao pai.
+- Fluxo: FILHO -> PAI
+
+model()
+- Cria um input/output combinado.
+- Usar: quando quiser implementar two-way binding.
+
+
+3. SIGNALS E REATIVIDADE
+------------------------
+
+signal()
+- Cria um estado reativo.
+- Usar: quando um valor pode mudar e a interface precisa reagir à mudança.
+
+computed()
+- Cria um valor derivado de outros signals.
+- Usar: quando um valor pode ser calculado a partir de outros estados.
+
+effect()
+- Executa código quando os signals usados dentro dele mudam.
+- Usar: para efeitos colaterais, especialmente quando uma mudança precisa provocar uma ação externa.
+
+untracked()
+- Lê um signal sem criar uma dependência reativa.
+- Usar: em casos avançados, quando não queremos que uma leitura seja considerada uma dependência.
+
+
+Exemplo:
+
+projetos = signal<Projeto[]>([]);
+
+projetosAtivos = computed(() =>
+  this.projetos().filter(p => p.status === 'ativo')
+);
+
+effect(() => {
+  console.log(this.projetosAtivos());
+});
+
+
+4. INJEÇÃO DE DEPENDÊNCIA
+-------------------------
+
+inject()
+- Obtém uma dependência através do sistema de injeção de dependência.
+- Usar: quando um componente ou service precisa utilizar outro service.
+
+Exemplo:
+
+private projetoService = inject(ProjetoService);
+
+
+InjectionToken
+- Cria um token para injetar valores ou objetos.
+- Usar: quando precisa injetar algo que não é necessariamente uma classe.
+
+
+5. QUERIES
+----------
+
+viewChild()
+- Encontra um elemento ou componente dentro da view do componente.
+- Usar: quando precisa acessar algo que o próprio componente possui.
+
+viewChildren()
+- Encontra vários elementos ou componentes dentro da view.
+- Usar: quando precisa acessar uma coleção de elementos/componentes.
+
+contentChild()
+- Encontra algo projetado através de <ng-content>.
+- Usar: quando trabalha com content projection.
+
+contentChildren()
+- Encontra vários elementos projetados através de <ng-content>.
+- Usar: quando precisa acessar múltiplos elementos projetados.
+
+
+6. RENDERIZAÇÃO E TEMPLATES
+---------------------------
+
+TemplateRef
+- Representa um template Angular.
+- Usar: principalmente em situações avançadas envolvendo templates dinâmicos.
+
+ViewContainerRef
+- Representa um local onde views/componentes podem ser inseridos.
+- Usar: para criar componentes ou views dinamicamente.
+
+ElementRef
+- Dá acesso direto ao elemento DOM.
+- Usar: somente quando realmente precisar acessar o DOM diretamente.
+
+Renderer2
+- Permite manipular o DOM através da abstração do Angular.
+- Usar: quando precisar alterar elementos/estilos via código e quiser evitar acesso direto ao DOM.
+
+
+7. ORDEM RECOMENDADA DE ESTUDO
+------------------------------
+
+PRIMEIRO — Essenciais:
+- Component
+- Directive
+- Injectable
+- input()
+- output()
+- signal()
+- computed()
+- effect()
+- inject()
+
+SEGUNDO — Muito importantes:
+- viewChild()
+- viewChildren()
+- OnInit
+- OnDestroy
+- OnChanges
+- model()
+
+TERCEIRO — Avançados:
+- InjectionToken
+- TemplateRef
+- ViewContainerRef
+- ElementRef
+- Renderer2
+- untracked()
+- contentChild()
+- contentChildren()
+
+
+8. MAPA MENTAL
+--------------
+
+@angular/core
+|
++-- Componentes
+|   +-- Component
+|
++-- Comunicação
+|   +-- input()
+|   +-- output()
+|   +-- model()
+|
++-- Reatividade
+|   +-- signal()
+|   +-- computed()
+|   +-- effect()
+|
++-- Injeção de dependência
+|   +-- inject()
+|   +-- Injectable
+|   +-- InjectionToken
+|
++-- Ciclo de vida
+|   +-- OnInit
+|   +-- OnDestroy
+|   +-- OnChanges
+|
++-- Queries
+|   +-- viewChild()
+|   +-- viewChildren()
+|   +-- contentChild()
+|   +-- contentChildren()
+|
++-- Templates / DOM
+    +-- TemplateRef
+    +-- ViewContainerRef
+    +-- ElementRef
+    +-- Renderer2
+
+
+FOCO PARA UM PROJETO ANGULAR MODERNO
+-------------------------------------
+
+Para o estudo atual, priorize:
+
+Component
+input()
+output()
+signal()
+computed()
+effect()
+inject()
+Injectable
+
+A ideia principal é entender o papel de cada grupo:
+
+Estado:
+  signal()
+
+Estado derivado:
+  computed()
+
+Efeitos colaterais:
+  effect()
+
+Pai -> Filho:
+  input()
+
+Filho -> Pai:
+  output()
+
+Dependências:
+  inject() / Injectable

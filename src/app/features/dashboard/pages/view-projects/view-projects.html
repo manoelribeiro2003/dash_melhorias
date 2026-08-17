@@ -1,4 +1,12 @@
 <div class="main">
-    <app-card-status [value]="23" icon="atrasados" title="Teste"></app-card-status>
-    <app-projects-card></app-projects-card>
+    <div class="app-card-status-container">
+        <app-card-status [value]="23" icon="totalProjetos" title="Total de Projetos"/>
+        <app-card-status [value]="23" icon="emAndamento" title="Em Andamento"/>
+        <app-card-status [value]="23" icon="emPausa" title="Em Pausa"/>
+        <app-card-status [value]="23" icon="concluidos" title="Concluídos"/>
+        <app-card-status [value]="23" icon="atrasados" title="Atrasados"/>
+    </div>
+    <div class="app-projects-card-container">
+        <app-projects-card></app-projects-card>
+    </div>
 </div>
