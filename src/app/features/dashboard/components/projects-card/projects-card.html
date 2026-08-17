@@ -1,11 +1,11 @@
-<mat-card appearance="outlined">
+<mat-card appearance="filled">
   <mat-card-header>
     <div class="botoes">
-      <button matButton> Todos </button>
-      <button matButton> Em andamento </button>
-      <button matButton> Concluídos </button>
-      <button matButton> Em pausa </button>
-      <button matButton> Atrasados </button>
+      @for (status of status(); track status) {
+        <button matButton>
+          {{ status }}
+        </button>
+      }
     </div>
   </mat-card-header>
   <mat-card-actions>

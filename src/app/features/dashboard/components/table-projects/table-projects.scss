@@ -4,9 +4,12 @@
 
 .projects-table {
   width: 100%;
-  background: #ffffff;
+  flex: 1;
 
+  background: #ffffff;
   border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 
@@ -72,7 +75,8 @@
 
   gap: 3px;
 
-  min-width: 240px;
+  // min-width: 100px;
+  width: 500px;
 }
 
 .project-name {
@@ -129,40 +133,60 @@
   white-space: nowrap;
 }
 
-
-/* Em andamento */
-
-.status-andamento {
-  color: #24935c;
-
-  background-color: #e5f6ed;
-}
-
-
-/* Concluído */
-
 .status-concluido {
   color: #24935c;
-
   background-color: #e5f6ed;
 }
 
-
-/* Em pausa */
-
-.status-pausa {
+.status-andamento {
   color: #d98a12;
-
   background-color: #fff3dc;
 }
 
-
-/* Atrasado */
-
 .status-atrasado {
   color: #e34b4b;
-
   background-color: #ffe5e5;
+}
+
+.status-nao-iniciado {
+  color: #5b6b7a;
+  background-color: #edf1f5;
+}
+
+/* =========================================
+   Progresso
+   ========================================= */
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.progress-bar {
+  width: 100px;
+  height: 8px;
+  background-color: #e9edf2;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg,
+      #a7e8c2 0%,
+      #4fbd7e 50%,
+      #24935c 100%);
+
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  font-size: 13px;
+  color: #5f6368;
+  white-space: nowrap;
 }
 
 
@@ -192,4 +216,12 @@
   height: 20px;
 
   font-size: 20px;
+}
+
+/* =========================================
+       AÇÕES
+       ========================================= */
+
+mat-paginator {
+  background-color: #fff;
 }

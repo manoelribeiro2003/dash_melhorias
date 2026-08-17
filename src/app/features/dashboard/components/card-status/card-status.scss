@@ -1,0 +1,51 @@
+.project-card {
+    width: 190px;
+    min-height: 100px;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.06);
+
+    border: 1px solid #eeeeee;
+}
+
+.project-card mat-card-content {
+    padding: 16px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid black;
+}
+
+.card-icon {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    flex: 1;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.card-title {
+    font-size: 11px;
+    color: #555;
+    border: 1px solid black;
+}
+
+.card-value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2937;
+    border: 1px solid black;
+}

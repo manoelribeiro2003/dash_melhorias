@@ -1,7 +1,7 @@
 [
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Não iniciado",
         "Prioridade":"Média",
@@ -13,7 +13,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -25,7 +25,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -37,7 +37,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -49,7 +49,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -61,7 +61,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -73,7 +73,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -85,7 +85,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -97,7 +97,7 @@
     },
     {
         "Nome da tarefa":"Lançar melhoria do bimestre",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Programa de Melhorias",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -109,7 +109,7 @@
     },
     {
         "Nome da tarefa":"Fazer auditoria nos postos de trabalho dos lançamentos ",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -121,7 +121,7 @@
     },
     {
         "Nome da tarefa":"Criar as documentações do TEGAD dentro matrix",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -133,7 +133,7 @@
     },
     {
         "Nome da tarefa":"Criar as documentações dos montadores de layout dentro do matrix",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -145,7 +145,7 @@
     },
     {
         "Nome da tarefa":"Work sampling no processo de chamada ativa do PS7",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -157,7 +157,7 @@
     },
     {
         "Nome da tarefa":"Cadastro de pessoas treinadas aplicativo.",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -169,7 +169,7 @@
     },
     {
         "Nome da tarefa":"Atualização planilhas SMED e criação de boletim.",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -181,7 +181,7 @@
     },
     {
         "Nome da tarefa":"Desenho ",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -193,7 +193,7 @@
     },
     {
         "Nome da tarefa":"Atualização planilha dos indicadores",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -205,7 +205,7 @@
     },
     {
         "Nome da tarefa":"Atualizar checklist kaizen, ver com RH cadastro de pessoas treinadas em Kaizen.",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -217,7 +217,7 @@
     },
     {
         "Nome da tarefa":"Organização materiais MEG ",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -229,7 +229,7 @@
     },
     {
         "Nome da tarefa":"Estudo Sala Impressão Digital",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -241,7 +241,7 @@
     },
     {
         "Nome da tarefa":"Organizar evento de melhorias ",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -253,7 +253,7 @@
     },
     {
         "Nome da tarefa":"Passada Horizontal no TS6",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",
@@ -265,7 +265,7 @@
     },
     {
         "Nome da tarefa":"Passada Horizontal TS7",
-        "Categoria":"Melhorias do Bimestre",
+        "Categoria":"Tarefas Antigas",
         "Meta":null,
         "Status":"Concluída",
         "Prioridade":"Média",

@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="tarefas" class="projects-table">
+<table mat-table [dataSource]="dataSource" class="projects-table">
 
   <ng-container matColumnDef="nome">
     <th mat-header-cell *matHeaderCellDef class="project-header-cell">Projeto</th>
@@ -23,43 +23,44 @@
 
   <ng-container matColumnDef="status">
     <th mat-header-cell *matHeaderCellDef class="project-header-cell">Status</th>
-
     <td mat-cell *matCellDef="let projeto" class="project-data-cell">
       <span class="status" [ngClass]="{
-          'status-andamento': projeto.status === 'Em andamento',
-          'status-concluido': projeto.status === 'Concluído',
-          'status-pausa': projeto.status === 'Em pausa',
-          'status-atrasado': projeto.status === 'Atrasado'
-        }">
+            'status-andamento': projeto.status === 'Em andamento',
+            'status-concluido': projeto.status === 'Concluída',
+            'status-atrasado': projeto.status === 'Atrasado',
+            'status-nao-iniciado': projeto.status === 'Não iniciado',
+          }">
         {{ projeto.status }}
       </span>
     </td>
+  </ng-container>
 
+  <ng-container matColumnDef="itensConcluidos">
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell"> Progresso </th>
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" [style.width.%]="
+              projeto.totalItens > 0 ? (projeto.itensConcluidos / projeto.totalItens) * 100 : 0">
+          </div>
+        </div>
+        <span class="progress-text">{{ projeto.itensConcluidos }} / {{ projeto.totalItens }}</span>
+      </div>
+    </td>
   </ng-container>
 
   <ng-container matColumnDef="criadoEm">
-
-    <th mat-header-cell *matHeaderCellDef class="project-header-cell"> Início
-    </th>
-
-    <td mat-cell *matCellDef="let projeto" class="project-data-cell">
-      {{ projeto.criadoEm }}
-    </td>
-
+    <th mat-header-cell *matHeaderCellDef class="project-header-cell">Início</th>
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">{{ projeto.criadoEm | date:'dd/MM/yyyy'}}</td>
   </ng-container>
 
   <ng-container matColumnDef="dataConclusao">
-
     <th mat-header-cell *matHeaderCellDef class="project-header-cell">Término</th>
-
-    <td mat-cell *matCellDef="let projeto" class="project-data-cell">{{ projeto.dataConclusao }}</td>
-
+    <td mat-cell *matCellDef="let projeto" class="project-data-cell">{{ projeto.dataConclusao | date:'dd/MM/yyyy'}}</td>
   </ng-container>
 
   <ng-container matColumnDef="acoes">
-
     <th mat-header-cell *matHeaderCellDef class="project-header-cell actions-header">Ações</th>
-
     <td mat-cell *matCellDef="let projeto" class="project-data-cell actions-cell">
       <button mat-icon-button class="project-action-button" aria-label="Ações do projeto">
         <mat-icon>more_vert</mat-icon>
@@ -69,7 +70,7 @@
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns" class="project-header-row"></tr>
-
   <tr mat-row *matRowDef="let row; columns: displayedColumns" class="project-row"></tr>
-
 </table>
+<mat-divider />
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Selecine a página" />
