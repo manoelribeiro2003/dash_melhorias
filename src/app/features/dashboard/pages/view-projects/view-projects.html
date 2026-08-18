@@ -1,10 +1,14 @@
 <div class="main">
     <div class="app-card-status-container">
-        <app-card-status [value]="23" icon="totalProjetos" title="Total de Projetos"/>
-        <app-card-status [value]="23" icon="emAndamento" title="Em Andamento"/>
-        <app-card-status [value]="23" icon="emPausa" title="Em Pausa"/>
-        <app-card-status [value]="23" icon="concluidos" title="Concluídos"/>
-        <app-card-status [value]="23" icon="atrasados" title="Atrasados"/>
+        @for (cardValue of cardValues; track cardValue) {
+        <app-card-status
+            [status]="cardValue.status"
+            [value]="cardValue.status === 'TotalDeProjetos'? tarefas().length: tarefas().filter(tarefa => tarefa.status === cardValue.status).length"
+            [icon]="cardValue.icon" 
+            [title]="cardValue.title"
+            [itensConcluidos]="tarefas().filter(tarefa => tarefa.status == cardValue.status).length"
+            [totalItens]="tarefas().length" />
+        }
     </div>
     <div class="app-projects-card-container">
         <app-projects-card></app-projects-card>

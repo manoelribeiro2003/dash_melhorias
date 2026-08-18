@@ -10,25 +10,17 @@ import { Tarefa } from '../../models/tarefa.interface';
 export class GetTasks {
     private http = inject(HttpClient);
 
-    private carregado = false;
-
     private _tarefas = signal<Tarefa[]>([]);
 
     readonly tarefas = this._tarefas.asReadonly()
 
     carregar(): void {
-        if (this.carregado) {
-            return;
-        }
-
-        this.carregado = true;
 
         this.http.get<TarefaJson[]>('/dados.json').subscribe({
             next: (dados) => {
                 this._tarefas.set(this.mapearTarefas(dados));
             },
             error: (erro) => {
-                this.carregado = false;
                 console.error(erro);
             }
         });

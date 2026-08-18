@@ -8,12 +8,16 @@ import { MatIconModule } from "@angular/material/icon";
   imports: [
     MatCardModule,
     MatChipsModule,
-    MatIconModule
+    MatIconModule,
   ],
   templateUrl: './card-status.html',
   styleUrl: './card-status.scss',
 })
 export class CardStatus {
+  totalItens = input.required<number>();
+  itensConcluidos = input.required<number>();
+
+  status = input<string>()
 
   icon = input.required<string>();
   title = input.required<string>();

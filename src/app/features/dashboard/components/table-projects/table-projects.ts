@@ -7,7 +7,7 @@ import { NgClass, DatePipe } from '@angular/common';
 import { GetTasks } from '../../services/get-tasks/get-tasks';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { Tarefa } from '../../models/tarefa.interface';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-table-projects',
@@ -25,24 +25,20 @@ import {MatDividerModule} from '@angular/material/divider';
   styleUrl: './table-projects.scss',
 })
 export class TableProjects implements AfterViewInit {
+  private tasks = inject(GetTasks);
   constructor() {
-    this.tasks.carregar()
-
     effect(() => {
       this.dataSource.data = this.tasks.tarefas()
     })
   }
-  displayedColumns: string[] = ['nome', 'criadoPor', 'status', 'criadoEm', 'itensConcluidos', 'dataConclusao', 'acoes'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  private tasks = inject(GetTasks);
-
   dataSource = new MatTableDataSource<Tarefa>(this.tasks.tarefas());
-
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }
+
 
   tableColumns: string[] = [
     'nome',
@@ -57,5 +53,6 @@ export class TableProjects implements AfterViewInit {
     'totalItens',
     'itensChecklist'
   ];
+  displayedColumns: string[] = ['nome', 'criadoPor', 'status', 'criadoEm', 'itensConcluidos', 'dataConclusao', 'acoes'];
 
 }

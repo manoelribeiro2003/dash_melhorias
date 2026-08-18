@@ -6,29 +6,42 @@ import { CardStatus } from "../../components/card-status/card-status";
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 
+type CardValues = {
+  icon: string,
+  title: string,
+  status: string
+}
+
 @Component({
   selector: 'app-view-projects',
   imports: [
     ProjectsCard,
     MatButtonModule,
     CardStatus
-],
+  ],
   templateUrl: './view-projects.html',
   styleUrl: './view-projects.scss',
 })
+
 export class ViewProjects {
   private tasks = inject(GetTasks);
-
   tarefas = this.tasks.tarefas;
+
+  cardValues: CardValues[] = [
+    {icon: "totalProjetos", title: "Total de Projetos", status: 'TotalDeProjetos'},
+    {icon: "emAndamento", title: "Em Andamento", status: 'Em andamento' },
+    {icon: "concluidos", title: "Concluídos", status: 'Concluída' },
+    {icon: "naoIniciados", title: "Não Inicados", status: 'Não iniciado' },
+  ]
 
   private iconRegistry = inject(MatIconRegistry);
   private sanitizer = inject(DomSanitizer);
 
   constructor() {
     this.iconRegistry.addSvgIcon(
-      'atrasados',
+      'naoIniciados',
       this.sanitizer.bypassSecurityTrustResourceUrl(
-        'dashboard/card-status/atrasados.svg'
+        'dashboard/card-status/naoIniciados.svg'
       )
     );
 
@@ -43,13 +56,6 @@ export class ViewProjects {
       'emAndamento',
       this.sanitizer.bypassSecurityTrustResourceUrl(
         'dashboard/card-status/emAndamento.svg'
-      )
-    );
-
-    this.iconRegistry.addSvgIcon(
-      'emPausa',
-      this.sanitizer.bypassSecurityTrustResourceUrl(
-        'dashboard/card-status/emPausa.svg'
       )
     );
     this.iconRegistry.addSvgIcon(

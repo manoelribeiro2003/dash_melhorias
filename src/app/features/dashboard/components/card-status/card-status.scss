@@ -1,13 +1,18 @@
 .project-card {
     width: 250px;
-    min-height: 100px;
+    min-height: 150px;
     border-radius: 10px;
     background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 0.5px solid rgb(231, 231, 231);
+    outline: none;
 }
 
 mat-card-content {
     padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .card-header {
@@ -34,7 +39,7 @@ mat-card-content {
 .card-info {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 10px;
 }
 
 .card-title {
@@ -47,4 +52,49 @@ mat-card-content {
     font-size: 30px;
     font-weight: 600;
     color: #1f2937;
+}
+.progress-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.progress-percentage {
+    font-size: 13px;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.progress-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #e9edf2;
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(
+        90deg,
+        #a7e8c2 0%,
+        #4fbd7e 50%,
+        #24935c 100%
+    );
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 12px;
+    color: #5f6368;
+    white-space: nowrap;
 }
