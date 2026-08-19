@@ -12,10 +12,18 @@ export const routes: Routes = [
             {
                 path: '',
                 component: Dashboard,
+                data:{
+                    title: 'Dashborad',
+                    description: 'Visão geral do projetos'
+                }
             },
             {
                 path: 'projetos',
-                component: ViewProjects
+                component: ViewProjects,
+                data:{
+                    title: 'Projetos',
+                    description: 'Liste e acompanhe todo os projetos'
+                }
             }
         ]
     },

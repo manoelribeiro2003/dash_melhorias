@@ -50,7 +50,7 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content class="app-content">
-        <app-toobar/>
+        <app-toobar [title]="title" [description]="description"/>
         <router-outlet />
     </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,19 +1,16 @@
 <mat-toolbar>
 
-  <button matIconButton class="example-icon">
-    <mat-icon>menu</mat-icon>
-  </button>
+  <div class="left-controls">
+    <span class="toolbar-title">{{title()}}</span>
+    <span class="toolbar-description">{{description()}}</span>
+  </div>
 
-  <span>Projetos</span>
-
-  <span class="spacer"></span>
-
-  <div class="controles-direita">
-    <div class="container-input-busca">
+  <div class="right-controls">
+    <!-- <div class="container-input-busca">
       <input class="input-busca" placeholder="Buscar Projetos">
-    </div>
+    </div> -->
 
-    <button matButton="filled" class="find-button">
+    <button matButton="filled" class="button-create">
       <mat-icon>add</mat-icon>
       <span>Novo Projeto</span>
     </button>

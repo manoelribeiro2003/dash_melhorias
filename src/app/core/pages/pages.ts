@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { RouterOutlet, RouterLinkWithHref, RouterLinkActive } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet, RouterLinkWithHref, RouterLinkActive, Router, ActivatedRoute, NavigationEnd } from '@angular/router';
 import { Toobar } from '../../shared/components/toobar/toobar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-pages',
@@ -22,6 +23,30 @@ import { MatTooltipModule } from '@angular/material/tooltip';
   styleUrl: './pages.scss',
 })
 export class Pages {
+  private router = inject(Router);
+  private activatedRoute = inject(ActivatedRoute)
+
+  title = 'Dashboard';
+  description = '';
+
+  constructor(){
+    this.router.events.
+    pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe(
+      () => {
+        let route = this.activatedRoute;
+
+        while(route.firstChild){
+          route = route.firstChild
+        }
+
+        this.title = route.snapshot.data['title'] ?? 'Dashboard'
+        this.description = route.snapshot.data['description'] ?? ''
+      }
+    )
+  }
+
   menuItems = [
     { label: 'Dashboard', icon: 'home', route: '/', exact: true },
     { label: 'Projetos', icon: 'business_center', route: '/projetos', exact: false },
