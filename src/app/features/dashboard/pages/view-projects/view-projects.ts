@@ -31,7 +31,7 @@ export class ViewProjects {
     {icon: "totalProjetos", title: "Total de Projetos", status: 'TotalDeProjetos'},
     {icon: "emAndamento", title: "Em Andamento", status: 'Em andamento' },
     {icon: "concluidos", title: "Concluídos", status: 'Concluída' },
-    {icon: "naoIniciados", title: "Não Inicados", status: 'Não iniciado' },
+    {icon: "naoIniciados", title: "Não Iniciados", status: 'Não iniciado' },
   ]
 
   private iconRegistry = inject(MatIconRegistry);

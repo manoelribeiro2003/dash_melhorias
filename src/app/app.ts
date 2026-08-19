@@ -1,16 +1,13 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Toobar } from './features/dashboard/components/toobar/toobar';
-import { Dashboard } from './features/dashboard/pages/dashboard/dashboard';
-import { ViewProjects } from './features/dashboard/pages/view-projects/view-projects';
 import { GetTasks } from './features/dashboard/services/get-tasks/get-tasks';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-root',
   imports: [
     RouterOutlet,
-    Toobar,
-    ViewProjects
+    MatSidenavModule,
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
