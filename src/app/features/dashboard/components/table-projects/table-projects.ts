@@ -46,6 +46,7 @@ export class TableProjects implements AfterViewInit {
     'meta',
     'status',
     'prioridade',
+    'atrasado',
     'criadoPor',
     'criadoEm',
     'dataConclusao',

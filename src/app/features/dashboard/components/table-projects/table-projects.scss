@@ -132,25 +132,51 @@
   white-space: nowrap;
 }
 
+// ================================================
+
+.data-termino {
+  display: inline-flex;
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+.data-inicio {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
 .status-concluido {
-  color: #24935c;
-  background-color: #e5f6ed;
+  color: #2F80ED;
+  background: #EAF3FF;
 }
 
 .status-andamento {
-  color: #d98a12;
-  background-color: #fff3dc;
-}
-
-.status-atrasado {
-  color: #e34b4b;
-  background-color: #ffe5e5;
+  color: #2DBE60;
+  background: #E8F8EE;
 }
 
 .status-nao-iniciado {
-  color: #5b6b7a;
-  background-color: #edf1f5;
+  color: #F59E0B;
+  background: #FEF3C7;
 }
+
+.data-atrasada {
+  color: #fff;
+  background-color: #fd6161;
+
+}
+
+// 
 
 /* =========================================
    Progresso

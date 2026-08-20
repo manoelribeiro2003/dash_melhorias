@@ -3,14 +3,20 @@
         @for (cardValue of cardValues; track cardValue) {
         <app-card-status
             [status]="cardValue.status"
-            [value]="cardValue.status === 'TotalDeProjetos'? tarefas().length: tarefas().filter(tarefa => tarefa.status === cardValue.status).length"
+            [value]="cardValue.status === 'TotalDeProjetos'
+            ? tarefas().length
+            : cardValue.atrasado
+                ? tarefas().filter(tarefa => tarefa.atrasado == true).length
+                : tarefas().filter(tarefa => tarefa.status === cardValue.status).length"
             [icon]="cardValue.icon" 
             [title]="cardValue.title"
-            [itensConcluidos]="tarefas().filter(tarefa => tarefa.status == cardValue.status).length"
+            [itensConcluidos]=" !cardValue.atrasado
+            ? tarefas().filter(tarefa => tarefa.status == cardValue.status).length
+            : tarefas().filter(tarefa => tarefa.atrasado == true).length"
             [totalItens]="tarefas().length" />
         }
     </div>
     <div class="app-projects-card-container">
-        <app-projects-card></app-projects-card>
+        <app-projects-card/>
     </div>
 </div>

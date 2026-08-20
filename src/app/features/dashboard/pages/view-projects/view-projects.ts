@@ -9,7 +9,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 type CardValues = {
   icon: string,
   title: string,
-  status: string
+  status?: string,
+  atrasado?: boolean
 }
 
 @Component({
@@ -29,9 +30,10 @@ export class ViewProjects {
 
   cardValues: CardValues[] = [
     {icon: "totalProjetos", title: "Total de Projetos", status: 'TotalDeProjetos'},
-    {icon: "emAndamento", title: "Em Andamento", status: 'Em andamento' },
+    {icon: "emAndamento", title: "Em Andamento", status: 'Em andamento'},
     {icon: "concluidos", title: "Concluídos", status: 'Concluída' },
     {icon: "naoIniciados", title: "Não Iniciados", status: 'Não iniciado' },
+    {icon: "atrasado", title: "Atrasados", status: '', atrasado: true },
   ]
 
   private iconRegistry = inject(MatIconRegistry);
@@ -62,6 +64,12 @@ export class ViewProjects {
       'totalProjetos',
       this.sanitizer.bypassSecurityTrustResourceUrl(
         'dashboard/card-status/totalProjetos.svg'
+      )
+    );
+    this.iconRegistry.addSvgIcon(
+      'atrasado',
+      this.sanitizer.bypassSecurityTrustResourceUrl(
+        'dashboard/card-status/atrasado.svg'
       )
     );
   }

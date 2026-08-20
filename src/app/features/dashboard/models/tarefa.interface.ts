@@ -7,6 +7,7 @@ export interface Tarefa {
   criadoPor: string | null,
   criadoEm: string,
   dataConclusao: string | null,
+  atrasado: boolean;
   itensConcluidos: number,
   totalItens: number,
   itensChecklist: string[]

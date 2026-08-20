@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { Observable } from 'rxjs';
 import { TarefaJson } from '../../models/taferas-json.interface';
 import { Tarefa } from '../../models/tarefa.interface';
 
@@ -39,6 +38,7 @@ export class GetTasks {
                 meta: item['Meta'],
                 status: item['Status'],
                 prioridade: item['Prioridade'],
+                atrasado: item['Atrasados'],
                 criadoPor: item['Criado por'] ?? "Sem nome",
                 criadoEm: item['Criado em'],
                 dataConclusao: item['Data de conclusão'],
