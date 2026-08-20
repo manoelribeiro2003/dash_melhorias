@@ -1,59 +1,43 @@
-# DashMelhorias
+# Ações do Projeto
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.3.
+## Tela Projetos
 
-## Development server
+- [x] ~~**Tirar a logo do breadcrumb**~~
 
-To start a local development server, run:
+- [x] ~~**Mudar o visual do botão novo projeto**~~
 
-```bash
-ng serve
-```
+- [x] ~~**Remover o input de buscar projetos**~~
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- [x] ~~**Aumentar tamanho e peso da fonte do título**~~
 
-## Code scaffolding
+- [x] ~~**Mudar o nome do título da toolbar ao mudar de tela**~~
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- [x] ~~**Adicionar um texto explicando sobre para que serve a tela atual logo abaixo do título**~~
 
-```bash
-ng generate component component-name
-```
+## Cards de Status
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- [x] ~~**Inserir um card a mais para um status de projetos em atraso**~~
 
-```bash
-ng generate --help
-```
+- [x] ~~**Fazer com que os cards ocupem um espaço maior na tela de modo que eles fiquem mais visualmente preenchendo o espaço horizontal**~~
 
-## Building
+- [x] ~~**Melhorar o alinhamento dos cards e da tabela**~~
 
-To build the project run:
+## Visão da tabela de projetos
 
-```bash
-ng build
-```
+- [x] ~~**Adicionar mais um botão a fim de ficar os filtros: Todos, Em Andamento, Concluídos, Não Iniciados, Prioridade, Atrasados**~~
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- [] *Fazer com que a tabela ocupe um espaço maior na tela de modo que ela fique mais visualmente preenchendo o espaço horizontal*
 
-## Running unit tests
+- [x] ~~**Fazer com que ao dar zoom a tabela fique mais para cima, logo abaixo dos cards**~~
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+- [x] ~~**Fazer com que ao dar zoom o card que serve de wrapper da tabela fique mais para cima e ocupe um espaço maior da tela (flex: 1, width: 100%, margin: 10px)**~~
 
-```bash
-ng test
-```
+## Tabela
 
-## Running end-to-end tests
+- [] *Inserir porcentagem do progresso em cima da barra de progresso verde*
 
-For end-to-end (e2e) testing, run:
+- [x] ~~**Inserir coluna orçamento**~~
 
-```bash
-ng e2e
-```
+- [x] ~~**Inserir status prioridade na coluna de status, mudando este status para tema vermelho (dependente da criação do card de prioridade)**~~
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Funcionalidade ver projetos
