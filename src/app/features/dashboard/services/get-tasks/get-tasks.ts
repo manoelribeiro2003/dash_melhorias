@@ -42,6 +42,7 @@ export class GetTasks {
                 criadoPor: item['Criado por'] ?? "Sem nome",
                 criadoEm: item['Criado em'],
                 dataConclusao: item['Data de conclusão'],
+                orcamento: item['Orçamento'],
                 itensConcluidos,
                 totalItens,
                 itensChecklist: item['Itens da lista de verificação']?.split(';').map(item => item.trim()) ?? []

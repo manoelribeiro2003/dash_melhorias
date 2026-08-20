@@ -8,6 +8,7 @@ export interface Tarefa {
   criadoEm: string,
   dataConclusao: string | null,
   atrasado: boolean;
+  orcamento: number;
   itensConcluidos: number,
   totalItens: number,
   itensChecklist: string[]

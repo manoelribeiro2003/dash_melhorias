@@ -10,4 +10,5 @@ export interface TarefaJson {
   "Atrasados": boolean;
   "Itens concluídos da lista de verificação": string | null;
   "Itens da lista de verificação": string | null
+  "Orçamento": number
 }

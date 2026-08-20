@@ -137,16 +137,21 @@
 .data-termino {
   display: inline-flex;
   align-items: center;
-
   padding: 5px 9px;
-
   border-radius: 5px;
-
   font-size: 13px;
-
   white-space: nowrap;
+  text-align: center;
 }
 .data-inicio {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.orcamento {
   display: inline-flex;
   align-items: center;
   padding: 5px 9px;

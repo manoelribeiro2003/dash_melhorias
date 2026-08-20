@@ -8,6 +8,7 @@ import { GetTasks } from '../../services/get-tasks/get-tasks';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { Tarefa } from '../../models/tarefa.interface';
 import { MatDividerModule } from '@angular/material/divider';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-table-projects',
@@ -19,7 +20,8 @@ import { MatDividerModule } from '@angular/material/divider';
     NgClass,
     DatePipe,
     MatPaginatorModule,
-    MatDividerModule
+    MatDividerModule,
+    DecimalPipe
   ],
   templateUrl: './table-projects.html',
   styleUrl: './table-projects.scss',
@@ -47,6 +49,7 @@ export class TableProjects implements AfterViewInit {
     'status',
     'prioridade',
     'atrasado',
+    'orcamento',
     'criadoPor',
     'criadoEm',
     'dataConclusao',
@@ -54,6 +57,6 @@ export class TableProjects implements AfterViewInit {
     'totalItens',
     'itensChecklist'
   ];
-  displayedColumns: string[] = ['nome', 'criadoPor', 'status', 'criadoEm', 'itensConcluidos', 'dataConclusao', 'acoes'];
+  displayedColumns: string[] = ['nome', 'criadoPor', 'status', 'criadoEm', 'itensConcluidos', 'dataConclusao', 'orcamento', 'acoes'];
 
 }

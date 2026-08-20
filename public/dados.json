@@ -10,7 +10,8 @@
     "Data de conclusão":"2026-10-05",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/10",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Thiago Roberto;Martins;Leonardo Galdino;Kennedy;Leonardo Costa;Eduarda;Daniel Viana;Alan Vilela"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Thiago Roberto;Martins;Leonardo Galdino;Kennedy;Leonardo Costa;Eduarda;Daniel Viana;Alan Vilela",
+    "Orçamento":880.64
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -23,7 +24,8 @@
     "Data de conclusão":"2026-08-05",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"7\/10",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Thiago Roberto;Martins;Leonardo Galdino;Kennedy;Leonardo Costa;Eduarda;Daniel Viana;Alan Vilela"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Thiago Roberto;Martins;Leonardo Galdino;Kennedy;Leonardo Costa;Eduarda;Daniel Viana;Alan Vilela",
+    "Orçamento":321.55
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -36,7 +38,8 @@
     "Data de conclusão":"2026-04-05",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer",
+    "Orçamento":560.77
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -49,7 +52,8 @@
     "Data de conclusão":"2026-02-05",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer",
+    "Orçamento":755.5
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -62,7 +66,8 @@
     "Data de conclusão":"2025-12-05",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer",
+    "Orçamento":349.29
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -75,7 +80,8 @@
     "Data de conclusão":"2025-10-05",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer",
+    "Orçamento":285.0
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -88,7 +94,8 @@
     "Data de conclusão":"2025-08-08",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer",
+    "Orçamento":502.98
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -101,7 +108,8 @@
     "Data de conclusão":"2024-12-05",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer",
+    "Orçamento":110.46
   },
   {
     "Nome da tarefa":"Lançar melhoria do bimestre",
@@ -114,7 +122,8 @@
     "Data de conclusão":"2024-10-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer"
+    "Itens da lista de verificação":"Rômulo ;Charliane;Martins;Kennedy;Douglas;Jennifer",
+    "Orçamento":32.19
   },
   {
     "Nome da tarefa":"Fazer auditoria nos postos de trabalho dos lançamentos ",
@@ -127,7 +136,8 @@
     "Data de conclusão":"2024-08-30",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"4\/4",
-    "Itens da lista de verificação":"Gerar laudo dos postos de trabalho e enviar para os envolvidos ;Registrar condições dos postos com fotos ;Analisar postos nos pilares de P5.0 e Ergonomia ;Passar nas linhas produtivas dos lançamentos "
+    "Itens da lista de verificação":"Gerar laudo dos postos de trabalho e enviar para os envolvidos ;Registrar condições dos postos com fotos ;Analisar postos nos pilares de P5.0 e Ergonomia ;Passar nas linhas produtivas dos lançamentos ",
+    "Orçamento":391.93
   },
   {
     "Nome da tarefa":"Criar as documentações do TEGAD dentro matrix",
@@ -140,7 +150,8 @@
     "Data de conclusão":"2024-08-02",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":52.13
   },
   {
     "Nome da tarefa":"Criar as documentações dos montadores de layout dentro do matrix",
@@ -153,7 +164,8 @@
     "Data de conclusão":"2024-09-13",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":173.06
   },
   {
     "Nome da tarefa":"Work sampling no processo de chamada ativa do PS7",
@@ -166,7 +178,8 @@
     "Data de conclusão":"2024-08-23",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"4\/4",
-    "Itens da lista de verificação":"Gerar um gráfico com os dados de percurso com maior repetição ;Registrar os percursos realizados de movimentação dos operadores ;Acompanhar o processo ;Anotar as ocorrências ou divergências do processo "
+    "Itens da lista de verificação":"Gerar um gráfico com os dados de percurso com maior repetição ;Registrar os percursos realizados de movimentação dos operadores ;Acompanhar o processo ;Anotar as ocorrências ou divergências do processo ",
+    "Orçamento":96.29
   },
   {
     "Nome da tarefa":"Cadastro de pessoas treinadas aplicativo.",
@@ -179,7 +192,8 @@
     "Data de conclusão":"2024-08-23",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":318.55
   },
   {
     "Nome da tarefa":"Atualização planilhas SMED e criação de boletim.",
@@ -192,7 +206,8 @@
     "Data de conclusão":"2024-08-23",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":0.98
   },
   {
     "Nome da tarefa":"Desenho ",
@@ -205,7 +220,8 @@
     "Data de conclusão":"2024-08-16",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"3\/3",
-    "Itens da lista de verificação":"Desenho da Mesa Posto de trabalho F3;Desenho do Layout F3-F4;Desenho do Layout Peças Técnicas "
+    "Itens da lista de verificação":"Desenho da Mesa Posto de trabalho F3;Desenho do Layout F3-F4;Desenho do Layout Peças Técnicas ",
+    "Orçamento":274.44
   },
   {
     "Nome da tarefa":"Atualização planilha dos indicadores",
@@ -218,7 +234,8 @@
     "Data de conclusão":"2024-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":210.98
   },
   {
     "Nome da tarefa":"Atualizar checklist kaizen, ver com RH cadastro de pessoas treinadas em Kaizen.",
@@ -231,7 +248,8 @@
     "Data de conclusão":"2024-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":389.75
   },
   {
     "Nome da tarefa":"Organização materiais MEG ",
@@ -244,7 +262,8 @@
     "Data de conclusão":"2024-09-12",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":499.61
   },
   {
     "Nome da tarefa":"Estudo Sala Impressão Digital",
@@ -257,7 +276,8 @@
     "Data de conclusão":"2024-09-18",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":612.74
   },
   {
     "Nome da tarefa":"Organizar evento de melhorias ",
@@ -270,7 +290,8 @@
     "Data de conclusão":"2024-09-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"5\/5",
-    "Itens da lista de verificação":"Organizar o espaço de eventos ;Montar apresentação do evento ;Listar os dados dos premiados (Calçados e informações gerais);Levantar dados das avaliações de percepção. ;Treinar a apresentação "
+    "Itens da lista de verificação":"Organizar o espaço de eventos ;Montar apresentação do evento ;Listar os dados dos premiados (Calçados e informações gerais);Levantar dados das avaliações de percepção. ;Treinar a apresentação ",
+    "Orçamento":273.08
   },
   {
     "Nome da tarefa":"Passada Horizontal no TS6",
@@ -283,7 +304,8 @@
     "Data de conclusão":"2024-09-27",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":793.53
   },
   {
     "Nome da tarefa":"Passada Horizontal TS7",
@@ -296,7 +318,8 @@
     "Data de conclusão":"2024-09-25",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":987.87
   },
   {
     "Nome da tarefa":"MOI - Movimentadores de Caixas Montagem",
@@ -309,7 +332,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"6\/8",
-    "Itens da lista de verificação":"Validar com a gestão;Determinar padrões da operações;Testar nova proposta;Verificar possíveis propostas de melhorias  ou automações;Avaliar durante uma semana dimensionamento pro fator X Padrão \/ aglutinado;Lançar FAP;Criar nova proposta de dimensionamento;Levantar situação atual"
+    "Itens da lista de verificação":"Validar com a gestão;Determinar padrões da operações;Testar nova proposta;Verificar possíveis propostas de melhorias  ou automações;Avaliar durante uma semana dimensionamento pro fator X Padrão \/ aglutinado;Lançar FAP;Criar nova proposta de dimensionamento;Levantar situação atual",
+    "Orçamento":74.97
   },
   {
     "Nome da tarefa":"Otimização Setup Matriz EVA",
@@ -322,7 +346,8 @@
     "Data de conclusão":"2026-08-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"5\/9",
-    "Itens da lista de verificação":"Acompanhar definição do carrinho compra ou confecção junto a fábrica;Análise de ganho para transformação das matrizes em troca rápida (Vagner).;Análise de setups Matriz. (20 à 24\/07);Acompanhamento de implantação do Simon.;Teste de carrinho com capacidade para matrizes de entrada e saída.;Fazer analise do custo da estufa ligada o dia todo (Setups por maquina e por dia);Teste de pré aquecimento de matriz em setups reais.;Análise do fluxo de programação do EVA.;Montar material para reunião com Igor (sobre a estufa e moer purga)"
+    "Itens da lista de verificação":"Acompanhar definição do carrinho compra ou confecção junto a fábrica;Análise de ganho para transformação das matrizes em troca rápida (Vagner).;Análise de setups Matriz. (20 à 24\/07);Acompanhamento de implantação do Simon.;Teste de carrinho com capacidade para matrizes de entrada e saída.;Fazer analise do custo da estufa ligada o dia todo (Setups por maquina e por dia);Teste de pré aquecimento de matriz em setups reais.;Análise do fluxo de programação do EVA.;Montar material para reunião com Igor (sobre a estufa e moer purga)",
+    "Orçamento":426.94
   },
   {
     "Nome da tarefa":"Cerimônia de Premiação do Programa de Melhorias",
@@ -335,7 +360,8 @@
     "Data de conclusão":"2026-12-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"1\/4",
-    "Itens da lista de verificação":"Cerimônia de Premiação - Bimestre Set\/Out 2026;Cerimônia de Premiação - Bimestre Jul\/Ago 2026;Cerimônia de Premiação - Bimestre Mai\/Jun 2026;Cerimônia de Premiação - Bimestre Nov\/Dez 2026"
+    "Itens da lista de verificação":"Cerimônia de Premiação - Bimestre Set\/Out 2026;Cerimônia de Premiação - Bimestre Jul\/Ago 2026;Cerimônia de Premiação - Bimestre Mai\/Jun 2026;Cerimônia de Premiação - Bimestre Nov\/Dez 2026",
+    "Orçamento":244.88
   },
   {
     "Nome da tarefa":"MOI - Auxiliar de Matrizaria",
@@ -348,7 +374,8 @@
     "Data de conclusão":"2026-07-22",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"9\/10",
-    "Itens da lista de verificação":"Validar com a gestão;Tabulação de dados e classificação das atividades;Acompanhar turno B;Apresentar a gerência e coordenação;Verificar possíveis propostas de melhorias, transferências ou otimização de atividades;Colocar em teste para avaliar;Proposta de novo dimensionamento;Verificar com Kleilson a decisão de alterar dimensionamento, conforme avaliação no físico;Lançar FAP;Acompanhamento turno A (07\/07 e 09\/07)"
+    "Itens da lista de verificação":"Validar com a gestão;Tabulação de dados e classificação das atividades;Acompanhar turno B;Apresentar a gerência e coordenação;Verificar possíveis propostas de melhorias, transferências ou otimização de atividades;Colocar em teste para avaliar;Proposta de novo dimensionamento;Verificar com Kleilson a decisão de alterar dimensionamento, conforme avaliação no físico;Lançar FAP;Acompanhamento turno A (07\/07 e 09\/07)",
+    "Orçamento":273.43
   },
   {
     "Nome da tarefa":"MOI - Matrizeiro",
@@ -361,7 +388,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/8",
-    "Itens da lista de verificação":"Tabulação de dados e classificação das atividades;Proposta de novo dimensionamento;Colocar em teste para avaliar;Validar com a gestão;Acompanhamento turno A;Acompanhar turno B;Lançar FAP;Verificar possíveis propostas de melhorias, transferências ou otimização de atividades"
+    "Itens da lista de verificação":"Tabulação de dados e classificação das atividades;Proposta de novo dimensionamento;Colocar em teste para avaliar;Validar com a gestão;Acompanhamento turno A;Acompanhar turno B;Lançar FAP;Verificar possíveis propostas de melhorias, transferências ou otimização de atividades",
+    "Orçamento":719.5
   },
   {
     "Nome da tarefa":"SMED Setup de Cor EVA",
@@ -374,7 +402,8 @@
     "Data de conclusão":"2026-10-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"5\/7",
-    "Itens da lista de verificação":"Análise da troca de cor sem a utilização do material de limpeza.;Análise ECRS - Troca de cor simples e complexa;Análise de tempo perdido com expurgo, recorte e recolhimento da purga.;Proposta de alterações para redução de material expurgado (Reduzir material dentro do injetor).;Realizar teste no mini moinho com a purga do EVA para ver o comportamento do material.;Criar mapa de raciocínio da troca de cor;Levantamento de ganhos."
+    "Itens da lista de verificação":"Análise da troca de cor sem a utilização do material de limpeza.;Análise ECRS - Troca de cor simples e complexa;Análise de tempo perdido com expurgo, recorte e recolhimento da purga.;Proposta de alterações para redução de material expurgado (Reduzir material dentro do injetor).;Realizar teste no mini moinho com a purga do EVA para ver o comportamento do material.;Criar mapa de raciocínio da troca de cor;Levantamento de ganhos.",
+    "Orçamento":732.63
   },
   {
     "Nome da tarefa":"MOI - Tegad \/ Célula de Layout",
@@ -387,7 +416,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"4\/7",
-    "Itens da lista de verificação":"Levantamento da situação atual;Apresentar e validar com a gestão;Mapear todas as atividades realizadas na área e funções;Lançar FAP;Testar nova proposta de dimensionamento;Verificar possíveis melhorias ou automações de processos;Nova proposta de dimensionamento"
+    "Itens da lista de verificação":"Levantamento da situação atual;Apresentar e validar com a gestão;Mapear todas as atividades realizadas na área e funções;Lançar FAP;Testar nova proposta de dimensionamento;Verificar possíveis melhorias ou automações de processos;Nova proposta de dimensionamento",
+    "Orçamento":451.23
   },
   {
     "Nome da tarefa":"Credenciamento - Programa de Melhorias",
@@ -400,7 +430,8 @@
     "Data de conclusão":"2026-07-22",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"2\/2",
-    "Itens da lista de verificação":"Reunião para montagem do Plano de Credenciamento do Programa de Melhorias;Estruturar o conteúdo de Treinamento para o Público de Preparadores ate Supervisão"
+    "Itens da lista de verificação":"Reunião para montagem do Plano de Credenciamento do Programa de Melhorias;Estruturar o conteúdo de Treinamento para o Público de Preparadores ate Supervisão",
+    "Orçamento":475.39
   },
   {
     "Nome da tarefa":"Padronização das Embalagens",
@@ -413,7 +444,8 @@
     "Data de conclusão":"2026-08-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/4",
-    "Itens da lista de verificação":"Mobiliários - Crato;Mobiliarios - Fortaleza;Criação do material de apresentação da Hora da Excelência - Padronização das Embalagens;Mobiliários - Sobral"
+    "Itens da lista de verificação":"Mobiliários - Crato;Mobiliarios - Fortaleza;Criação do material de apresentação da Hora da Excelência - Padronização das Embalagens;Mobiliários - Sobral",
+    "Orçamento":396.3
   },
   {
     "Nome da tarefa":"Padronização das Salas de Tintas",
@@ -426,7 +458,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":102.4
   },
   {
     "Nome da tarefa":"Padronização do Tingimento",
@@ -439,7 +472,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":960.52
   },
   {
     "Nome da tarefa":"[Semana 27-31\/07] Automação de atividades de Organização do Programa de Melhorias",
@@ -452,7 +486,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"1\/5",
-    "Itens da lista de verificação":"Automatizar montagem da apresentação do Programa de Melhorias;Analise dos arquivos e dos fluxos para viabilizar automação;Automatizar montagem dos Certificados;Automatizar Convite dos Premiados e Convite Oficial para Gerencias do Programa de Melhorias;Criação dos arquivos do material de planejamento em pasta para automação"
+    "Itens da lista de verificação":"Automatizar montagem da apresentação do Programa de Melhorias;Analise dos arquivos e dos fluxos para viabilizar automação;Automatizar montagem dos Certificados;Automatizar Convite dos Premiados e Convite Oficial para Gerencias do Programa de Melhorias;Criação dos arquivos do material de planejamento em pasta para automação",
+    "Orçamento":503.93
   },
   {
     "Nome da tarefa":"Criar operação de aplicar rolinho curvado logo pequeno",
@@ -465,7 +500,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":618.85
   },
   {
     "Nome da tarefa":"Montar apresentação para treinamento novo dosador",
@@ -478,7 +514,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":194.13
   },
   {
     "Nome da tarefa":"[Semana 20-24\/07] Criação dos Famílias - Serigrafia Fábrica 05",
@@ -491,7 +528,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"5\/5",
-    "Itens da lista de verificação":"Levantar dados de processo de Serigrafia da Fábrica 05;Criar bases de famílias e gráficos para visualização da distribuição das Famílias;Analisar os padrões p\/lacas\/hr dos modelos para criar os ranges das Famílias;Levantar dados de PQP;Analisar os padrões pares\/hr dos modelos para criar os ranges das Famílias"
+    "Itens da lista de verificação":"Levantar dados de processo de Serigrafia da Fábrica 05;Criar bases de famílias e gráficos para visualização da distribuição das Famílias;Analisar os padrões p\/lacas\/hr dos modelos para criar os ranges das Famílias;Levantar dados de PQP;Analisar os padrões pares\/hr dos modelos para criar os ranges das Famílias",
+    "Orçamento":505.12
   },
   {
     "Nome da tarefa":"Projeto TR Cabine de Pintura Manual",
@@ -504,7 +542,8 @@
     "Data de conclusão":"2026-08-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/3",
-    "Itens da lista de verificação":"Confecção de bombas TS7 (nec. 32\/ feito 18);Replicação para TS6 (nec. 26);Replicação para TS1 (nec. 12)"
+    "Itens da lista de verificação":"Confecção de bombas TS7 (nec. 32\/ feito 18);Replicação para TS6 (nec. 26);Replicação para TS1 (nec. 12)",
+    "Orçamento":107.76
   },
   {
     "Nome da tarefa":"Enviar boletim de Aderência de Melhorias - Quinzenal para Gerentes e Coordenadores",
@@ -517,7 +556,8 @@
     "Data de conclusão":"2026-12-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":87.21
   },
   {
     "Nome da tarefa":"Enviar boletim semanal relacionado a Gestão de Melhorias da área do Tiago - Engenharia",
@@ -530,7 +570,8 @@
     "Data de conclusão":"2026-08-18",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":511.17
   },
   {
     "Nome da tarefa":"Enviar boletim semanal relacionado a Gestão de Melhorias da área do Tiago - Engenharia",
@@ -543,7 +584,8 @@
     "Data de conclusão":"2026-08-11",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":939.14
   },
   {
     "Nome da tarefa":"Enviar boletim semanal relacionado a Gestão de Melhorias da área do Tiago - Engenharia",
@@ -556,7 +598,8 @@
     "Data de conclusão":"2026-08-06",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":204.8
   },
   {
     "Nome da tarefa":"Enviar boletim semanal relacionado a Gestão de Melhorias da área do Tiago - Engenharia",
@@ -569,7 +612,8 @@
     "Data de conclusão":"2026-07-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":805.18
   },
   {
     "Nome da tarefa":"Criar operação de montar enfeite com novo equipamento",
@@ -582,7 +626,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":100.58
   },
   {
     "Nome da tarefa":"Acompanhar entrega dos móveis embalagem",
@@ -595,7 +640,8 @@
     "Data de conclusão":"2026-12-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":588.3
   },
   {
     "Nome da tarefa":"Acompanhar entrega das bombas duplas",
@@ -608,7 +654,8 @@
     "Data de conclusão":"2026-08-28",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/5",
-    "Itens da lista de verificação":"F1 - Total - 12, entregue - 7;F7 - Total - 38, entregue - 21;Previsão de entrega 28\/08\/2026;F6 - Total - 26, entregue - 6;33 bombas entregues Atualização - 14\/08\/2026"
+    "Itens da lista de verificação":"F1 - Total - 12, entregue - 7;F7 - Total - 38, entregue - 21;Previsão de entrega 28\/08\/2026;F6 - Total - 26, entregue - 6;33 bombas entregues Atualização - 14\/08\/2026",
+    "Orçamento":535.16
   },
   {
     "Nome da tarefa":"Projeto 02 - Dimensionamento dos Trocadores de Layout Fáb. 06",
@@ -621,7 +668,8 @@
     "Data de conclusão":"2026-08-14",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"3\/4",
-    "Itens da lista de verificação":"Acompanhar físico x tabela de cálculo.;Criar tabela de dimensionamento da F06;Validar processo de dimensionamento hora a hora.;Testar processo de automação das informações"
+    "Itens da lista de verificação":"Acompanhar físico x tabela de cálculo.;Criar tabela de dimensionamento da F06;Validar processo de dimensionamento hora a hora.;Testar processo de automação das informações",
+    "Orçamento":432.77
   },
   {
     "Nome da tarefa":"Fazer análise de ganhos dos modelos com elevador",
@@ -634,7 +682,8 @@
     "Data de conclusão":"2026-07-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":463.31
   },
   {
     "Nome da tarefa":"Atualização dos ganhos dos robôs de pintura",
@@ -647,7 +696,8 @@
     "Data de conclusão":"2026-12-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":438.74
   },
   {
     "Nome da tarefa":"Projeto 02 - Dimensionamento dos Trocadores de Layout Fáb. 07",
@@ -660,7 +710,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/4",
-    "Itens da lista de verificação":"Testar processo de automação das informações;Criar tabela de dimensionamento;Acompanhar físico x tabela de cálculo.;Validar processo de dimensionamento hora a hora."
+    "Itens da lista de verificação":"Testar processo de automação das informações;Criar tabela de dimensionamento;Acompanhar físico x tabela de cálculo.;Validar processo de dimensionamento hora a hora.",
+    "Orçamento":815.71
   },
   {
     "Nome da tarefa":"Projeto 02 - Dimensionamento dos Trocadores de Layout Crato",
@@ -673,7 +724,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/4",
-    "Itens da lista de verificação":"Testar processo de automação das informações;Criar tabela de dimensionamento;Acompanhar físico x tabela de cálculo.;Validar processo de dimensionamento hora a hora."
+    "Itens da lista de verificação":"Testar processo de automação das informações;Criar tabela de dimensionamento;Acompanhar físico x tabela de cálculo.;Validar processo de dimensionamento hora a hora.",
+    "Orçamento":312.45
   },
   {
     "Nome da tarefa":"Projeto 02 - Dimensionamento dos Trocadores de Layout Fáb. 01",
@@ -686,7 +738,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/4",
-    "Itens da lista de verificação":"Testar processo de automação das informações;Validar processo de dimensionamento hora a hora.;Criar tabela de dimensionamento;Acompanhar físico x tabela de cálculo."
+    "Itens da lista de verificação":"Testar processo de automação das informações;Validar processo de dimensionamento hora a hora.;Criar tabela de dimensionamento;Acompanhar físico x tabela de cálculo.",
+    "Orçamento":45.21
   },
   {
     "Nome da tarefa":"Projeto 01 - Dimensionamento dos Reguladores de Telas",
@@ -699,7 +752,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"5\/5",
-    "Itens da lista de verificação":"Criar tabela de cálculo do dimensionamento;Adequar e validar o quadro de acordo com a demanda.;Aplicar automação de processo da tabela de cálculo;Acompanhar físico x Tabela de cálculo;Lançar FAP"
+    "Itens da lista de verificação":"Criar tabela de cálculo do dimensionamento;Adequar e validar o quadro de acordo com a demanda.;Aplicar automação de processo da tabela de cálculo;Acompanhar físico x Tabela de cálculo;Lançar FAP",
+    "Orçamento":50.34
   },
   {
     "Nome da tarefa":"Levantamento das atividades de assistentes",
@@ -712,7 +766,8 @@
     "Data de conclusão":"2026-07-17",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"5\/5",
-    "Itens da lista de verificação":"Atividades Expandido\/EVA;Atividades F3;Atividades TS;Levantamento das atividades automatizadas;Atividades F5"
+    "Itens da lista de verificação":"Atividades Expandido\/EVA;Atividades F3;Atividades TS;Levantamento das atividades automatizadas;Atividades F5",
+    "Orçamento":536.25
   },
   {
     "Nome da tarefa":"BI - Dados de Try out",
@@ -725,7 +780,8 @@
     "Data de conclusão":"2026-07-17",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":904.74
   },
   {
     "Nome da tarefa":"Atualização Automação Robô de Pintura",
@@ -738,7 +794,8 @@
     "Data de conclusão":"2026-07-17",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":695.57
   },
   {
     "Nome da tarefa":"Indicadores Internos Engenharia",
@@ -751,7 +808,8 @@
     "Data de conclusão":"2026-07-30",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"5\/5",
-    "Itens da lista de verificação":"Certificado;Apresentação;Projetos de Engenharia;Requisitar calçados;Kahoot"
+    "Itens da lista de verificação":"Certificado;Apresentação;Projetos de Engenharia;Requisitar calçados;Kahoot",
+    "Orçamento":379.62
   },
   {
     "Nome da tarefa":"Replicação - Automação de download de documentação Matrix",
@@ -764,7 +822,8 @@
     "Data de conclusão":"2026-07-17",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"2\/3",
-    "Itens da lista de verificação":"Realizar teste em escala;Realizar teste piloto;Ajustar código"
+    "Itens da lista de verificação":"Realizar teste em escala;Realizar teste piloto;Ajustar código",
+    "Orçamento":290.77
   },
   {
     "Nome da tarefa":"Fechar com fábrica envio dos armários sem gaveta",
@@ -777,7 +836,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":917.2
   },
   {
     "Nome da tarefa":"Enviar caixas de celular para unidade de Crato",
@@ -790,7 +850,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":465.7
   },
   {
     "Nome da tarefa":"Montar apresentação sobre o posto de revisão",
@@ -803,7 +864,8 @@
     "Data de conclusão":"2026-07-27",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":936.21
   },
   {
     "Nome da tarefa":"Criar operação Montar 2 comp. no gabarito sapata",
@@ -816,7 +878,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":456.62
   },
   {
     "Nome da tarefa":"[Semana 27-31\/07] Melhorias - Semanal F03",
@@ -829,7 +892,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"3\/3",
-    "Itens da lista de verificação":"Adicionar dados pendentes;Revisão base para os dados de Volume;Adequar as novas colunas"
+    "Itens da lista de verificação":"Adicionar dados pendentes;Revisão base para os dados de Volume;Adequar as novas colunas",
+    "Orçamento":879.46
   },
   {
     "Nome da tarefa":"Estudo sobre setup de cor na rotografia",
@@ -842,7 +906,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"4\/4",
-    "Itens da lista de verificação":"Gravar vídeos de trocas de cor simples e complexas na rotografia;Escolher um produto para fazer análise da carga pendente;Fazer simulação da perda de tempo e custo do setup de acordo com a carga;Analisar possibilidade de fazer melhor sequenciamento de cores."
+    "Itens da lista de verificação":"Gravar vídeos de trocas de cor simples e complexas na rotografia;Escolher um produto para fazer análise da carga pendente;Fazer simulação da perda de tempo e custo do setup de acordo com a carga;Analisar possibilidade de fazer melhor sequenciamento de cores.",
+    "Orçamento":75.99
   },
   {
     "Nome da tarefa":"[Semana 20-24\/07] Robô de alteração de Processos",
@@ -855,7 +920,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"4\/4",
-    "Itens da lista de verificação":"Mapear atividade de alteração do processo e operações de Base Coating;Criar robô para alteração automatizada;Testes e Revisões no robô;Execução da lista de componentes para alteração"
+    "Itens da lista de verificação":"Mapear atividade de alteração do processo e operações de Base Coating;Criar robô para alteração automatizada;Testes e Revisões no robô;Execução da lista de componentes para alteração",
+    "Orçamento":646.13
   },
   {
     "Nome da tarefa":"Definição de Padrão (Capacidade) das esteiras do CD.",
@@ -868,7 +934,8 @@
     "Data de conclusão":"2026-07-24",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":23.01
   },
   {
     "Nome da tarefa":"Análise de layout das salas de tintas para recebimento dos contêiner de adesivo.",
@@ -881,7 +948,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":315.31
   },
   {
     "Nome da tarefa":"Plano de comunicação do Programa de Melhorias - Gerencias e Coordenadores",
@@ -894,7 +962,8 @@
     "Data de conclusão":"2026-08-15",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"2\/2",
-    "Itens da lista de verificação":"Estruturar material e criar o plano de comunicação para Gerentes e Coordenadores;Cronograma de Apresentação do Material - Programa de Melhorias - Conteúdo e Aderência"
+    "Itens da lista de verificação":"Estruturar material e criar o plano de comunicação para Gerentes e Coordenadores;Cronograma de Apresentação do Material - Programa de Melhorias - Conteúdo e Aderência",
+    "Orçamento":947.2
   },
   {
     "Nome da tarefa":"Estudo - Setup de Cor",
@@ -907,7 +976,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"5\/5",
-    "Itens da lista de verificação":"Levantar quantidade de PP\/Líder Técnico por turno;Criar mapa de raciocínio do setup de cor para investigar as causas do acumulo de tempo;Verificar quantidade de setups simples e complexos por turno;Analisar os resultado dos tempos de Setup de Cor (estratificado);Acompanhar setups de cor"
+    "Itens da lista de verificação":"Levantar quantidade de PP\/Líder Técnico por turno;Criar mapa de raciocínio do setup de cor para investigar as causas do acumulo de tempo;Verificar quantidade de setups simples e complexos por turno;Analisar os resultado dos tempos de Setup de Cor (estratificado);Acompanhar setups de cor",
+    "Orçamento":522.23
   },
   {
     "Nome da tarefa":"Criação do Video do Evento do Programa de Melhorias",
@@ -920,7 +990,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/1",
-    "Itens da lista de verificação":"Finalizar edição do vídeo do Evento de Melhorias"
+    "Itens da lista de verificação":"Finalizar edição do vídeo do Evento de Melhorias",
+    "Orçamento":627.75
   },
   {
     "Nome da tarefa":"Criar cronograma de Passadas com Supervisores da Engenharia - Manoel",
@@ -933,7 +1004,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":8.67
   },
   {
     "Nome da tarefa":"Análise Engate de Escoamento (Dosador)",
@@ -946,7 +1018,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"0\/4",
-    "Itens da lista de verificação":"Caso necessário, estudar novo protótipo para substituir o atual;Analisar modificação do protótipo atual;Pensar novo método para evitar descer da máquina com peso (matéria prima em excesso);Readequação do engate atual"
+    "Itens da lista de verificação":"Caso necessário, estudar novo protótipo para substituir o atual;Analisar modificação do protótipo atual;Pensar novo método para evitar descer da máquina com peso (matéria prima em excesso);Readequação do engate atual",
+    "Orçamento":502.3
   },
   {
     "Nome da tarefa":"Estruturar com as áreas sobre a Embalagem para o momento da Hora da Excelência",
@@ -959,7 +1032,8 @@
     "Data de conclusão":"2026-08-15",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":127.34
   },
   {
     "Nome da tarefa":"22\/07 - Reunião de Indicadores dos Montadores",
@@ -972,7 +1046,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"0\/1",
-    "Itens da lista de verificação":"Cronograma dos vídeos do Programa de Melhorias"
+    "Itens da lista de verificação":"Cronograma dos vídeos do Programa de Melhorias",
+    "Orçamento":280.72
   },
   {
     "Nome da tarefa":"16\/07 - Fechamento de Indicadores dos Transformadores",
@@ -985,7 +1060,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"0\/6",
-    "Itens da lista de verificação":"Analisar complexidade da injeção de Fortaleza comparando com Sobral, resultados de OPE.;Comparativo de ineficiência da injeção full com expandido;Acompanhar implantação do SIMON na injeção de EVA;Apresentar quantidade de melhorias do grupo de inelegíveis;Separar os produtos com matrizes novas nos blocos das ineficiências.;Analisar ajuste de meta da injeção de Crato"
+    "Itens da lista de verificação":"Analisar complexidade da injeção de Fortaleza comparando com Sobral, resultados de OPE.;Comparativo de ineficiência da injeção full com expandido;Acompanhar implantação do SIMON na injeção de EVA;Apresentar quantidade de melhorias do grupo de inelegíveis;Separar os produtos com matrizes novas nos blocos das ineficiências.;Analisar ajuste de meta da injeção de Crato",
+    "Orçamento":52.23
   },
   {
     "Nome da tarefa":"Abertura de Solicitação de licença para IA - Para criação de vídeos HeyGEn",
@@ -998,7 +1074,8 @@
     "Data de conclusão":"2026-07-23",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":976.11
   },
   {
     "Nome da tarefa":"AMR para entrega de insumos (Sala de Tintas)",
@@ -1011,7 +1088,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":426.08
   },
   {
     "Nome da tarefa":"POP da troca de número na rotografia friso",
@@ -1024,7 +1102,8 @@
     "Data de conclusão":"2026-07-28",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":499.33
   },
   {
     "Nome da tarefa":"Estudos  - Sala de Amostras",
@@ -1037,7 +1116,8 @@
     "Data de conclusão":"2026-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"7\/8",
-    "Itens da lista de verificação":"Implementar pastas nas máquinas;Acompanhamento: pastas sendo utilizadas no novo formato (Acompanhar no físico);Aprofundamento na análise do histórico de solicitações dos kits (Solicitação André);Definir quantidade de pastas necessárias para compra;Análise do histórico de solicitações de kits;Protótipo de layout;Medição Sala de revisão x  Sala de amostra;Implementação: realocação de pastas com divisórias"
+    "Itens da lista de verificação":"Implementar pastas nas máquinas;Acompanhamento: pastas sendo utilizadas no novo formato (Acompanhar no físico);Aprofundamento na análise do histórico de solicitações dos kits (Solicitação André);Definir quantidade de pastas necessárias para compra;Análise do histórico de solicitações de kits;Protótipo de layout;Medição Sala de revisão x  Sala de amostra;Implementação: realocação de pastas com divisórias",
+    "Orçamento":705.43
   },
   {
     "Nome da tarefa":"Fazer análise da troca de caixa preparação com elevador",
@@ -1050,7 +1130,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":204.85
   },
   {
     "Nome da tarefa":"Fazer análise do apontamento SIMON Setup",
@@ -1063,7 +1144,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":592.49
   },
   {
     "Nome da tarefa":"Fazer análise apontamento SIMON Disponibilidade",
@@ -1076,7 +1158,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":645.92
   },
   {
     "Nome da tarefa":"Fazer a solicitação do Usuario da IA HeyGEn - Para produção de Videos do Programa de Melhorias",
@@ -1089,7 +1172,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":301.13
   },
   {
     "Nome da tarefa":"Revisar análise - Unir Tira, enformar prensar e desenformar - sorveteira a vácuo",
@@ -1102,7 +1186,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":43.83
   },
   {
     "Nome da tarefa":"Revisar análise - Aplicar Cola em sola, Área de Colagem da palmilha, Sola Cape Gaspea Adulto",
@@ -1115,7 +1200,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":26.47
   },
   {
     "Nome da tarefa":"Liberar análise - Unir palmilha em cabedal com sola plataforma EVA + Enformar, Prensar e Desenformar, Sorveteira, Obter forma sem dedeira e Obter cabedal da esteira, Cabedal Com Tira de Fech",
@@ -1128,7 +1214,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":776.96
   },
   {
     "Nome da tarefa":"Criar análise - Passar sola pelo termoget, sola baixa, obter e dispor na esteira + Retirar fio de cola palmilha",
@@ -1141,7 +1228,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":305.23
   },
   {
     "Nome da tarefa":"Imprimir e Enviar formas do modelo 38154 para Fortaleza",
@@ -1154,7 +1242,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":456.21
   },
   {
     "Nome da tarefa":"Ações de Planejamento Programa de Melhorias Mai-Jun26",
@@ -1167,7 +1256,8 @@
     "Data de conclusão":"2026-08-10",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"6\/6",
-    "Itens da lista de verificação":"Impressão dos Certificados;Criação da  Apresentação do Evento;Impressão dos Cartões dos Premiados;Vídeo de Comunicação - Programa de Melhorias;Requisição dos calçados Programa de Melhorias - 03\/08\/2026;Requisição dos calçados Indicadores Internos - 29\/07\/2026"
+    "Itens da lista de verificação":"Impressão dos Certificados;Criação da  Apresentação do Evento;Impressão dos Cartões dos Premiados;Vídeo de Comunicação - Programa de Melhorias;Requisição dos calçados Programa de Melhorias - 03\/08\/2026;Requisição dos calçados Indicadores Internos - 29\/07\/2026",
+    "Orçamento":715.98
   },
   {
     "Nome da tarefa":"Desenhar e imprimir bases para placas laboratório",
@@ -1180,7 +1270,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":671.96
   },
   {
     "Nome da tarefa":"Revisar análise - Unir dedeira e palmilha no cabedal EVA, obter sola com palmilha já preso da esteira, dispor na esteira",
@@ -1193,7 +1284,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":516.5
   },
   {
     "Nome da tarefa":"Fechar indicadores de Julho e Criar indicadores de Agosto",
@@ -1206,7 +1298,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"11\/13",
-    "Itens da lista de verificação":"Melhoria TC;Auditoria 5S;Banco de Horas;Aprov. Estrutura Melissa;Passada Horizontal;Auditoria Produto Certificado;Melhoria MP;Aprov. Estrutura;Aderência MTM Melissa;Ineficiência;Aderência MTM;Certificação De produtos;Inclusão de batida"
+    "Itens da lista de verificação":"Melhoria TC;Auditoria 5S;Banco de Horas;Aprov. Estrutura Melissa;Passada Horizontal;Auditoria Produto Certificado;Melhoria MP;Aprov. Estrutura;Aderência MTM Melissa;Ineficiência;Aderência MTM;Certificação De produtos;Inclusão de batida",
+    "Orçamento":34.49
   },
   {
     "Nome da tarefa":"Revisar análise - Limpar fio de cola, área da palmilha, com pincel, bico e calcanhar, obter simultâneo da esteira e dispor simultâneo, AD\/INF",
@@ -1219,7 +1312,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":504.98
   },
   {
     "Nome da tarefa":"Criar análise - Embutir cabedal na palmilha, 1 Dedeira + Aplicar Cola na Dedeira 3 áreas, com Bico de Pato Simples, Obter da esteira, Par",
@@ -1232,7 +1326,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":990.77
   },
   {
     "Nome da tarefa":"Acompanhamento de PPPs na hora das trocas de cor para verificar se realmente há problemas com o robô",
@@ -1245,7 +1340,8 @@
     "Data de conclusão":"2026-07-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":9.8
   },
   {
     "Nome da tarefa":"Reunião com PPPs sobre custo do setup e premiação SMED",
@@ -1258,7 +1354,8 @@
     "Data de conclusão":"2026-08-13",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"5\/6",
-    "Itens da lista de verificação":"Fábrica 6 - 2° turno;Fábrica 1 - 2° turno;Fábrica 7 - 2° turno;Fábrica 6 - 1° turno;Fábrica 1 - 1° turno;Fábrica 7 - 1° turno"
+    "Itens da lista de verificação":"Fábrica 6 - 2° turno;Fábrica 1 - 2° turno;Fábrica 7 - 2° turno;Fábrica 6 - 1° turno;Fábrica 1 - 1° turno;Fábrica 7 - 1° turno",
+    "Orçamento":833.24
   },
   {
     "Nome da tarefa":"MOI - Sala de Tintas",
@@ -1271,7 +1368,8 @@
     "Data de conclusão":"2026-08-28",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/7",
-    "Itens da lista de verificação":"Mapear todas as atividades realizadas na área e funções;Apresentar e validar com a gestão;Nova proposta de dimensionamento;Levantamento da situação atual;Testar nova proposta de dimensionamento;Lançar FAP;Verificar possíveis melhorias ou automações de processos"
+    "Itens da lista de verificação":"Mapear todas as atividades realizadas na área e funções;Apresentar e validar com a gestão;Nova proposta de dimensionamento;Levantamento da situação atual;Testar nova proposta de dimensionamento;Lançar FAP;Verificar possíveis melhorias ou automações de processos",
+    "Orçamento":784.14
   },
   {
     "Nome da tarefa":"Acompanhar a aplicação dos Manifolds - Troca Rápida de Ar",
@@ -1284,7 +1382,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"0\/3",
-    "Itens da lista de verificação":"Gravar trocas utilizando o Manifold;Apresentar os resultados - Análise ECRS;Acompanhar a entrega de 26 Manifold's para os Trocadores"
+    "Itens da lista de verificação":"Gravar trocas utilizando o Manifold;Apresentar os resultados - Análise ECRS;Acompanhar a entrega de 26 Manifold's para os Trocadores",
+    "Orçamento":764.24
   },
   {
     "Nome da tarefa":"Verificar atividades e tempo dedicado pelo PPP nos setups (linha sempre nova)",
@@ -1297,7 +1396,8 @@
     "Data de conclusão":"2026-08-13",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"2\/3",
-    "Itens da lista de verificação":"Troca de número;Troca de produto;Troca de cor"
+    "Itens da lista de verificação":"Troca de número;Troca de produto;Troca de cor",
+    "Orçamento":16.66
   },
   {
     "Nome da tarefa":"MOI - Caixas Vazias - Injeção",
@@ -1310,7 +1410,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"4\/6",
-    "Itens da lista de verificação":"Testar proposta no físico;Apresentar e validar com a gestão;Mapear as atividades do estado atual;Lançar FAP;Estudar a mão de obra necessária - atividades x demanda;Nova proposta de dimensionamento"
+    "Itens da lista de verificação":"Testar proposta no físico;Apresentar e validar com a gestão;Mapear as atividades do estado atual;Lançar FAP;Estudar a mão de obra necessária - atividades x demanda;Nova proposta de dimensionamento",
+    "Orçamento":556.81
   },
   {
     "Nome da tarefa":"Envio ganchos das bolsas para Fortaleza",
@@ -1323,7 +1424,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":436.44
   },
   {
     "Nome da tarefa":"Solicitar requisição, corte e costura do coverline para Fortaleza, F8 e F6",
@@ -1336,7 +1438,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":433.95
   },
   {
     "Nome da tarefa":"Adaptação do moinho para moer purga inteira (Eliminar necessidade de recorte da purga).",
@@ -1349,7 +1452,8 @@
     "Data de conclusão":"2026-08-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"2\/4",
-    "Itens da lista de verificação":"Verificar com produção (EVA) fluxo de classificação dos resíduos para enviar ao Crato.;Conhecer fluxo de geração de resíduos Crato (repasse Charliane);Criar mapa de raciocínio da Geração de Resíduos do Eva;Análise de custo benefício do uso do mini moinho na máquina. Verificar qual o ganho."
+    "Itens da lista de verificação":"Verificar com produção (EVA) fluxo de classificação dos resíduos para enviar ao Crato.;Conhecer fluxo de geração de resíduos Crato (repasse Charliane);Criar mapa de raciocínio da Geração de Resíduos do Eva;Análise de custo benefício do uso do mini moinho na máquina. Verificar qual o ganho.",
+    "Orçamento":428.58
   },
   {
     "Nome da tarefa":"Imprimir e enviar formas para Fortaleza",
@@ -1362,7 +1466,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":511.6
   },
   {
     "Nome da tarefa":"Envio modelos sem bloco e atualização painel ineficiência",
@@ -1375,7 +1480,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"9\/12",
-    "Itens da lista de verificação":"Fortaleza - Montagem OK;Envio da lista de modelos;Crato - Montagem;Crato - FULL;Fortaleza  - FULL;Fábrica 6;Atualização;Expandido;Crato - EVA;Fábrica 7;Fábrica 1;Fábrica 3 - OK"
+    "Itens da lista de verificação":"Fortaleza - Montagem OK;Envio da lista de modelos;Crato - Montagem;Crato - FULL;Fortaleza  - FULL;Fábrica 6;Atualização;Expandido;Crato - EVA;Fábrica 7;Fábrica 1;Fábrica 3 - OK",
+    "Orçamento":994.97
   },
   {
     "Nome da tarefa":"Enviar relatório dos modelos injeção EVA para ergonomia",
@@ -1388,7 +1494,8 @@
     "Data de conclusão":"2026-08-14",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":662.67
   },
   {
     "Nome da tarefa":"Planilha de acionamento de indicadores",
@@ -1401,7 +1508,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":168.18
   },
   {
     "Nome da tarefa":"Revisar análise - Aplicar Insumo em Sola, Bisnaga, Aplicação Lateral e Forquilha ( logo), Esteira",
@@ -1414,7 +1522,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":631.94
   },
   {
     "Nome da tarefa":"Comparativo de qtde de ordens previstas e qtde apontadas",
@@ -1427,7 +1536,8 @@
     "Data de conclusão":"2026-08-04",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"3\/3",
-    "Itens da lista de verificação":"Fábrica 6;Fábrica 1;Fábrica 7"
+    "Itens da lista de verificação":"Fábrica 6;Fábrica 1;Fábrica 7",
+    "Orçamento":439.02
   },
   {
     "Nome da tarefa":"Fazer comparativo para ajuste de metas de setup no TS",
@@ -1440,7 +1550,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"3\/3",
-    "Itens da lista de verificação":"TS7;TS6;TS1"
+    "Itens da lista de verificação":"TS7;TS6;TS1",
+    "Orçamento":187.59
   },
   {
     "Nome da tarefa":"Padronização do posto de trabalho da Op. preparação de sola",
@@ -1453,7 +1564,8 @@
     "Data de conclusão":"2026-08-31",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"2\/4",
-    "Itens da lista de verificação":"Cria um protótipo de sistema de 2 caixas, sendo 2 elevadores, 1 elétrico e 1 por gravidade;Fazer teste do sistema de 2 caixa;Fazer teste do Protótipo do Karakuri;Criar uma Protótipo com Karakuri para descer caixa vazia"
+    "Itens da lista de verificação":"Cria um protótipo de sistema de 2 caixas, sendo 2 elevadores, 1 elétrico e 1 por gravidade;Fazer teste do sistema de 2 caixa;Fazer teste do Protótipo do Karakuri;Criar uma Protótipo com Karakuri para descer caixa vazia",
+    "Orçamento":550.34
   },
   {
     "Nome da tarefa":"Criar uma proposta de Sistema de Duas Caixa , 2 elevadores , sendo 1 elétrico e 1  gravidade",
@@ -1466,7 +1578,8 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":339.28
   },
   {
     "Nome da tarefa":"Proposta: eliminar subida no dosador durante o setup de cor",
@@ -1479,7 +1592,8 @@
     "Data de conclusão":"2026-08-14",
     "Atrasados":true,
     "Itens concluídos da lista de verificação":"1\/4",
-    "Itens da lista de verificação":"Verificar possibilidade de instalar pistola de ar comprimido internamente no dosador;Análise de material residual;Elaborar mapa de retenção de matéria prima no dosador;Analisar estrutura física do dosador"
+    "Itens da lista de verificação":"Verificar possibilidade de instalar pistola de ar comprimido internamente no dosador;Análise de material residual;Elaborar mapa de retenção de matéria prima no dosador;Analisar estrutura física do dosador",
+    "Orçamento":316.28
   },
   {
     "Nome da tarefa":"Revisar análise - \tVazar Tira, Pega da esteira, 2 encaixes no gabarito + retirar refugo",
@@ -1492,7 +1606,8 @@
     "Data de conclusão":"2026-08-07",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":859.87
   },
   {
     "Nome da tarefa":"Enviar cálculo de necessidade de material para impressão filtro enforquilhadeira",
@@ -1505,7 +1620,8 @@
     "Data de conclusão":"2026-08-14",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":442.41
   },
   {
     "Nome da tarefa":"Enviar placas para comprador, placas impressora 3D",
@@ -1518,7 +1634,8 @@
     "Data de conclusão":"2026-08-14",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":67.64
   },
   {
     "Nome da tarefa":"Iniciar estudo: Robô AMR de Matrizes",
@@ -1531,7 +1648,8 @@
     "Data de conclusão":"2026-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/3",
-    "Itens da lista de verificação":"Mapear futuro fluxo do robô;Analisar quantidades de Setup (estratificado);Rever fluxo do processo de entrega de matrizes"
+    "Itens da lista de verificação":"Mapear futuro fluxo do robô;Analisar quantidades de Setup (estratificado);Rever fluxo do processo de entrega de matrizes",
+    "Orçamento":244.2
   },
   {
     "Nome da tarefa":"Monitoramento: Redução de Trocadores de Matrizes",
@@ -1544,7 +1662,8 @@
     "Data de conclusão":"2026-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/2",
-    "Itens da lista de verificação":"Acompanhar impacto da redução nos setups;Elaborar relatório: setups per capita"
+    "Itens da lista de verificação":"Acompanhar impacto da redução nos setups;Elaborar relatório: setups per capita",
+    "Orçamento":64.97
   },
   {
     "Nome da tarefa":"Entrega parcial da confecção de rolinhos para F7",
@@ -1557,7 +1676,8 @@
     "Data de conclusão":"2026-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/2",
-    "Itens da lista de verificação":"Total: - 200 rolinhos;Entregue - 0 - 0%"
+    "Itens da lista de verificação":"Total: - 200 rolinhos;Entregue - 0 - 0%",
+    "Orçamento":671.95
   },
   {
     "Nome da tarefa":"Entrega parcial dos filtros das enforquilhadeiras",
@@ -1570,7 +1690,8 @@
     "Data de conclusão":"2026-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":"0\/2",
-    "Itens da lista de verificação":"Entregue - 0 - 0%;Total: 350"
+    "Itens da lista de verificação":"Entregue - 0 - 0%;Total: 350",
+    "Orçamento":115.53
   },
   {
     "Nome da tarefa":"Automação da planilha de Abastecedores de PA",
@@ -1583,7 +1704,8 @@
     "Data de conclusão":"2026-08-21",
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":730.66
   },
   {
     "Nome da tarefa":"Gestão de Projetos",
@@ -1596,6 +1718,21 @@
     "Data de conclusão":null,
     "Atrasados":false,
     "Itens concluídos da lista de verificação":null,
-    "Itens da lista de verificação":null
+    "Itens da lista de verificação":null,
+    "Orçamento":7.44
+  },
+  {
+    "Nome da tarefa":null,
+    "Categoria":null,
+    "Meta":null,
+    "Status":null,
+    "Prioridade":null,
+    "Criado por":null,
+    "Criado em":null,
+    "Data de conclusão":null,
+    "Atrasados":null,
+    "Itens concluídos da lista de verificação":null,
+    "Itens da lista de verificação":null,
+    "Orçamento":565.42
   }
 ]
