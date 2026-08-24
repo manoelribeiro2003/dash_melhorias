@@ -1,4 +1,4 @@
-import { CdkDrag, CdkDragDrop, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
@@ -16,6 +16,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   imports: [
     CdkDropList,
     CdkDrag,
+    CdkDragHandle,
     MatButtonModule,
     MatIconModule,
     MatSlideToggleModule,
