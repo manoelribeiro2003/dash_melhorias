@@ -1,6 +1,6 @@
-import { AfterViewInit, Component, effect, inject, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, inject, viewChild, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import { MatMenuModule } from '@angular/material/menu';
+import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgClass, DatePipe } from '@angular/common';
@@ -9,6 +9,9 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { Tarefa } from '../../models/tarefa.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import { DecimalPipe } from '@angular/common';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
+import { DialogProject } from '../dialog-project/dialog-project';
 
 @Component({
   selector: 'app-table-projects',
@@ -21,22 +24,37 @@ import { DecimalPipe } from '@angular/common';
     DatePipe,
     MatPaginatorModule,
     MatDividerModule,
-    DecimalPipe
+    DecimalPipe,
+    MatDialogModule
   ],
   templateUrl: './table-projects.html',
   styleUrl: './table-projects.scss',
 })
 export class TableProjects implements AfterViewInit {
+
   private tasks = inject(GetTasks);
+  dataSource = new MatTableDataSource<Tarefa>(this.tasks.tarefas());
+
+  readonly menuTrigger = viewChild.required(MatMenuTrigger);
+
+  readonly dialog = inject(MatDialog);
+
   constructor() {
     effect(() => {
       this.dataSource.data = this.tasks.tarefas()
     })
+
+    this.abrirDialog()
+  }
+
+  abrirDialog(): void {
+    this.dialog.open(DialogProject, {
+      width: '90vw',
+      maxWidth: '1500px'
+    })
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-
-  dataSource = new MatTableDataSource<Tarefa>(this.tasks.tarefas());
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
   }

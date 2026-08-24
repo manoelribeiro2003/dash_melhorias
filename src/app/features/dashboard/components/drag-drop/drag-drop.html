@@ -1,0 +1,66 @@
+<div class="stages-container">
+
+  <div class="table-header">
+    <div></div>
+    <div>Ordem</div>
+    <div>Nome da Etapa</div>
+    <div>Início</div>
+    <div>Término</div>
+    <div>Concluída?</div>
+    <div>Ações</div>
+  </div>
+
+  <div cdkDropList class="drag-list" (cdkDropListDropped)="drop($event)">
+
+    @for (movie of movies; track movie) {
+
+    <div class="stage-row" cdkDrag>
+
+      <!-- Drag Handle -->
+      <div class="drag-col" cdkDragHandle>
+        <mat-icon>drag_indicator</mat-icon>
+      </div>
+
+      <!-- Ordem -->
+      <div class="order-col">{{$index + 1}}</div>
+
+      <!-- Nome -->
+      <div class="name-col">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
+          <input matInput [value]="movie">
+        </mat-form-field>
+      </div>
+
+      <!-- Data Início -->
+      <div class="date-col">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
+          <input matInput value="17/07/2026">
+          <mat-icon matSuffix>calendar_today</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <!-- Data Fim -->
+      <div class="date-col">
+        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
+          <input matInput value="05/10/2026">
+          <mat-icon matSuffix>calendar_today</mat-icon>
+        </mat-form-field>
+      </div>
+
+      <!-- Status -->
+      <div class="status-col">
+        <mat-slide-toggle></mat-slide-toggle>
+        <span>Não</span>
+      </div>
+
+      <!-- Ações -->
+      <div class="actions-col">
+        <button mat-icon-button color="warn">
+          <mat-icon>delete_outline</mat-icon>
+        </button>
+      </div>
+      
+    </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,118 @@
+@use '@angular/material' as mat;
+
+.div-header {
+    // border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.div-title-header {
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid black;
+    gap: 10px;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 15px;
+    color: rgb(101, 101, 101);
+}
+
+.div-dados-projeto {
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid black;
+    padding: 10px;
+
+    .label-dados-projeto {
+        font-size: 18px;
+        color: rgb(59, 59, 59);
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .inputs-projeto {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+
+        // border: 1px solid black;
+        .div-nome-projeto {
+            display: flex;
+            flex-direction: row;
+            // border: 1px solid black;
+            flex: 2;
+
+            mat-form-field {
+                flex: 1;
+            }
+        }
+
+        .responsavel {
+            display: flex;
+            flex-direction: row;
+            // border: 1px solid black;
+            flex: 1;
+
+            mat-form-field {
+                flex: 1;
+            }
+        }
+    }
+
+    .inputs-projeto.div-dois {
+
+        display: flex;
+        flex-direction: row;
+        // border: 1px solid black;
+        gap: 20px;
+
+        .div-desc-projeto {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+
+            // border: 1px solid black;
+            mat-form-field {
+                flex: 1;
+            }
+        }
+
+
+        input.right-align {
+            text-align: right;
+        }
+
+        input.right-align::-webkit-outer-spin-button,
+        input.right-align::-webkit-inner-spin-button {
+            display: none;
+        }
+    }
+
+}
+
+.div-etapas-projeto {
+    display: flex;
+    flex-direction: column;
+    // border: 1px solid black;
+    padding: 10px;
+    padding-top: 0;
+    margin-top: 25px;
+
+    .label-etapas-projeto {
+        font-size: 18px;
+        color: rgb(59, 59, 59);
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+}

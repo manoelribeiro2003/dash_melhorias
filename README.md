@@ -51,3 +51,8 @@
 - Adicionar um drag and drop com as etapas do projeto com as definidas colunas a serem editadas de acordo com as propriedades de uma tarefa
 - Implementar a parte de trazer os dados das tarefas
 - Salvar os dados da tarefa no banco
+
+
+[x] - adicionei um matmenu para ver as opções que podem ser feitas sobre o projeto nessa tela
+[ ] - inserir o modal
+[ ] - criar link para quando clicar no botão ver projeto ele abrir o modal

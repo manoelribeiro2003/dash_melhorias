@@ -1,0 +1,144 @@
+.stages-container {
+  width: 100%;
+}
+
+.table-header {
+  display: grid;
+  grid-template-columns:
+    40px
+    70px
+    minmax(250px, 1fr)
+    160px
+    160px
+    140px
+    80px;
+
+  gap: 12px;
+  align-items: center;
+  padding: 0 12px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.drag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.stage-row {
+  display: grid;
+
+  grid-template-columns:
+    40px
+    70px
+    minmax(250px, 1fr)
+    160px
+    160px
+    140px
+    80px;
+
+  gap: 12px;
+  align-items: center;
+
+  padding: 8px 12px;
+
+  // background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  transition: all .2s ease;
+}
+
+.stage-row:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+}
+
+.drag-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: grab;
+  color: #9ca3af;
+}
+
+.drag-col:hover {
+  color: #4f46e5;
+}
+
+.drag-col:active {
+  cursor: grabbing;
+}
+
+.order-col {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  background: #fff;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.name-col,
+.date-col {
+  width: 100%;
+}
+
+.compact-field {
+  width: 100%;
+}
+
+.status-col {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-col span {
+  font-size: 14px;
+  color: #374151;
+}
+
+.actions-col {
+  display: flex;
+  justify-content: center;
+}
+
+.actions-col button {
+  color: #dc2626;
+}
+
+.cdk-drag-preview {
+  background: white;
+  border-radius: 8px;
+
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, .1),
+    0 4px 6px -4px rgba(0, 0, 0, .1);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, .2, 1);
+}
+
+.drag-list.cdk-drop-list-dragging
+.stage-row:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, .2, 1);
+}

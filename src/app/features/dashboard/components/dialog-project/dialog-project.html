@@ -1,0 +1,95 @@
+<div class="div-header">
+    <div class="div-title-header">
+        <span class="title">Etapas do Projeto</span>
+        <span class="description">Visualize e edite as etapas do projeto.</span>
+    </div>
+    <button mat-icon-button (click)="fechar()">
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<mat-divider />
+
+<mat-dialog-content style="padding: 25px;">
+    <div class="div-dados-projeto">
+        <span class="label-dados-projeto">Dados do Projeto</span>
+        <div class="inputs-projeto">
+            <div class="div-nome-projeto">
+                <mat-form-field appearance="outline">
+                    <mat-label>Nome do Projeto</mat-label>
+                    <input matInput placeholder="Insira o nome do projeto">
+                </mat-form-field>
+            </div>
+            <div class="responsavel">
+                <mat-form-field>
+                    <mat-label>Responsável</mat-label>
+                    <mat-select>
+                        <mat-option value="one">Manoel Ribeiro do Nascimento</mat-option>
+                        <mat-option value="two">João Francisco</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <mat-form-field>
+                <mat-label>Data de Início</mat-label>
+                <input matInput [matDatepicker]="pickerInicio">
+                <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+                <mat-datepicker #pickerInicio></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Data de Conclusão</mat-label>
+                <input matInput [matDatepicker]="pickerConclusao">
+                <mat-datepicker-toggle matIconSuffix [for]="pickerConclusao"></mat-datepicker-toggle>
+                <mat-datepicker #pickerConclusao></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="inputs-projeto div-dois">
+            <div class="div-desc-projeto">
+                <mat-form-field class="desc-projeto">
+                    <mat-label>Descrição do Projeto</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+            </div>
+
+            <div class="div-orcamento">
+                <mat-form-field floatLabel="always">
+                    <mat-label>Orçamento</mat-label>
+                    <input matInput type="number" class="right-align" placeholder="0,00" />
+                    <span matTextPrefix>R$&nbsp;</span>
+                </mat-form-field>
+            </div>
+
+            <div class="div-andamento">
+                <mat-form-field>
+                    <mat-label>Status do projeto</mat-label>
+                    <mat-select>
+                        <mat-option value="one">
+                            <mat-icon>mode_standby</mat-icon>
+                            <span>Não Iniciado</span>
+                        </mat-option>
+                        <mat-option value="two">
+                            <mat-icon>play_circle</mat-icon>
+                            <span>Em Andamento</span>
+                        </mat-option>
+                        <mat-option value="three">
+                            <mat-icon>check_circle</mat-icon>
+                            <span>Concluído</span>
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+
+        </div>
+    </div>
+    <mat-divider />
+    <div class="div-etapas-projeto">
+        <span class="label-etapas-projeto">Etapas do Projeto</span>
+        <app-drag-drop></app-drag-drop>
+    </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancelar</button>
+    <button mat-flat-button color="primary" mat-dialog-close>Confirmar</button>
+</mat-dialog-actions>
