@@ -1,5 +1,16 @@
+@use '@angular/material' as mat;
+$font-size: 14px;
+
 .stages-container {
   width: 100%;
+
+  // formatar o form field das etapas classe: name-col
+  @include mat.form-field-overrides((container-height: 30px,
+      container-vertical-padding: 8px,
+      outlined-focus-outline-width: 1px,
+      outlined-outline-color: #d1d5db,
+      container-text-size: $font-size ));
+
 }
 
 .table-header {
@@ -10,7 +21,7 @@
   gap: 12px;
   align-items: center;
   padding: 0 12px 12px;
-  font-size: 13px;
+  font-size: $font-size;
   font-weight: 600;
   color: #4b5563;
   border-bottom: 1px solid #e5e7eb;
@@ -35,7 +46,7 @@
   padding: 8px 12px;
 
   // background: #fff;
-  border: 1px solid #e5e7eb;
+  // border: 1px solid #e5e7eb;
   border-radius: 8px;
 
   transition: all .2s ease;
@@ -77,9 +88,9 @@
   border: 1px solid #d1d5db;
   border-radius: 8px;
 
-  background: #fff;
+  // background: #fff;
 
-  font-size: 14px;
+  font-size: $font-size;
   font-weight: 500;
 }
 
@@ -99,7 +110,7 @@
 }
 
 .status-col span {
-  font-size: 14px;
+  font-size: $font-size;
   color: #374151;
 }
 
@@ -111,8 +122,14 @@
   gap: 10px;
 }
 
-.actions-col button {
-  color: #dc2626;
+.actions-col {
+  .button-delete {
+    color: #dc2626;
+  }
+
+  // .button-check {
+  //   color: #549125;
+  // }
 }
 
 .cdk-drag-preview {

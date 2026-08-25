@@ -51,7 +51,7 @@ export class TableProjects implements AfterViewInit {
     this.dialog.open(DialogProject, {
       width: '80vw',
       maxWidth: '1500px',
-      height: '90vh'
+      // height: '90vh',
     })
   }
 

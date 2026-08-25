@@ -8,4 +8,10 @@ html {
       typography: Roboto,
       density: 0,
     ));
+
+    @include mat.dialog-overrides((
+    container-color: #fff,
+    container-shape: 10px,
+    container-elevation-shadow: 0 12px 40px rgba(0, 0, 0, 0.35)
+  ));
 }
