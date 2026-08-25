@@ -1,4 +1,5 @@
-export interface TarefaJson {
+export interface ProjetoJson {
+  "Identificação da tarefa": string,
   "Nome da tarefa": string;
   "Categoria": string;
   "Meta": string | null;

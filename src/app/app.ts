@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GetTasks } from './features/dashboard/services/get-tasks/get-tasks';
+import { GetProjetos } from './features/dashboard/services/get-projetos/get-projetos';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
@@ -16,6 +16,6 @@ export class App {
   constructor(){
     this.tasks.carregar()
   }
-  private tasks = inject(GetTasks);
+  private tasks = inject(GetProjetos);
   
 }

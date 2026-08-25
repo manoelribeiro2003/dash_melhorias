@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { ProjectsCard } from '../../components/projects-card/projects-card';
-import { GetTasks } from '../../services/get-tasks/get-tasks';
+import { GetProjetos } from '../../services/get-projetos/get-projetos';
 import { CardStatus } from "../../components/card-status/card-status";
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -25,8 +25,8 @@ type CardValues = {
 })
 
 export class ViewProjects {
-  private tasks = inject(GetTasks);
-  tarefas = this.tasks.tarefas;
+  private projetosService = inject(GetProjetos);
+  projetos = this.projetosService.projetos;
 
   cardValues: CardValues[] = [
     {icon: "totalProjetos", title: "Total de Projetos", status: 'TotalDeProjetos'},

@@ -88,12 +88,12 @@
         <mat-icon>more_vert</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>delete</mat-icon>
+        <button mat-menu-item (click)="removerPorIndice(projeto)">
+          <mat-icon class="mat-icon-delete">delete</mat-icon>
           <span>Deletar Projeto</span>
         </button>
         <button mat-menu-item (click)="abrirDialog()">
-          <mat-icon>arrow_outward</mat-icon>
+          <mat-icon class="mat-icon-open-dialog">arrow_outward</mat-icon>
           <span>Ver Projeto</span>
         </button>
       </mat-menu>

@@ -231,6 +231,12 @@
 .actions-cell {
   text-align: center;
 }
+mat-icon.mat-icon-delete{
+  color: var(--mat-sys-error);
+}
+mat-icon.mat-icon-open-dialog{
+  color: var(--mat-sys-primary);
+}
 
 // .project-action-button {
 //   width: 36px;

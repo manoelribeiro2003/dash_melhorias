@@ -118,6 +118,16 @@
                 width: 100%;
                 height: 40px;
             }
+
+            mat-icon.mat-icon-nao-iniciado{
+                color: #e09004
+            }
+            mat-icon.mat-icon-em-andamento{
+                color: #2DBE60
+            }
+            mat-icon.mat-icon-concluido{
+                color: #2F80ED
+            }
         }
 
         // Input de orçamento

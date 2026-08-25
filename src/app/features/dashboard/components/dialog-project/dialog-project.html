@@ -65,15 +65,15 @@
                 <mat-label>Status do projeto</mat-label>
                 <mat-select>
                     <mat-option value="one">
-                        <mat-icon>mode_standby</mat-icon>
+                        <mat-icon class="mat-icon-nao-iniciado">mode_standby</mat-icon>
                         <span>Não Iniciado</span>
                     </mat-option>
                     <mat-option value="two">
-                        <mat-icon>play_circle</mat-icon>
+                        <mat-icon class="mat-icon-em-andamento">play_circle</mat-icon>
                         <span>Em Andamento</span>
                     </mat-option>
                     <mat-option value="three">
-                        <mat-icon>check_circle</mat-icon>
+                        <mat-icon class="mat-icon-concluido">check_circle</mat-icon>
                         <span>Concluído</span>
                     </mat-option>
                 </mat-select>
@@ -91,9 +91,3 @@
     <button mat-button mat-dialog-close>Cancelar</button>
     <button mat-flat-button color="primary" mat-dialog-close>Confirmar</button>
 </mat-dialog-actions>
-
-<!-- <h2 mat-dialog-title>Dialog with elements</h2>
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
-<mat-dialog-actions>
-  <button matButton mat-dialog-close>Close</button>
-</mat-dialog-actions> -->

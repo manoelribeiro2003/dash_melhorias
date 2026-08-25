@@ -4,9 +4,9 @@ import { MatMenuModule, MatMenuTrigger } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgClass, DatePipe } from '@angular/common';
-import { GetTasks } from '../../services/get-tasks/get-tasks';
+import { GetProjetos } from '../../services/get-projetos/get-projetos';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { Tarefa } from '../../models/tarefa.interface';
+import { Projeto } from '../../models/projeto.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import { DecimalPipe } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -32,8 +32,8 @@ import { DialogProject } from '../dialog-project/dialog-project';
 })
 export class TableProjects implements AfterViewInit {
 
-  private tasks = inject(GetTasks);
-  dataSource = new MatTableDataSource<Tarefa>(this.tasks.tarefas());
+  private tasks = inject(GetProjetos);
+  dataSource = new MatTableDataSource<Projeto>(this.tasks.projetos());
 
   readonly menuTrigger = viewChild.required(MatMenuTrigger);
 
@@ -41,10 +41,10 @@ export class TableProjects implements AfterViewInit {
 
   constructor() {
     effect(() => {
-      this.dataSource.data = this.tasks.tarefas()
+      this.dataSource.data = this.tasks.projetos()
     })
 
-    this.abrirDialog()
+    // this.abrirDialog()
   }
 
   abrirDialog(): void {
@@ -55,6 +55,11 @@ export class TableProjects implements AfterViewInit {
     })
   }
 
+  removerPorIndice(item: Projeto) {
+    this.tasks.projetos.update(projetos =>
+      projetos.filter((p) => p !== item)
+    );
+  }
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
