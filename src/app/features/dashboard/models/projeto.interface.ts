@@ -7,12 +7,12 @@ export interface Projeto {
   meta: string | null,
   status: string,
   prioridade: string,
-  criadoPor: string | null,
-  criadoEm: string,
-  dataConclusao: string | null,
   atrasado: boolean;
+  criadoPor: string | null,
+  criadoEm: Date,
+  dataConclusao: Date | null,
   orcamento: number;
-  itensConcluidos: number,
-  totalItens: number,
-  itensChecklist: Tarefa[]
+  tarefasConcluidas: number,
+  totalTarefas: number,
+  tarefas: Tarefa[]
 }

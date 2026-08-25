@@ -15,7 +15,7 @@
         <div class="div-nome-projeto">
             <mat-form-field appearance="outline">
                 <mat-label>Nome do Projeto</mat-label>
-                <input matInput placeholder="Insira o nome do projeto">
+                <input matInput placeholder="Insira o nome do projeto" [(ngModel)]="projetoRecebido.nome">
             </mat-form-field>
         </div>
 
@@ -31,14 +31,14 @@
 
         <mat-form-field appearance="outline">
             <mat-label>Data de Início</mat-label>
-            <input matInput [matDatepicker]="pickerInicio">
+            <input matInput [matDatepicker]="pickerInicio" [(ngModel)]="projetoRecebido.criadoEm">
             <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
             <mat-datepicker #pickerInicio></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
             <mat-label>Data de Conclusão</mat-label>
-            <input matInput [matDatepicker]="pickerConclusao">
+            <input matInput [matDatepicker]="pickerConclusao" [(ngModel)]="projetoRecebido.dataConclusao">
             <mat-datepicker-toggle matIconSuffix [for]="pickerConclusao"></mat-datepicker-toggle>
             <mat-datepicker #pickerConclusao></mat-datepicker>
         </mat-form-field>
@@ -55,7 +55,7 @@
         <div class="div-orcamento">
             <mat-form-field appearance="outline" floatLabel="always">
                 <mat-label>Orçamento</mat-label>
-                <input matInput type="number" class="right-align" placeholder="0,00">
+                <input matInput type="number" class="right-align" placeholder="0,00" [(ngModel)]="projetoRecebido.orcamento">
                 <span matTextPrefix>R$&nbsp;</span>
             </mat-form-field>
         </div>
@@ -63,18 +63,18 @@
         <div class="div-andamento">
             <mat-form-field appearance="outline">
                 <mat-label>Status do projeto</mat-label>
-                <mat-select>
-                    <mat-option value="one">
+                <mat-select [(ngModel)]="projetoRecebido.status">
+                    <mat-option value="Não iniciado">
                         <mat-icon class="mat-icon-nao-iniciado">mode_standby</mat-icon>
-                        <span>Não Iniciado</span>
+                        <span>Não iniciado</span>
                     </mat-option>
-                    <mat-option value="two">
+                    <mat-option value="Em andamento">
                         <mat-icon class="mat-icon-em-andamento">play_circle</mat-icon>
-                        <span>Em Andamento</span>
+                        <span>Em andamento</span>
                     </mat-option>
-                    <mat-option value="three">
+                    <mat-option value="Concluída">
                         <mat-icon class="mat-icon-concluido">check_circle</mat-icon>
-                        <span>Concluído</span>
+                        <span>Concluída</span>
                     </mat-option>
                 </mat-select>
             </mat-form-field>
@@ -89,5 +89,10 @@
 
 <mat-dialog-actions align="end">
     <button mat-button mat-dialog-close>Cancelar</button>
-    <button mat-flat-button color="primary" mat-dialog-close>Confirmar</button>
+    <!-- <button mat-flat-button color="primary" mat-dialog-close 
+    [mat-dialog-close]="enviarTarefa()"
+    >Confirmar</button> -->
+    <button mat-flat-button color="primary" (click)="salvarProjeto()">
+        Confirmar
+    </button>
 </mat-dialog-actions>

@@ -23,7 +23,6 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
-    CdkDragPreview
   ],
 })
 export class DragDropComponent {

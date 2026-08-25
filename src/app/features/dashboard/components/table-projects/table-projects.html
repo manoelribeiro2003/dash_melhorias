@@ -36,16 +36,16 @@
     </td>
   </ng-container>
 
-  <ng-container matColumnDef="itensConcluidos">
+  <ng-container matColumnDef="tarefasConcluidas">
     <th mat-header-cell *matHeaderCellDef class="project-header-cell"> Progresso </th>
     <td mat-cell *matCellDef="let projeto" class="project-data-cell">
       <div class="progress-container">
         <div class="progress-bar">
           <div class="progress-fill" [style.width.%]="
-              projeto.totalItens > 0 ? (projeto.itensConcluidos / projeto.totalItens) * 100 : 0">
+              projeto.totalTarefas > 0 ? (projeto.tarefasConcluidas / projeto.totalTarefas) * 100 : 0">
           </div>
         </div>
-        <span class="progress-text">{{ projeto.itensConcluidos }} / {{ projeto.totalItens }}</span>
+        <span class="progress-text">{{ projeto.tarefasConcluidas }} / {{ projeto.totalTarefas }}</span>
       </div>
     </td>
   </ng-container>
@@ -54,7 +54,10 @@
     <th mat-header-cell *matHeaderCellDef class="project-header-cell">Início</th>
     <td mat-cell *matCellDef="let projeto" class="project-data-cell">
       <span class="data-inicio">
-        {{ projeto.criadoEm | date:'dd/MM/yyyy'}}
+        @if(projeto.criadoEm){
+          {{ projeto.criadoEm | date: 'dd/MM/yy'}}
+        }
+        @else{Sem Data}
       </span>
     </td>
   </ng-container>
@@ -64,8 +67,7 @@
     <td mat-cell *matCellDef="let projeto" class="project-data-cell">
       <span [class.data-atrasada]="projeto.atrasado" class="data-termino">
         @if(projeto.dataConclusao){
-        {{ projeto.dataConclusao | date:'dd/MM/yyyy' }}
-
+          {{ projeto.dataConclusao | date: 'dd/MM/yy'}}
         }
         @else{Sem Data}
       </span>
@@ -92,7 +94,7 @@
           <mat-icon class="mat-icon-delete">delete</mat-icon>
           <span>Deletar Projeto</span>
         </button>
-        <button mat-menu-item (click)="abrirDialog()">
+        <button mat-menu-item (click)="openDialog(projeto)">
           <mat-icon class="mat-icon-open-dialog">arrow_outward</mat-icon>
           <span>Ver Projeto</span>
         </button>

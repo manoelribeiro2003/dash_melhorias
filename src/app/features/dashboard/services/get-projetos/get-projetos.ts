@@ -4,6 +4,12 @@ import { ProjetoJson } from '../../models/projeto-json.interface';
 import { Projeto } from '../../models/projeto.interface';
 import { Tarefa } from '../../models/tarefa.interface';
 
+interface Data {
+    ano: number,
+    mes: number,
+    dia: number
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -30,12 +36,15 @@ export class GetProjetos {
 
     private mapearTarefas(data: ProjetoJson[]): Projeto[] {
         return data.map(item => {
-            const [itensConcluidos = 0, totalItens = 0] =
+            const [tarefasConcluidas = 0, totalTarefas = 0] =
                 (item['Itens concluídos da lista de verificação'] ?? '0/0')
                     .split('/')
                     .map(Number);
-            
-            const tarefas: Tarefa[] = item['Itens concluídos da lista de verificação']?.split(';').map((nome,index) => ({
+
+            const criadoEm = item['Criado em'].split('-').map(Number)
+            const dataConclusao = item['Data de conclusão']?.split('-').map(Number) ?? null
+    
+            const tarefas: Tarefa[] = item['Itens concluídos da lista de verificação']?.split(';').map((nome, index) => ({
                 ordem: index + 1,
                 nome: nome,
                 concluido: false,
@@ -51,12 +60,12 @@ export class GetProjetos {
                 prioridade: item['Prioridade'],
                 atrasado: item['Atrasados'],
                 criadoPor: item['Criado por'] ?? "Sem nome",
-                criadoEm: item['Criado em'],
-                dataConclusao: item['Data de conclusão'],
+                criadoEm: new Date(criadoEm[0], criadoEm[1] - 1, criadoEm[2]),
+                dataConclusao: dataConclusao !== null ? new Date(dataConclusao[0], dataConclusao[1] - 1, dataConclusao[2]) : null,
                 orcamento: item['Orçamento'],
-                itensConcluidos: itensConcluidos,
-                totalItens: totalItens,
-                itensChecklist: tarefas
+                tarefasConcluidas: tarefasConcluidas,
+                totalTarefas: totalTarefas,
+                tarefas: tarefas
             };
         });
     }
