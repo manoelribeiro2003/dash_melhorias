@@ -1,4 +1,4 @@
-import { Tarefa } from "./tarefa.interface";
+import { Tarefa } from "../tarefa/tarefa.interface";
 
 export interface Projeto {
   id: string,

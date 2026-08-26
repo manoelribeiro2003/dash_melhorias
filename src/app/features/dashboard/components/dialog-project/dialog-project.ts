@@ -12,7 +12,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { DragDropComponent } from '../drag-drop/drag-drop';
-import { Projeto } from '../../models/projeto.interface';
+import { Projeto } from '../../models/projeto/projeto.interface';
 
 @Component({
   selector: 'app-dialog-project',

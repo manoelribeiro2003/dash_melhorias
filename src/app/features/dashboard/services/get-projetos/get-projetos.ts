@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
-import { ProjetoJson } from '../../models/projeto-json.interface';
-import { Projeto } from '../../models/projeto.interface';
-import { Tarefa } from '../../models/tarefa.interface';
+import { ProjetoJson } from '../../models/projeto/projeto-json.interface';
+import { Projeto } from '../../models/projeto/projeto.interface';
+import { Tarefa } from '../../models/tarefa/tarefa.interface';
 
 interface Data {
     ano: number,

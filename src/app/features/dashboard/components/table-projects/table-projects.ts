@@ -6,12 +6,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { NgClass, DatePipe } from '@angular/common';
 import { GetProjetos } from '../../services/get-projetos/get-projetos';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
-import { Projeto } from '../../models/projeto.interface';
 import { MatDividerModule } from '@angular/material/divider';
 import { DecimalPipe } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { DialogProject } from '../dialog-project/dialog-project';
+import { Projeto } from '../../models/projeto/projeto.interface';
 
 @Component({
   selector: 'app-table-projects',
