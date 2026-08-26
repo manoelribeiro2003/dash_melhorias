@@ -1,5 +1,6 @@
 import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDragPreview, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -23,9 +24,12 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     MatMenuModule,
     MatFormFieldModule,
     MatInputModule,
+    FormsModule
   ],
 })
 export class DragDropComponent {
+  concluido = false;
+
   movies = [
     'Episode I - The Phantom Menace',
     'Episode II - Attack of the Clones',

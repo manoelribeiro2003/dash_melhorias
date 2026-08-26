@@ -3,11 +3,10 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { NgClass, DatePipe } from '@angular/common';
+import { NgClass, DatePipe, CurrencyPipe } from '@angular/common';
 import { GetProjetos } from '../../services/get-projetos/get-projetos';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
-import { DecimalPipe } from '@angular/common';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { DialogProject } from '../dialog-project/dialog-project';
@@ -24,8 +23,8 @@ import { Projeto } from '../../models/projeto/projeto.interface';
     DatePipe,
     MatPaginatorModule,
     MatDividerModule,
-    DecimalPipe,
-    MatDialogModule
+    MatDialogModule,
+    CurrencyPipe
   ],
   templateUrl: './table-projects.html',
   styleUrl: './table-projects.scss',

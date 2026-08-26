@@ -4,8 +4,8 @@
     <div></div>
     <div>Ordem</div>
     <div>Nome da Tarefa</div>
-    <div>Início</div>
-    <div>Término</div>
+    <!-- <div>Início</div>
+    <div>Término</div> -->
     <div>Concluída?</div>
     <div>Ações</div>
   </div>
@@ -31,7 +31,7 @@
         </mat-form-field>
       </div>
 
-      <!-- Data Início -->
+      <!-- Data Início
       <div class="date-col">
         <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
           <input matInput value="17/07/2026">
@@ -39,18 +39,18 @@
         </mat-form-field>
       </div>
 
-      <!-- Data Fim -->
+      Data Fim
       <div class="date-col">
         <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
           <input matInput value="05/10/2026">
           <mat-icon matSuffix>calendar_today</mat-icon>
         </mat-form-field>
-      </div>
+      </div> -->
 
       <!-- Status -->
       <div class="status-col">
-        <mat-slide-toggle></mat-slide-toggle>
-        <span>Não</span>
+        <mat-slide-toggle [(ngModel)]="concluido"></mat-slide-toggle>
+        <span>{{concluido ? 'Sim' : 'Não'}}</span>
       </div>
 
       <!-- Ações -->
