@@ -1,15 +1,27 @@
 export interface ProjetoJson {
-  "Identificação da tarefa": string,
-  "Nome da tarefa": string;
-  "Categoria": string;
-  "Meta": string | null;
-  "Status": string;
-  "Prioridade": string;
-  "Criado por": string | null;
-  "Criado em": string;
-  "Data de conclusão": string | null;
-  "Atrasados": boolean;
-  "Itens concluídos da lista de verificação": string | null;
-  "Itens da lista de verificação": string | null
-  "Orçamento": number
+  "id": number,
+  "nome": string,
+  "categoria":string,
+  "status": string,
+  "dataInicio": string | null,
+  "dataTermino": string | null,
+  "orcamento": string | null,
+  "prioridade": boolean,
+  "criadoPor": {
+    "id": number,
+    "nome": string,
+    "email": string
+  },
+  "tarefas": [
+    {
+      "id": number,
+      "nome": string,
+      "ordem": number,
+      "concluido": boolean,
+      "createdAt": string,
+      "updatedAt": string
+    }
+  ],
+  "createdAt": string,
+  "updatedAt": string
 }
