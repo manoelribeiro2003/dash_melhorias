@@ -49,22 +49,11 @@ export class TableProjects implements AfterViewInit {
     });
 
     dialogRef.afterClosed().subscribe((projetoRetornado: Projeto | undefined) => {
-      if (projetoRetornado !== undefined) {
-        this.projetosService.projetos.update(projetos =>
-          projetos.map(p =>
-            p.id === projetoRetornado.id
-              ? projetoRetornado
-              : p
-          )
-        );
+      if (projetoRetornado === undefined) {
+        return;
       }
+      this.projetosService.atualizarProjeto(projetoRetornado);
     });
-  }
-
-  removerPorIndice(item: Projeto) {
-    this.projetosService.projetos.update(projetos =>
-      projetos.filter((p) => p !== item)
-    );
   }
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

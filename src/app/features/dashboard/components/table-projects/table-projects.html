@@ -92,19 +92,9 @@
   <ng-container matColumnDef="acoes">
     <th mat-header-cell *matHeaderCellDef class="project-header-cell actions-header">Ações</th>
     <td mat-cell *matCellDef="let projeto" class="project-data-cell actions-cell">
-      <button mat-icon-button [matMenuTriggerFor]="menu">
-        <mat-icon>more_vert</mat-icon>
+      <button mat-icon-button (click)="openDialog(projeto)">
+        <mat-icon class="mat-icon-open-dialog">arrow_outward</mat-icon>
       </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="removerPorIndice(projeto)">
-          <mat-icon class="mat-icon-delete">delete</mat-icon>
-          <span>Deletar Projeto</span>
-        </button>
-        <button mat-menu-item (click)="openDialog(projeto)">
-          <mat-icon class="mat-icon-open-dialog">arrow_outward</mat-icon>
-          <span>Ver Projeto</span>
-        </button>
-      </mat-menu>
 
     </td>
 

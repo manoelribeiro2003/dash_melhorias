@@ -1,15 +1,14 @@
-import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDragPreview, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, signal } from '@angular/core';
+import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import { Component, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormField, MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
-import { MatMenuItem, MatMenuModule } from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-/**
- * @title Drag&Drop sorting
- */
+import { Tarefa } from '../../models/tarefa/tarefa.interface';
+
 @Component({
   selector: 'app-drag-drop',
   templateUrl: 'drag-drop.html',
@@ -28,20 +27,48 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
   ],
 })
 export class DragDropComponent {
-  concluido = false;
 
-  movies = [
-    'Episode I - The Phantom Menace',
-    'Episode II - Attack of the Clones',
-    'Episode III - Revenge of the Sith',
-    'Episode IV - A New Hope',
-    'Episode V - The Empire Strikes Back',
-    'Episode VI - Return of the Jedi',
-    'Episode VII - The Force Awakens',
-    'Episode VIII - The Last Jedi',
-    'Episode IX - The Rise of Skywalker',
-  ];
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.movies, event.previousIndex, event.currentIndex);
+  readonly tarefasRecebidas = input.required<Tarefa[]>();
+  readonly tarefasAlteradas = output<Tarefa[]>();
+
+  drop(event: CdkDragDrop<Tarefa[]>): void {
+
+    const tarefas = this.tarefasRecebidas()
+      .map(tarefa => ({ ...tarefa }));
+
+    moveItemInArray(tarefas, event.previousIndex, event.currentIndex);
+
+    const tarefasAtualizadas = tarefas.map((tarefa, index) => ({
+      ...tarefa,
+      ordem: index + 1
+    }));
+
+    this.tarefasAlteradas.emit(tarefasAtualizadas);
+  }
+
+  atualizarTarefa(id: number,alteracoes: Partial<Tarefa>): void {
+    const tarefas = this.tarefasRecebidas()
+      .map(tarefa =>
+        tarefa.id === id
+          ? {
+            ...tarefa,
+            ...alteracoes
+          }
+          : tarefa
+      );
+
+    this.tarefasAlteradas.emit(tarefas);
+  }
+
+  excluirTarefa(id: number): void {
+
+    const tarefas = this.tarefasRecebidas()
+      .filter(tarefa => tarefa.id !== id)
+      .map((tarefa, index) => ({
+        ...tarefa,
+        ordem: index + 1
+      }));
+
+    this.tarefasAlteradas.emit(tarefas);
   }
 }

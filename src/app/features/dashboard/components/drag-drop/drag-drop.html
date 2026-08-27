@@ -4,16 +4,12 @@
     <div></div>
     <div>Ordem</div>
     <div>Nome da Tarefa</div>
-    <!-- <div>Início</div>
-    <div>Término</div> -->
     <div>Concluída?</div>
     <div>Ações</div>
   </div>
 
   <div cdkDropList class="drag-list" (cdkDropListDropped)="drop($event)">
-
-    @for (movie of movies; track movie) {
-
+    @for (tarefa of tarefasRecebidas(); track tarefa.id) {
     <div class="stage-row" cdkDrag>
 
       <!-- Drag Handle -->
@@ -22,45 +18,34 @@
       </div>
 
       <!-- Ordem -->
-      <div class="order-col">{{$index + 1}}</div>
+      <div class="order-col">
+        {{ $index + 1 }}
+      </div>
 
       <!-- Nome -->
       <div class="name-col">
         <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
-          <input matInput [value]="movie">
+          <input matInput [ngModel]="tarefa.nome" (ngModelChange)="atualizarTarefa(tarefa.id, { nome: $event })">
         </mat-form-field>
       </div>
 
-      <!-- Data Início
-      <div class="date-col">
-        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
-          <input matInput value="17/07/2026">
-          <mat-icon matSuffix>calendar_today</mat-icon>
-        </mat-form-field>
-      </div>
-
-      Data Fim
-      <div class="date-col">
-        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
-          <input matInput value="05/10/2026">
-          <mat-icon matSuffix>calendar_today</mat-icon>
-        </mat-form-field>
-      </div> -->
 
       <!-- Status -->
       <div class="status-col">
-        <mat-slide-toggle [(ngModel)]="concluido"></mat-slide-toggle>
-        <span>{{concluido ? 'Sim' : 'Não'}}</span>
+        <mat-slide-toggle [ngModel]="tarefa.concluido" (ngModelChange)="atualizarTarefa(tarefa.id, { concluido: $event })">
+        </mat-slide-toggle>
+        <span>{{ tarefa.concluido ? 'Sim' : 'Não' }}</span>
       </div>
 
       <!-- Ações -->
       <div class="actions-col">
-        <button class="button-delete" mat-icon-button color="warn">
+        <button class="button-delete" mat-icon-button color="warn" (click)="excluirTarefa(tarefa.id)">
           <mat-icon>delete_outline</mat-icon>
         </button>
       </div>
 
     </div>
     }
+
   </div>
 </div>

@@ -13,6 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { DragDropComponent } from '../drag-drop/drag-drop';
 import { Projeto } from '../../models/projeto/projeto.interface';
+import { Tarefa } from '../../models/tarefa/tarefa.interface';
 
 @Component({
   selector: 'app-dialog-project',
@@ -45,37 +46,17 @@ export class DialogProject {
     ...this.data
   };
 
+  atualizarTarefas(tarefas: Tarefa[]): void {
+    this.projetoRecebido.tarefas = tarefas;
+  }
+
   salvarProjeto(): void {
     this.dialogRef.close(this.projetoRecebido);
   }
-
 
   fechar(): void {
     this.dialogRef.close();
   }
 
-  
-
-
-
-
-  // valorFormatado = '';
-  // formatarValor(event: Event): void {
-  //   const input = event.target as HTMLInputElement;
-
-  //   const valor = input.value.replace(/\D/g, '');
-
-  //   if (!valor) {
-  //     this.valorFormatado = '';
-  //     return;
-  //   }
-
-  //   const numero = Number(valor) / 100;
-
-  //   this.valorFormatado = numero.toLocaleString('pt-BR', {
-  //     minimumFractionDigits: 2,
-  //     maximumFractionDigits: 2
-  //   });
-  // }
 }
 

@@ -2,29 +2,68 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { ProjetoJson } from '../../models/projeto/projeto-json.interface';
 import { Projeto } from '../../models/projeto/projeto.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
 })
 export class GetProjetos {
+
+    private apiUrl = 'http://localhost:3000';
     private http = inject(HttpClient);
 
-    // private _tarefas = signal<Tarefa[]>([]);
-    projetos = signal<Projeto[]>([]);
-
-    // readonly tarefas = this._tarefas.asReadonly()
+    private _projetos = signal<Projeto[]>([]);
+    readonly projetos = this._projetos.asReadonly()
 
     carregar(): void {
-
-        this.http.get<ProjetoJson[]>('http://localhost:3000/projetos/').subscribe({
+        this.http.get<ProjetoJson[]>(`${this.apiUrl}/projetos/`).subscribe({
             next: (dados) => {
-                // this._tarefas.set(this.mapearTarefas(dados));
-                this.projetos.set(this.mapearTarefas(dados));
+                this._projetos.set(this.mapearTarefas(dados));
             },
             error: (erro) => {
                 console.error(erro);
             }
         });
+    }
+
+    atualizarProjeto(projeto: Projeto): void {
+
+        const dados = {
+            nome: projeto.nome,
+            categoria: projeto.categoria,
+            status: projeto.status,
+            dataInicio: projeto.dataInicio,
+            dataTermino: projeto.dataTermino,
+            orcamento: projeto.orcamento,
+            prioridade: projeto.prioridade,
+            criadoPorId: projeto.criadoPor.id,
+            tarefas: projeto.tarefas.map(tarefa => ({
+                id: tarefa.id,
+                nome: tarefa.nome,
+                ordem: tarefa.ordem,
+                concluido: tarefa.concluido
+            }))
+        }
+
+        this.http.patch<ProjetoJson>(`${this.apiUrl}/projetos/${projeto.id}`, dados)
+            .subscribe({
+                next: (projetoAtualizado) => {
+
+                    const projetoMapeado = this.mapearTarefas([projetoAtualizado])[0];
+
+                    this._projetos.update(projetos =>
+                        projetos.map(p =>
+                            p.id === projetoMapeado.id
+                                ? projetoMapeado
+                                : p
+                        )
+                    );
+
+                },
+                error: (erro) => {
+                    console.error(erro);
+                }
+            });
     }
 
     private mapearTarefas(projeto: ProjetoJson[]): Projeto[] {
