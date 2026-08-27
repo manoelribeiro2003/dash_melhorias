@@ -2,7 +2,7 @@ import { Component, computed, inject, input, signal } from '@angular/core';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import { TableProjects } from '../table-projects/table-projects';
-import { GetProjetos } from '../../services/get-projetos/get-projetos';
+import { ProjetoService } from '../../services/projeto/projeto.service';
 
 @Component({
   selector: 'app-projects-card',
@@ -11,7 +11,7 @@ import { GetProjetos } from '../../services/get-projetos/get-projetos';
   styleUrl: './projects-card.scss',
 })
 export class ProjectsCard {
-   tasks = inject(GetProjetos);
+   tasks = inject(ProjetoService);
 
    selected = input<string>()
 

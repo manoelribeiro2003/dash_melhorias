@@ -1,5 +1,6 @@
 export interface Tarefa{
-    id: number;
+    id?: number;
+    tempId?: string;
     nome: string;
     ordem: number;
     concluido: boolean;

@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { GetProjetos } from './features/dashboard/services/get-projetos/get-projetos';
+import { ProjetoService } from './features/dashboard/services/projeto/projeto.service';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { UsuarioService } from './features/dashboard/services/usuario/usuario.service';
 
 @Component({
   selector: 'app-root',
@@ -14,8 +15,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 })
 export class App {
   constructor(){
-    this.tasks.carregar()
+    this.projetos.carregarProjetos()
+    this.usuarios.carregarUsuarios()
   }
-  private tasks = inject(GetProjetos);
+  private projetos = inject(ProjetoService);
+  private usuarios = inject(UsuarioService);
   
 }

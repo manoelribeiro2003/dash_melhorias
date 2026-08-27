@@ -9,7 +9,7 @@
   </div>
 
   <div cdkDropList class="drag-list" (cdkDropListDropped)="drop($event)">
-    @for (tarefa of tarefasRecebidas(); track tarefa.id) {
+    @for (tarefa of tarefasRecebidas(); track tarefa.id ?? tarefa.tempId) {
     <div class="stage-row" cdkDrag>
 
       <!-- Drag Handle -->
@@ -25,27 +25,33 @@
       <!-- Nome -->
       <div class="name-col">
         <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
-          <input matInput [ngModel]="tarefa.nome" (ngModelChange)="atualizarTarefa(tarefa.id, { nome: $event })">
+          <input matInput [ngModel]="tarefa.nome" (ngModelChange)="atualizarTarefa(tarefa, { nome: $event })"
+            (keydown.enter)="$event.preventDefault(); adicionarTarefa()">
         </mat-form-field>
       </div>
 
 
       <!-- Status -->
       <div class="status-col">
-        <mat-slide-toggle [ngModel]="tarefa.concluido" (ngModelChange)="atualizarTarefa(tarefa.id, { concluido: $event })">
+        <mat-slide-toggle [ngModel]="tarefa.concluido" (ngModelChange)="atualizarTarefa(tarefa, { concluido: $event })">
         </mat-slide-toggle>
         <span>{{ tarefa.concluido ? 'Sim' : 'Não' }}</span>
       </div>
 
       <!-- Ações -->
       <div class="actions-col">
-        <button class="button-delete" mat-icon-button color="warn" (click)="excluirTarefa(tarefa.id)">
+        <button class="button-delete" mat-icon-button color="warn" (click)="excluirTarefa(tarefa)">
           <mat-icon>delete_outline</mat-icon>
         </button>
       </div>
 
     </div>
     }
-
+  </div>
+  <div class="add-task">
+    <button mat-stroked-button type="button" (click)="adicionarTarefa()">
+      <mat-icon>add</mat-icon>
+      Adicionar tarefa
+    </button>
   </div>
 </div>

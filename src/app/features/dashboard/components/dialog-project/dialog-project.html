@@ -22,16 +22,17 @@
         <div class="responsavel">
             <mat-form-field appearance="outline">
                 <mat-label>Responsável</mat-label>
-                <mat-select>
-                    <mat-option value="one">Manoel Ribeiro do Nascimento</mat-option>
-                    <mat-option value="two">João Francisco</mat-option>
+                <mat-select [(ngModel)]="projetoRecebido.criadoPor" [compareWith]="compararUsuarios">
+                    @for (usuario of usuarios; track usuario.id) {
+                    <mat-option [value]="usuario">{{usuario.nome}}</mat-option>
+                    }
                 </mat-select>
             </mat-form-field>
         </div>
 
         <mat-form-field appearance="outline">
             <mat-label>Data de Início</mat-label>
-            <input matInput [matDatepicker]="pickerInicio" [(ngModel)]="projetoRecebido.criadoEm">
+            <input matInput [matDatepicker]="pickerInicio" [(ngModel)]="projetoRecebido.dataInicio">
             <mat-datepicker-toggle matIconSuffix [for]="pickerInicio"></mat-datepicker-toggle>
             <mat-datepicker #pickerInicio></mat-datepicker>
         </mat-form-field>
@@ -48,14 +49,15 @@
         <div class="div-desc-projeto">
             <mat-form-field appearance="outline" class="desc-projeto">
                 <mat-label>Descrição do Projeto</mat-label>
-                <textarea matInput></textarea>
+                <textarea matInput disabled></textarea>
             </mat-form-field>
         </div>
 
         <div class="div-orcamento">
             <mat-form-field appearance="outline" floatLabel="always">
                 <mat-label>Orçamento</mat-label>
-                <input matInput type="number" class="right-align" placeholder="0,00" [(ngModel)]="projetoRecebido.orcamento">
+                <input matInput type="number" class="right-align" placeholder="0,00"
+                    [(ngModel)]="projetoRecebido.orcamento">
                 <span matTextPrefix>R$&nbsp;</span>
             </mat-form-field>
         </div>
@@ -83,10 +85,7 @@
     <mat-divider />
     <div class="div-etapas-projeto">
         <span class="label-etapas-projeto">Etapas do Projeto</span>
-        <app-drag-drop
-        [tarefasRecebidas]="projetoRecebido.tarefas"
-        (tarefasAlteradas)="atualizarTarefas($event)"
-        />
+        <app-drag-drop [tarefasRecebidas]="projetoRecebido.tarefas" (tarefasAlteradas)="atualizarTarefas($event)" />
     </div>
 </mat-dialog-content>
 

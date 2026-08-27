@@ -46,24 +46,33 @@ export class DragDropComponent {
     this.tarefasAlteradas.emit(tarefasAtualizadas);
   }
 
-  atualizarTarefa(id: number,alteracoes: Partial<Tarefa>): void {
-    const tarefas = this.tarefasRecebidas()
-      .map(tarefa =>
-        tarefa.id === id
-          ? {
-            ...tarefa,
-            ...alteracoes
-          }
-          : tarefa
-      );
+  adicionarTarefa(): void {
+    const tarefas = [
+      ...this.tarefasRecebidas(),
+      {
+        tempId: crypto.randomUUID(),
+        nome: '',
+        ordem: this.tarefasRecebidas().length + 1,
+        concluido: false
+      }
+    ]
+    this.tarefasAlteradas.emit(tarefas)
+  }
+
+  atualizarTarefa(tarefa: Tarefa, alteracoes: Partial<Tarefa>): void {
+    const tarefas = this.tarefasRecebidas().map(t =>
+      t === tarefa
+        ? { ...t, ...alteracoes }
+        : t
+    );
 
     this.tarefasAlteradas.emit(tarefas);
   }
 
-  excluirTarefa(id: number): void {
+  excluirTarefa(tarefaExcluir: Tarefa): void {
 
     const tarefas = this.tarefasRecebidas()
-      .filter(tarefa => tarefa.id !== id)
+      .filter(tarefa => tarefa !== tarefaExcluir)
       .map((tarefa, index) => ({
         ...tarefa,
         ordem: index + 1

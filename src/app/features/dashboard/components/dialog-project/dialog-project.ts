@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 import { DragDropComponent } from '../drag-drop/drag-drop';
 import { Projeto } from '../../models/projeto/projeto.interface';
 import { Tarefa } from '../../models/tarefa/tarefa.interface';
+import { UsuarioService } from '../../services/usuario/usuario.service';
+import { Usuario } from '../../models/usuario/usuario.interface';
 
 @Component({
   selector: 'app-dialog-project',
@@ -42,6 +44,9 @@ export class DialogProject {
   private dialogRef = inject(MatDialogRef<DialogProject>);
   readonly data = inject<Projeto>(MAT_DIALOG_DATA);
 
+  private usuariosService = inject(UsuarioService)
+  readonly usuarios = this.usuariosService.usuarios()
+
   readonly projetoRecebido: Projeto = {
     ...this.data
   };
@@ -56,6 +61,10 @@ export class DialogProject {
 
   fechar(): void {
     this.dialogRef.close();
+  }
+
+  compararUsuarios(usuario1: Usuario | null, usuario2: Usuario | null): boolean {
+    return usuario1?.id === usuario2?.id;
   }
 
 }

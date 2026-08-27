@@ -4,7 +4,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgClass, DatePipe, CurrencyPipe } from '@angular/common';
-import { GetProjetos } from '../../services/get-projetos/get-projetos';
+import { ProjetoService } from '../../services/projeto/projeto.service';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
@@ -30,7 +30,7 @@ import { Projeto } from '../../models/projeto/projeto.interface';
   styleUrl: './table-projects.scss',
 })
 export class TableProjects implements AfterViewInit {
-  private projetosService = inject(GetProjetos);
+  private projetosService = inject(ProjetoService);
   dataSource = new MatTableDataSource<Projeto>(this.projetosService.projetos());
 
   readonly dialog = inject(MatDialog);
@@ -42,6 +42,7 @@ export class TableProjects implements AfterViewInit {
   }
 
   openDialog(projeto: Projeto): void {
+
     const dialogRef = this.dialog.open(DialogProject, {
       width: '80vw',
       maxWidth: '1500px',
@@ -52,6 +53,7 @@ export class TableProjects implements AfterViewInit {
       if (projetoRetornado === undefined) {
         return;
       }
+      console.log(projetoRetornado.criadoPor)
       this.projetosService.atualizarProjeto(projetoRetornado);
     });
   }
