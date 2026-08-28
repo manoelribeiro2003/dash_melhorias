@@ -1,27 +1,55 @@
-import { Component, computed, inject, input, signal } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
+import { Component, computed, effect, inject, input, model, signal } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { TableProjects } from '../table-projects/table-projects';
 import { ProjetoService } from '../../services/projeto/projeto.service';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+
+interface Status {
+  value: string
+  label: string
+}
 
 @Component({
   selector: 'app-projects-card',
-  imports: [MatCardModule, MatButtonModule, TableProjects],
+  imports: [MatCardModule, MatButtonModule, TableProjects, MatButtonToggleModule, MatFormFieldModule, MatSelectModule],
   templateUrl: './projects-card.html',
   styleUrl: './projects-card.scss',
 })
 export class ProjectsCard {
-   tasks = inject(ProjetoService);
+  constructor() {
+    effect(() => {
+      console.log(this.statusSelecionado())
+    })
+  }
+  readonly tasks = inject(ProjetoService);
+  readonly status = signal<Status[]>([
+    {
+      value: '',
+      label: 'Todos'
+    },
+    {
+      value: 'Em andamento',
+      label: 'Em Andamento'
+    },
+    {
+      value: 'Concluída',
+      label: 'Concluidos'
+    },
+    {
+      value: 'Não iniciado',
+      label: 'Não Iniciados'
+    },
+    {
+      value: 'Atrasado',
+      label: 'Atrasados'
+    }
+  ]);
+  categorias = [...new Set(this.tasks.projetos().map(p => p.categoria))]
 
-   selected = input<string>()
+  catSelecionada = model('')
+  statusSelecionado = model('Em Andamento');
 
-   status = signal(['Todos', 'Em Andamento', 'Concluídos', 'Não Iniciados', 'Atrasados']);
-
-  //  status = computed(() =>
-  //   [...new Set(
-  //     this.tasks.tarefas().map(tarefa => tarefa.status)
-  //   )
-  // ]);
-
-   
 }

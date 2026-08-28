@@ -40,10 +40,12 @@
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 20px;
+    // border: 1px solid black;
 
     mat-form-field {
         width: 100%;
         height: 40px;
+        flex: 1;
 
         @include mat.form-field-overrides((container-height: 40px,
                 container-vertical-padding: 10px,
@@ -55,22 +57,10 @@
     .div-nome-projeto {
         display: flex;
         flex: 2;
-
-        mat-form-field {
-            width: 100%;
-        }
     }
 
     .responsavel {
         display: flex;
-        flex: 1;
-
-        mat-form-field {
-            width: 100%;
-        }
-    }
-
-    >mat-form-field {
         flex: 1;
     }
 

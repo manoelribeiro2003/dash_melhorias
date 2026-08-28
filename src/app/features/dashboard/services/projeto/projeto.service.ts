@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { ProjetoJson } from '../../models/projeto/projeto-json.interface';
 import { Projeto } from '../../models/projeto/projeto.interface';
-import { Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -29,7 +28,6 @@ export class ProjetoService {
     atualizarProjeto(projeto: Projeto): void {
 
         const dataInicio = projeto.dataInicio?.toISOString()
-        console.log(`dataInicio: ${dataInicio}`)
 
         const dados = {
             nome: projeto.nome,
@@ -52,15 +50,11 @@ export class ProjetoService {
                 }))
         }
 
-        console.log('dentro do service: ', dados)
-
         this.http.patch<ProjetoJson>(`${this.apiUrl}/projetos/${projeto.id}`, dados)
             .subscribe({
                 next: (projetoAtualizado) => {
 
                     const projetoMapeado = this.mapearProjetos([projetoAtualizado])[0];
-                    console.log('projetoMapeado.dataInicio: ', projetoMapeado.dataInicio)
-
 
                     this._projetos.update(projetos =>
                         projetos.map(p =>

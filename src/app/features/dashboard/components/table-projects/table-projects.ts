@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, effect, inject, signal, viewChild, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, inject, input, signal, viewChild, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -30,16 +30,48 @@ import { Projeto } from '../../models/projeto/projeto.interface';
   styleUrl: './table-projects.scss',
 })
 export class TableProjects implements AfterViewInit {
-  private projetosService = inject(ProjetoService);
-  dataSource = new MatTableDataSource<Projeto>(this.projetosService.projetos());
 
+  readonly projetosService = inject(ProjetoService);
+  readonly dataSource = new MatTableDataSource<Projeto>(this.projetosService.projetos());
+  @ViewChild(MatPaginator) readonly paginator!: MatPaginator;
   readonly dialog = inject(MatDialog);
+  readonly filtroCategoria = input.required<string>();
+  readonly filtroStatus = input<string>('');
 
   constructor() {
     effect(() => {
-      this.dataSource.data = this.projetosService.projetos()
+      this.aplicarFiltros();
     })
   }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  private aplicarFiltros(): void {
+    const projetos = this.projetosService.projetos();
+
+    this.dataSource.data = projetos.filter(projeto => {
+      const categoriaOk = !this.filtroCategoria() || projeto.categoria === this.filtroCategoria();
+
+      const filtroStatus = this.filtroStatus();
+
+      const statusOk =
+        !filtroStatus
+          ? true
+          : filtroStatus === 'Atrasado'
+            ? projeto.atrasado
+            : projeto.status === filtroStatus;
+
+      return categoriaOk && statusOk;
+
+    });
+  }
+
+
+
+
+
 
   openDialog(projeto: Projeto): void {
 
@@ -53,15 +85,11 @@ export class TableProjects implements AfterViewInit {
       if (projetoRetornado === undefined) {
         return;
       }
-      console.log(projetoRetornado.criadoPor)
       this.projetosService.atualizarProjeto(projetoRetornado);
     });
   }
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-  }
+
 
 
   tableColumns: string[] = [
