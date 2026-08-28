@@ -6,6 +6,8 @@ import { ProjetoService } from '../../services/projeto/projeto.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { UsuarioService } from '../../services/usuario/usuario.service';
+import { Usuario } from '../../models/usuario/usuario.interface';
 
 interface Status {
   value: string
@@ -19,12 +21,9 @@ interface Status {
   styleUrl: './projects-card.scss',
 })
 export class ProjectsCard {
-  constructor() {
-    effect(() => {
-      console.log(this.statusSelecionado())
-    })
-  }
+
   readonly tasks = inject(ProjetoService);
+  readonly usuariosService = inject(UsuarioService)
   readonly status = signal<Status[]>([
     {
       value: '',
@@ -47,9 +46,11 @@ export class ProjectsCard {
       label: 'Atrasados'
     }
   ]);
-  categorias = [...new Set(this.tasks.projetos().map(p => p.categoria))]
-
+  categorias = [...new Set(this.tasks.projetos().map(p => p.categoria).filter(c => c !== null))]
+  readonly usuarios = this.usuariosService.usuarios()
+  
   catSelecionada = model('')
-  statusSelecionado = model('Em Andamento');
-
+  statusSelecionado = model(null);
+  readonly usuarioSelecionado = model<number | null>(null);
+  
 }

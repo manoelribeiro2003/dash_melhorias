@@ -37,11 +37,11 @@ import { Usuario } from '../../models/usuario/usuario.interface';
 
     DragDropComponent
   ],
-  templateUrl: './dialog-project.html',
-  styleUrl: './dialog-project.scss',
+  templateUrl: './dialog-overview-project.html',
+  styleUrl: './dialog-overview-project.scss',
 })
-export class DialogProject {
-  private dialogRef = inject(MatDialogRef<DialogProject>);
+export class DialogOverviewProject {
+  private dialogRef = inject(MatDialogRef<DialogOverviewProject>);
   readonly data = inject<Projeto>(MAT_DIALOG_DATA);
 
   private usuariosService = inject(UsuarioService)

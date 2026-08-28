@@ -9,8 +9,10 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
-import { DialogProject } from '../dialog-project/dialog-project';
+import { DialogOverviewProject } from '../dialog-overview-project/dialog-overview-project';
 import { Projeto } from '../../models/projeto/projeto.interface';
+import { MatSort, MatSortModule } from '@angular/material/sort';
+import { Usuario } from '../../models/usuario/usuario.interface';
 
 @Component({
   selector: 'app-table-projects',
@@ -24,7 +26,8 @@ import { Projeto } from '../../models/projeto/projeto.interface';
     MatPaginatorModule,
     MatDividerModule,
     MatDialogModule,
-    CurrencyPipe
+    CurrencyPipe,
+    MatSortModule
   ],
   templateUrl: './table-projects.html',
   styleUrl: './table-projects.scss',
@@ -34,9 +37,11 @@ export class TableProjects implements AfterViewInit {
   readonly projetosService = inject(ProjetoService);
   readonly dataSource = new MatTableDataSource<Projeto>(this.projetosService.projetos());
   @ViewChild(MatPaginator) readonly paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   readonly dialog = inject(MatDialog);
   readonly filtroCategoria = input.required<string>();
-  readonly filtroStatus = input<string>('');
+  readonly filtroStatus = input<string | null>('');
+  readonly filtroUsuario = input<number | null>(null);
 
   constructor() {
     effect(() => {
@@ -46,24 +51,27 @@ export class TableProjects implements AfterViewInit {
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
   }
 
   private aplicarFiltros(): void {
     const projetos = this.projetosService.projetos();
 
     this.dataSource.data = projetos.filter(projeto => {
+
       const categoriaOk = !this.filtroCategoria() || projeto.categoria === this.filtroCategoria();
-
-      const filtroStatus = this.filtroStatus();
-
       const statusOk =
-        !filtroStatus
+        !this.filtroStatus()
           ? true
-          : filtroStatus === 'Atrasado'
+          : this.filtroStatus() === 'Atrasado'
             ? projeto.atrasado
-            : projeto.status === filtroStatus;
+            : projeto.status === this.filtroStatus();
 
-      return categoriaOk && statusOk;
+      const usuarioOk =
+        this.filtroUsuario() === null ||
+        projeto.criadoPor?.id === this.filtroUsuario();
+
+      return categoriaOk && statusOk && usuarioOk;
 
     });
   }
@@ -75,7 +83,7 @@ export class TableProjects implements AfterViewInit {
 
   openDialog(projeto: Projeto): void {
 
-    const dialogRef = this.dialog.open(DialogProject, {
+    const dialogRef = this.dialog.open(DialogOverviewProject, {
       width: '80vw',
       maxWidth: '1500px',
       data: projeto

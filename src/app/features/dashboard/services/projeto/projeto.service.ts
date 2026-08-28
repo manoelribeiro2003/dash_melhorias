@@ -99,6 +99,6 @@ export class ProjetoService {
             }
 
             return projetos;
-        });
+        }).sort();
     }
 }
