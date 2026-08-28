@@ -9,7 +9,7 @@
   </div>
 
   <div cdkDropList class="drag-list" (cdkDropListDropped)="drop($event)">
-    @for (tarefa of tarefasRecebidas(); track tarefa.id ?? tarefa.tempId) {
+    @for (tarefa of tarefas(); track tarefa.id ?? tarefa.tempId) {
     <div class="stage-row" cdkDrag>
 
       <!-- Drag Handle -->

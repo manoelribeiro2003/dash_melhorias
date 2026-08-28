@@ -10,10 +10,12 @@
       <input class="input-busca" placeholder="Buscar Projetos">
     </div> -->
 
-    <button matButton="filled" class="button-create">
+    @if (isProjetosUrl) {
+    <button matButton="filled" class="button-create" (click)="openDialog()">
       <mat-icon>add</mat-icon>
       <span>Novo Projeto</span>
     </button>
+    }
 
   </div>
 

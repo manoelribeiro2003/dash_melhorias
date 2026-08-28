@@ -28,13 +28,12 @@ import { Tarefa } from '../../models/tarefa/tarefa.interface';
 })
 export class DragDropComponent {
 
-  readonly tarefasRecebidas = input.required<Tarefa[]>();
+  readonly tarefas = input.required<Tarefa[]>();
   readonly tarefasAlteradas = output<Tarefa[]>();
 
   drop(event: CdkDragDrop<Tarefa[]>): void {
 
-    const tarefas = this.tarefasRecebidas()
-      .map(tarefa => ({ ...tarefa }));
+    const tarefas = this.tarefas().map(tarefa => ({ ...tarefa }));
 
     moveItemInArray(tarefas, event.previousIndex, event.currentIndex);
 
@@ -48,11 +47,11 @@ export class DragDropComponent {
 
   adicionarTarefa(): void {
     const tarefas = [
-      ...this.tarefasRecebidas(),
+      ...this.tarefas(),
       {
         tempId: crypto.randomUUID(),
         nome: '',
-        ordem: this.tarefasRecebidas().length + 1,
+        ordem: this.tarefas().length + 1,
         concluido: false
       }
     ]
@@ -60,7 +59,7 @@ export class DragDropComponent {
   }
 
   atualizarTarefa(tarefa: Tarefa, alteracoes: Partial<Tarefa>): void {
-    const tarefas = this.tarefasRecebidas().map(t =>
+    const tarefas = this.tarefas().map(t =>
       t === tarefa
         ? { ...t, ...alteracoes }
         : t
@@ -71,7 +70,7 @@ export class DragDropComponent {
 
   excluirTarefa(tarefaExcluir: Tarefa): void {
 
-    const tarefas = this.tarefasRecebidas()
+    const tarefas = this.tarefas()
       .filter(tarefa => tarefa !== tarefaExcluir)
       .map((tarefa, index) => ({
         ...tarefa,

@@ -14,6 +14,10 @@ export class ProjetoService {
     private _projetos = signal<Projeto[]>([]);
     readonly projetos = this._projetos.asReadonly()
 
+    criarProjeto(projeto: Projeto): void{
+        this.http.post()
+    }   
+
     carregarProjetos(): void {
         this.http.get<ProjetoJson[]>(`${this.apiUrl}/projetos/`).subscribe({
             next: (dados) => {
