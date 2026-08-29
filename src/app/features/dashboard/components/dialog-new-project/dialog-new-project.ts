@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ProjetoService } from '../../services/projeto/projeto.service';
 
 function obterSemanaAtual(): { inicio: Date; termino: Date } {
   const hoje = new Date();
@@ -61,6 +62,7 @@ export class DialogNewProject {
   private usuariosService = inject(UsuarioService)
   readonly usuarios = this.usuariosService.usuarios()
   private dialogRef = inject(MatDialogRef<DialogNewProject>);
+  readonly projetosService = inject(ProjetoService);
 
   readonly novoProjeto: Partial<Projeto> = {
     status: 'Não iniciado',
@@ -89,7 +91,10 @@ export class DialogNewProject {
   }
 
   salvarProjeto(): void {
-    // this.dialogRef.close();
-    console.log('Novo Projeto: ', this.novoProjeto)
+    this.projetosService.criarProjeto(this.novoProjeto)
+    
+    console.log(this.novoProjeto);
+
+    this.dialogRef.close();
   }
 }

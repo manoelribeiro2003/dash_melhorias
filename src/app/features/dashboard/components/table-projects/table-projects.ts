@@ -81,7 +81,22 @@ export class TableProjects implements AfterViewInit {
 
 
 
-  openDialog(projeto: Projeto): void {
+  openDialogEdit(projeto: Projeto): void {
+
+    const dialogRef = this.dialog.open(DialogOverviewProject, {
+      width: '80vw',
+      maxWidth: '1500px',
+      data: projeto
+    });
+
+    dialogRef.afterClosed().subscribe((projetoRetornado: Projeto | undefined) => {
+      if (projetoRetornado === undefined) {
+        return;
+      }
+      this.projetosService.atualizarProjeto(projetoRetornado);
+    });
+  }
+  openDialogDelete(projeto: Projeto): void {
 
     const dialogRef = this.dialog.open(DialogOverviewProject, {
       width: '80vw',

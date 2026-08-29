@@ -14,9 +14,40 @@ export class ProjetoService {
     private _projetos = signal<Projeto[]>([]);
     readonly projetos = this._projetos.asReadonly()
 
-    criarProjeto(projeto: Projeto): void{
-        this.http.post()
-    }   
+    criarProjeto(projeto: Partial<Projeto>): void {
+
+        const dados = {
+            nome: projeto.nome,
+            categoria: projeto.categoria,
+            status: projeto.status,
+            dataInicio: projeto.dataInicio,
+            dataTermino: projeto.dataTermino,
+            orcamento: projeto.orcamento,
+            prioridade: projeto.prioridade,
+            criadoPorId: projeto.criadoPor?.id,
+            tarefas:
+                projeto.tarefas?.filter(tarefa => tarefa.nome?.trim())
+                    .map((tarefa, index) => ({
+                        nome: tarefa.nome?.trim() ?? '',
+                        ordem: index + 1,
+                        concluido: tarefa.concluido
+                    }))
+        }
+
+        this.http.post<ProjetoJson>(`${this.apiUrl}/projetos/`, dados).subscribe({
+            next: (projetoCriado) => {
+                const projetoMapeado = this.mapearProjetos([projetoCriado])[0];
+
+                this._projetos.update(projetos => [
+                    ...projetos,
+                    projetoMapeado
+                ]);
+            },
+            error: erro => {
+                console.error('Erro ao criar projeto', erro);
+            }
+        });
+    }
 
     carregarProjetos(): void {
         this.http.get<ProjetoJson[]>(`${this.apiUrl}/projetos/`).subscribe({
@@ -31,8 +62,6 @@ export class ProjetoService {
 
     atualizarProjeto(projeto: Projeto): void {
 
-        const dataInicio = projeto.dataInicio?.toISOString()
-
         const dados = {
             nome: projeto.nome,
             categoria: projeto.categoria,
@@ -42,16 +71,15 @@ export class ProjetoService {
             orcamento: projeto.orcamento,
             prioridade: projeto.prioridade,
             criadoPorId: projeto.criadoPor.id,
-            tarefas: projeto.tarefas
-                .filter(tarefa =>
-                    tarefa.id !== undefined || tarefa.nome?.trim()
-                )
-                .map((tarefa, index) => ({
-                    ...(tarefa.id !== undefined && { id: tarefa.id }),
-                    nome: tarefa.nome?.trim() ?? '',
-                    ordem: index + 1,
-                    concluido: tarefa.concluido
-                }))
+            tarefas:
+                projeto.tarefas
+                    .filter(tarefa => tarefa.id !== undefined || tarefa.nome?.trim())
+                    .map((tarefa, index) => ({
+                        ...(tarefa.id !== undefined && { id: tarefa.id }),
+                        nome: tarefa.nome?.trim() ?? '',
+                        ordem: index + 1,
+                        concluido: tarefa.concluido
+                    }))
         }
 
         this.http.patch<ProjetoJson>(`${this.apiUrl}/projetos/${projeto.id}`, dados)
