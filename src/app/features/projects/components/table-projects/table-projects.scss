@@ -1,14 +1,64 @@
 /* =========================================
+   CONTAINER DA TABELA
+   ========================================= */
+
+.table-card {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   ÁREA DE SCROLL DA TABELA
+   ========================================= */
+
+.table-scroll {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
    TABELA
    ========================================= */
 
 .projects-table {
   width: 100%;
-  flex: 1;
+
+  /*
+   * Em telas grandes:
+   * ocupa todo o espaço disponível.
+   *
+   * Em telas pequenas:
+   * mantém uma largura mínima e o
+   * .table-scroll cria o scroll.
+   */
+  min-width: 950px;
+
   background: #ffffff;
+
   border-collapse: collapse;
-  border-radius: 10px;
-  overflow: hidden;
+
+  box-sizing: border-box;
 }
 
 
@@ -29,6 +79,8 @@
   color: #293044;
 
   text-align: left;
+
+  white-space: nowrap;
 
   border-bottom: 1px solid #edf0f5;
 }
@@ -61,6 +113,8 @@
   color: #4b5567;
 
   border-bottom: 1px solid #edf0f5;
+
+  box-sizing: border-box;
 }
 
 
@@ -70,39 +124,68 @@
 
 .project-info {
   display: flex;
+
   flex-direction: column;
 
   gap: 3px;
 
-  // min-width: 100px;
-  width: 500px;
+  /*
+   * IMPORTANTE:
+   * Não usamos mais width: 500px.
+   */
+  min-width: 0;
+
+  max-width: 500px;
 }
 
 .project-name {
+  display: block;
+
+  max-width: 100%;
+
   font-size: 13px;
   font-weight: 600;
 
   color: #263044;
 
   line-height: 18px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
 }
 
 .project-description {
+  display: block;
+
+  max-width: 100%;
+
   font-size: 11px;
 
   color: #7c8494;
 
   line-height: 16px;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
 }
 
 
 /* =========================================
-   CRIADO POR
+   RESPONSÁVEL
    ========================================= */
 
 .manager-cell {
   display: flex;
+
   align-items: center;
+
+  min-width: 0;
 
   white-space: nowrap;
 }
@@ -111,6 +194,12 @@
   font-size: 12px;
 
   color: #3f4757;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
 }
 
 
@@ -120,6 +209,7 @@
 
 .status {
   display: inline-flex;
+
   align-items: center;
 
   padding: 5px 9px;
@@ -127,95 +217,114 @@
   border-radius: 5px;
 
   font-size: 11px;
+
   font-weight: 500;
 
   white-space: nowrap;
 }
 
-// ================================================
-
-.data-termino {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 9px;
-  border-radius: 5px;
-  font-size: 13px;
-  white-space: nowrap;
-  text-align: center;
-}
-.data-inicio {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 9px;
-  border-radius: 5px;
-  font-size: 13px;
-  white-space: nowrap;
-}
-.orcamento {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 9px;
-  border-radius: 5px;
-  font-size: 13px;
-  white-space: nowrap;
-}
-
 .status-concluido {
-  color: #2F80ED;
-  background: #EAF3FF;
+  color: #2f80ed;
+
+  background: #eaf3ff;
 }
 
 .status-andamento {
-  color: #2DBE60;
-  background: #E8F8EE;
+  color: #2dbe60;
+
+  background: #e8f8ee;
 }
 
 .status-nao-iniciado {
-  color: #F59E0B;
-  background: #FEF3C7;
+  color: #f59e0b;
+
+  background: #fef3c7;
+}
+
+
+/* =========================================
+   DATAS
+   ========================================= */
+
+.data-termino,
+.data-inicio,
+.orcamento {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 5px 9px;
+
+  border-radius: 5px;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+.data-termino,
+.data-inicio,
+.orcamento {
+  color: #4b5567;
 }
 
 .data-atrasada {
-  color: #fff;
-  background-color: #fd6161;
+  color: #ffffff;
 
+  background-color: #fd6161;
 }
 
-// 
 
 /* =========================================
-   Progresso
+   PROGRESSO
    ========================================= */
 
 .progress-container {
   display: flex;
+
   align-items: center;
+
   gap: 10px;
+
   width: 100%;
+
+  min-width: 130px;
 }
 
 .progress-bar {
   width: 100px;
+
   height: 8px;
+
+  flex-shrink: 0;
+
   background-color: #e9edf2;
+
   border-radius: 999px;
+
   overflow: hidden;
 }
 
 .progress-fill {
   height: 100%;
+
   border-radius: 999px;
-  background: linear-gradient(90deg,
-      #a7e8c2 0%,
-      #4fbd7e 50%,
-      #24935c 100%);
+
+  background: linear-gradient(
+    90deg,
+    #a7e8c2 0%,
+    #4fbd7e 50%,
+    #24935c 100%
+  );
 
   transition: width 0.3s ease;
 }
 
 .progress-text {
   font-size: 13px;
+
   color: #5f6368;
+
   white-space: nowrap;
 }
 
@@ -230,18 +339,166 @@
 
 .actions-cell {
   text-align: center;
+
+  white-space: nowrap;
 }
-mat-icon.mat-icon-delete{
+
+mat-icon.mat-icon-delete {
   color: var(--mat-sys-error);
 }
-mat-icon.mat-icon-open-dialog{
+
+mat-icon.mat-icon-open-dialog {
   color: var(--mat-sys-primary);
 }
 
+
 /* =========================================
-       Paginator
-       ========================================= */
+   PAGINATOR
+   ========================================= */
 
 mat-paginator {
-  background-color: #fff;
+  width: 100%;
+
+  background-color: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTAINER PRINCIPAL
+   ========================================= */
+
+/*
+ * Se .main estiver dentro de flex ou grid,
+ * isso impede que seus filhos forcem
+ * a largura da página.
+ */
+
+.main {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   CONTAINER DOS CARDS
+   ========================================= */
+
+.cards-container {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, minmax(0, 1fr));
+
+  gap: 16px;
+
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/*
+ * IMPORTANTE:
+ * Impede que um componente filho
+ * force uma coluna maior que deveria.
+ */
+
+.cards-container > * {
+  min-width: 0;
+
+  max-width: 100%;
+}
+
+
+/* =========================================
+   TABLE CONTAINER
+   ========================================= */
+
+.table-container {
+  width: 100%;
+
+  max-width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   RESPONSIVIDADE DOS CARDS
+   ========================================= */
+
+/*
+ * Desktop menor / notebook
+ */
+
+@media (max-width: 1200px) {
+
+  .cards-container {
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+  }
+
+}
+
+
+/*
+ * Tablet
+ */
+
+@media (max-width: 800px) {
+
+  .cards-container {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+  }
+
+}
+
+
+/*
+ * Celular
+ */
+
+@media (max-width: 500px) {
+
+  .cards-container {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+  }
+
+}
+
+
+/* =========================================
+   TELAS MUITO PEQUENAS
+   ========================================= */
+
+@media (max-width: 400px) {
+
+  .project-header-cell {
+    padding: 0 12px;
+  }
+
+  .project-data-cell {
+    padding: 0 12px;
+  }
+
 }
