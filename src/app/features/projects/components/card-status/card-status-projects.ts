@@ -4,16 +4,16 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from "@angular/material/icon";
 
 @Component({
-  selector: 'app-card-status',
+  selector: 'app-card-status-project',
   imports: [
     MatCardModule,
     MatChipsModule,
     MatIconModule,
   ],
-  templateUrl: './card-status.html',
-  styleUrl: './card-status.scss',
+  templateUrl: './card-status-projects.html',
+  styleUrl: './card-status-projects.scss',
 })
-export class CardStatus {
+export class CardStatusProjects {
   totalItens = input.required<number>();
   itensConcluidos = input.required<number>();
 

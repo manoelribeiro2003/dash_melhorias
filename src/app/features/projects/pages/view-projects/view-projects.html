@@ -1,7 +1,7 @@
 <div class="main">
     <div class="app-card-status-container">
         @for (cardValue of cardValues; track cardValue) {
-        <app-card-status
+        <app-card-status-project
             [status]="cardValue.status"
             [value]="cardValue.status === 'TotalDeProjetos'
             ? projetos().length

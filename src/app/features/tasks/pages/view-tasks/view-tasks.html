@@ -1,1 +1,19 @@
-<p>view-tasks works!</p>
+<div class="main">
+    <div class="cards-container">
+        @for (cardValue of cardValues; track cardValue) {
+        <app-card-status-tasks
+            [status]="cardValue.status"
+            [value]="cardValue.status === 'TotalDeProjetos'
+            ? projetos().length
+            : cardValue.atrasado
+                ? projetos().filter(projeto => projeto.atrasado == true).length
+                : projetos().filter(projeto => projeto.status === cardValue.status).length"
+            [icon]="cardValue.icon" 
+            [title]="cardValue.title"
+            [itensConcluidos]=" !cardValue.atrasado
+            ? projetos().filter(projeto => projeto.status == cardValue.status).length
+            : projetos().filter(projeto => projeto.atrasado == true).length"
+            [totalItens]="projetos().length" />
+        }
+    </div>
+</div>
