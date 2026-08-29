@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { ProjectsCard } from '../../components/projects-card/projects-card';
-import { ProjetoService } from '../../services/projeto/projeto.service';
 import { CardStatus } from "../../components/card-status/card-status";
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
+import { ProjetoService } from '../../../../shared/services/projeto/projeto.service';
 
 type CardValues = {
   icon: string,

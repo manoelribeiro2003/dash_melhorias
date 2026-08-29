@@ -4,15 +4,15 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgClass, DatePipe, CurrencyPipe } from '@angular/common';
-import { ProjetoService } from '../../services/projeto/projeto.service';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 import { DialogOverviewProject } from '../dialog-overview-project/dialog-overview-project';
-import { Projeto } from '../../models/projeto/projeto.interface';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { ConfirmDialogComponent } from '../dialog-delete-project/confirm-dialog';
+import { ProjetoService } from '../../../../shared/services/projeto/projeto.service';
+import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
 
 @Component({
   selector: 'app-table-projects',

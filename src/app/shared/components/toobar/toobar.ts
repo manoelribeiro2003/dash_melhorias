@@ -6,8 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { Projeto } from '../../../features/dashboard/models/projeto/projeto.interface';
-import { DialogNewProject } from '../../../features/dashboard/components/dialog-new-project/dialog-new-project';
+import { DialogNewProject } from '../../../features/projects/components/dialog-new-project/dialog-new-project';
 
 @Component({
   selector: 'app-toobar',

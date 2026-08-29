@@ -2,7 +2,6 @@ import { HttpClient } from "@angular/common/http";
 import { inject, Injectable, signal } from "@angular/core";
 import { Usuario } from "../../models/usuario/usuario.interface";
 
-
 @Injectable({
     providedIn: 'root'
 })

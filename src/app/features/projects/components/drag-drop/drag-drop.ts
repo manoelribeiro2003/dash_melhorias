@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { Tarefa } from '../../models/tarefa/tarefa.interface';
+import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface'; 
 
 @Component({
   selector: 'app-drag-drop',

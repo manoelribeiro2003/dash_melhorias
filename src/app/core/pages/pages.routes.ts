@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { Pages } from './pages';
-import { ViewProjects } from '../../features/dashboard/pages/view-projects/view-projects';
 import { Dashboard } from '../../features/dashboard/pages/dashboard/dashboard';
+import { ViewProjects } from '../../features/projects/pages/view-projects/view-projects';
+import { ViewTasks } from '../../features/tasks/pages/view-tasks/view-tasks';
 import { NotFound } from './not-found/not-found';
 
 export const routes: Routes = [
@@ -14,7 +15,7 @@ export const routes: Routes = [
                 component: Dashboard,
                 data:{
                     title: 'Dashborad',
-                    description: 'Visão geral do projetos'
+                    description: 'Visão geral dos projetos'
                 }
             },
             {
@@ -22,9 +23,17 @@ export const routes: Routes = [
                 component: ViewProjects,
                 data:{
                     title: 'Projetos',
-                    description: 'Liste e acompanhe todo os projetos'
+                    description: 'Liste e acompanhe todos os projetos'
                 }
-            }
+            },
+            {
+                path: 'tarefas',
+                component: ViewTasks,
+                data:{
+                    title: 'Tarefas',
+                    description: 'Acompanhe todas as tarefas da semana'
+                }
+            },
         ]
     },
     { 

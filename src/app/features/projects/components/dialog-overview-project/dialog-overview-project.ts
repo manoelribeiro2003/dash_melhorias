@@ -12,10 +12,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { FormsModule } from '@angular/forms';
 import { DragDropComponent } from '../drag-drop/drag-drop';
-import { Projeto } from '../../models/projeto/projeto.interface';
-import { Tarefa } from '../../models/tarefa/tarefa.interface';
-import { UsuarioService } from '../../services/usuario/usuario.service';
-import { Usuario } from '../../models/usuario/usuario.interface';
+import { UsuarioService } from '../../../../shared/services/usuario/usuario.service';
+import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
+import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
+import { Usuario } from '../../../../shared/models/usuario/usuario.interface';
 
 @Component({
   selector: 'app-dialog-project',

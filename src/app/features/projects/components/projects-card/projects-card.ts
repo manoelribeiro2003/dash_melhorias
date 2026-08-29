@@ -2,12 +2,11 @@ import { Component, computed, effect, inject, input, model, signal } from '@angu
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { TableProjects } from '../table-projects/table-projects';
-import { ProjetoService } from '../../services/projeto/projeto.service';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { UsuarioService } from '../../services/usuario/usuario.service';
-import { Usuario } from '../../models/usuario/usuario.interface';
+import { ProjetoService } from '../../../../shared/services/projeto/projeto.service';
+import { UsuarioService } from '../../../../shared/services/usuario/usuario.service';
 
 interface Status {
   value: string

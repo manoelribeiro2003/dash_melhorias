@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ProjetoService } from './features/dashboard/services/projeto/projeto.service';
 import { MatSidenavModule } from '@angular/material/sidenav';
-import { UsuarioService } from './features/dashboard/services/usuario/usuario.service';
+import { ProjetoService } from './shared/services/projeto/projeto.service';
+import { UsuarioService } from './shared/services/usuario/usuario.service';
 
 @Component({
   selector: 'app-root',

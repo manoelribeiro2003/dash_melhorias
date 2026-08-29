@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, provideEnvironmentInitializer, signal } from '@angular/core';
-import { ProjetoJson } from '../../models/projeto/projeto-json.interface';
+import { inject, Injectable, signal } from '@angular/core';
 import { Projeto } from '../../models/projeto/projeto.interface';
+import { ProjetoJson } from '../../models/projeto/projeto-json.interface';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +15,6 @@ export class ProjetoService {
     readonly projetos = this._projetos.asReadonly()
 
     criarProjeto(projeto: Partial<Projeto>): void {
-
         const dados = {
             nome: projeto.nome,
             categoria: projeto.categoria,
