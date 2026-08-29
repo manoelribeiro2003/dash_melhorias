@@ -12,7 +12,7 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { DialogOverviewProject } from '../dialog-overview-project/dialog-overview-project';
 import { Projeto } from '../../models/projeto/projeto.interface';
 import { MatSort, MatSortModule } from '@angular/material/sort';
-import { Usuario } from '../../models/usuario/usuario.interface';
+import { ConfirmDialogComponent } from '../dialog-delete-project/confirm-dialog';
 
 @Component({
   selector: 'app-table-projects',
@@ -98,17 +98,21 @@ export class TableProjects implements AfterViewInit {
   }
   openDialogDelete(projeto: Projeto): void {
 
-    const dialogRef = this.dialog.open(DialogOverviewProject, {
-      width: '80vw',
-      maxWidth: '1500px',
-      data: projeto
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      width: '400px',
+      data: {
+        titulo: 'Excluir projeto?',
+        mensagem: 'Tem certeza que deseja excluir este projeto? Essa ação não pode ser desfeita.',
+        textoCancelar: 'Cancelar',
+        textoConfirmar: 'Excluir',
+        acao: 'exclusao'
+      }
     });
 
-    dialogRef.afterClosed().subscribe((projetoRetornado: Projeto | undefined) => {
-      if (projetoRetornado === undefined) {
-        return;
+    dialogRef.afterClosed().subscribe((resposta: boolean) => {
+      if (resposta) {
+        this.projetosService.deletarProjeto(projeto);
       }
-      this.projetosService.atualizarProjeto(projetoRetornado);
     });
   }
 

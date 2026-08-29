@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>
+    {{ dados.titulo }}
+</h2>
+
+<mat-dialog-content>
+    <p>{{ dados.mensagem }}</p>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-button (click)="cancelar()">
+        {{ dados.textoCancelar ?? 'Cancelar' }}
+    </button>
+
+    <button mat-raised-button [ngClass]="{
+        'btn-excluir': dados.acao === 'exclusao',
+        'status-concluido': dados.acao === 'cricao',
+        'status-nao-iniciado': dados.acao === 'confirmacao'
+      }" (click)="confirmar()">
+        {{ dados.textoConfirmar ?? 'Confirmar' }}
+    </button>
+</mat-dialog-actions>

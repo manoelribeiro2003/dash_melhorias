@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, provideEnvironmentInitializer, signal } from '@angular/core';
 import { ProjetoJson } from '../../models/projeto/projeto-json.interface';
 import { Projeto } from '../../models/projeto/projeto.interface';
 
@@ -89,11 +89,7 @@ export class ProjetoService {
                     const projetoMapeado = this.mapearProjetos([projetoAtualizado])[0];
 
                     this._projetos.update(projetos =>
-                        projetos.map(p =>
-                            p.id === projetoMapeado.id
-                                ? projetoMapeado
-                                : p
-                        )
+                        projetos.map(projeto => projeto.id === projetoMapeado.id ? projetoMapeado : projeto)
                     );
 
                 },
@@ -101,6 +97,19 @@ export class ProjetoService {
                     console.error(erro);
                 }
             });
+    }
+
+    deletarProjeto(projeto: Projeto): void {
+        this.http.delete<ProjetoJson>(`${this.apiUrl}/projetos/${projeto.id}`).subscribe({
+            next: (projeto) => {
+                this._projetos.update(projetos =>
+                    projetos.filter(p => p.id !== projeto.id)
+                );
+            },
+            error: (erro) => {
+                console.error(erro);
+            }
+        });
     }
 
     private mapearProjetos(projetos: ProjetoJson[]): Projeto[] {

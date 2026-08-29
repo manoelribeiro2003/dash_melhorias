@@ -19,13 +19,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ProjetoService } from '../../services/projeto/projeto.service';
 
 function obterSemanaAtual(): { inicio: Date; termino: Date } {
-  const hoje = new Date();
-
-  const diaSemana = hoje.getDay();
-  const diferencaSegunda = diaSemana === 0 ? -6 : 1 - diaSemana;
-
-  const inicio = new Date(hoje);
-  inicio.setDate(hoje.getDate() + diferencaSegunda);
+  const inicio = new Date();
 
   const termino = new Date(inicio);
   termino.setDate(inicio.getDate() + 4);
@@ -92,8 +86,6 @@ export class DialogNewProject {
 
   salvarProjeto(): void {
     this.projetosService.criarProjeto(this.novoProjeto)
-    
-    console.log(this.novoProjeto);
 
     this.dialogRef.close();
   }
