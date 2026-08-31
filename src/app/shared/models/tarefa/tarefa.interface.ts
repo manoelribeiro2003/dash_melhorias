@@ -4,4 +4,6 @@ export interface Tarefa{
     nome: string;
     ordem: number;
     concluido: boolean;
+    dataInicio?: Date;
+    dataTermino?: Date
 }

@@ -1,33 +1,82 @@
 <div class="main">
 
+    <!-- =============================== -->
+    <!-- CARDS DE STATUS                  -->
+    <!-- =============================== -->
+
     <div class="cards-container-status">
+
         @for (cardValue of cardValues; track cardValue) {
-        <app-card-status-tasks [status]="cardValue.status" [value]="cardValue.status === 'TotalDeProjetos'
-            ? projetos.length
-            : cardValue.atrasado
-                ? projetos.filter(projeto => projeto.atrasado == true).length
-                : projetos.filter(projeto => projeto.status === cardValue.status).length" [icon]="cardValue.icon"
-            [title]="cardValue.title" [itensConcluidos]=" !cardValue.atrasado
-            ? projetos.filter(projeto => projeto.status == cardValue.status).length
-            : projetos.filter(projeto => projeto.atrasado == true).length" [totalItens]="projetos.length" />
+
+        <app-card-status-tasks [status]="cardValue.status" [value]="
+                    cardValue.status === 'TotalDeProjetos'
+                        ? projetos.length
+                        : cardValue.atrasado
+                            ? projetos.filter(projeto => projeto.atrasado == true).length
+                            : projetos.filter(projeto => projeto.status === cardValue.status).length
+                " [icon]="cardValue.icon" [title]="cardValue.title" [itensConcluidos]="
+                    !cardValue.atrasado
+                        ? projetos.filter(projeto => projeto.status == cardValue.status).length
+                        : projetos.filter(projeto => projeto.atrasado == true).length
+                " [totalItens]="projetos.length" />
+
         }
+
     </div>
 
-    <div class="div-grid">
-        <div class="celula-cabecalho">
-            <span class="conteudo-cabecalho">Responsável</span>
-        </div>
-        <div class="celula-cabecalho">
-            <span class="conteudo-cabecalho">Progresso da Semana</span>
-        </div>
-        <div class="celula-cabecalho">
-            <span class="conteudo-cabecalho">Atividades da Semana</span>
-        </div>
-        <div class="celula-cabecalho">
-            <span class="conteudo-cabecalho">Prazo</span>
-        </div>
-        <div class="celula-cabecalho">
-            <span class="conteudo-cabecalho">Status</span>
-        </div>
+
+    <!-- =============================== -->
+    <!-- TABELA                           -->
+    <!-- =============================== -->
+
+    <div class="container-table bg-white">
+
+        <table mat-table [dataSource]="dataSource" class="mat-shadow-2 bg-white">
+
+            <ng-container matColumnDef="nome">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="prazo">
+                <th mat-header-cell *matHeaderCellDef>Prazo</th>
+                <td mat-cell *matCellDef="let element" style="border-left: 2px solid rgb(175, 175, 175);">
+                    @for (projeto of element.projetos; track projeto.id)
+                    {
+                    <span>{{''}}</span>
+                    @for (tarefa of projeto.tarefas; track tarefa.id)
+                    {
+                    <div>{{tarefa.dataTermino | date: "dd/MM"}}</div>
+                    }
+                    }
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="projetos">
+                <th mat-header-cell *matHeaderCellDef>Projetos</th>
+                <td mat-cell *matCellDef="let element" style="border-left: 2px solid rgb(175, 175, 175);">
+                    @for (projeto of element.projetos; track projeto.id)
+                    {
+                    <div class="flex flex-row gap-2 py-1">
+                        <mat-icon aria-hidden="false" fontIcon="folder" style="color: black"></mat-icon>
+                        <span class="font-bold">{{ projeto.nome }}</span>
+                    </div>
+                    @for (tarefa of projeto.tarefas; track tarefa.id)
+                    {
+                    <div class="flex flex-row gap-2 pl-3 py-1">
+                        <mat-icon class="text-[green]" style="color: #2DBE60;" aria-hidden="false" fontIcon="circle"></mat-icon>
+                        <span>{{ tarefa.nome }}</span>
+                    </div>
+                    }
+                    }
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+
     </div>
+
 </div>

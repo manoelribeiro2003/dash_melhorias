@@ -10,6 +10,11 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
+import { groupBy } from '../../../../shared/utils/group-by';
+import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
+import { DatePipe } from '@angular/common';
+import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
 
 type CardValues = {
   icon: string,
@@ -17,6 +22,12 @@ type CardValues = {
   status?: string,
   atrasado?: boolean
 }
+
+type PessoaProjetos = {
+  nome: string;
+  projetos: Projeto[];
+};
+
 
 @Component({
   selector: 'app-view-tasks',
@@ -29,7 +40,9 @@ type CardValues = {
     MatPaginatorModule,
     MatDividerModule,
     MatDialogModule,
-    MatSortModule
+    MatSortModule,
+    MatCardModule,
+    DatePipe
   ],
   templateUrl: './view-tasks.html',
   styleUrl: './view-tasks.scss',
@@ -37,10 +50,41 @@ type CardValues = {
 export class ViewTasks {
 
   private projetosService = inject(ProjetoService);
-  readonly projetos = this.projetosService.projetos();
   private iconRegistry = inject(MatIconRegistry);
   private sanitizer = inject(DomSanitizer);
 
+  readonly projetos = this.projetosService.projetos().map(projetos => {
+
+    const projeto: Projeto = {
+      ...projetos,
+      tarefas: projetos.tarefas.filter(tarefa => !tarefa.concluido),
+    }
+
+    return projeto
+  }).filter(projeto => projeto.status !== 'Concluída' && projeto.status !== 'Não iniciado')
+
+  projetos_p_nome = groupBy(this.projetos, projeto => projeto.criadoPor.nome)
+
+  dataSource: PessoaProjetos[] = Array.from(this.projetos_p_nome.entries()).map(([nome, projetos]) => ({ nome, projetos }));
+  displayedColumns = ['nome', 'prazo', 'projetos',]
+
+  columnsToDisplay = ['nome'];
+  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
+
+  expandedElement: PessoaProjetos | null = null; expandedProjeto: Projeto | null = null;
+  toggleRow(pessoa: PessoaProjetos): void {
+    if (this.expandedElement === pessoa) {
+      this.expandedElement = null;
+      this.expandedProjeto = null;
+      return;
+    }
+    this.expandedElement = pessoa;
+    this.expandedProjeto = null;
+  }
+  toggleProjeto(projeto: Projeto, event: Event): void {
+    event.stopPropagation(); 
+    this.expandedProjeto = this.expandedProjeto === projeto ? null : projeto;
+  }
 
   cardValues: CardValues[] = [
     { icon: "totalProjetos", title: "Tarefas da Semana", status: 'TotalDeProjetos' },
@@ -89,74 +133,3 @@ export class ViewTasks {
 
 
 }
-
-interface AtividadeTeste {
-  id: number;
-  nome: string;
-  prazo: string;
-  status: 'Concluída' | 'Em andamento' | 'Pendente' | 'Atrasada';
-}
-
-interface ProjetoTeste {
-  id: number;
-  nome: string;
-  categoria: string;
-  atividades: AtividadeTeste[];
-}
-
-interface PessoaTeste {
-  id: number;
-  nome: string;
-  cargo: string;
-  iniciais: string;
-  projetos: ProjetoTeste[];
-}
-
-const pessoas: PessoaTeste[] = [
-  {
-    id: 1,
-    nome: 'Manoel Ribeiro',
-    cargo: 'Analista de Processos',
-    iniciais: 'MR',
-    projetos: [
-      {
-        id: 1,
-        nome: 'Automação do Processo de Cadastro',
-        categoria: 'RPA',
-        atividades: [
-          {
-            id: 1,
-            nome: 'Levantar regras do processo',
-            prazo: '26/08',
-            status: 'Concluída'
-          },
-          {
-            id: 2,
-            nome: 'Desenvolver automação',
-            prazo: '28/08',
-            status: 'Em andamento'
-          },
-          {
-            id: 3,
-            nome: 'Testar automação',
-            prazo: '29/08',
-            status: 'Em andamento'
-          }
-        ]
-      },
-      {
-        id: 2,
-        nome: 'Padronização de Documentos',
-        categoria: 'Melhoria',
-        atividades: [
-          {
-            id: 4,
-            nome: 'Revisar documentação',
-            prazo: '30/08',
-            status: 'Pendente'
-          }
-        ]
-      }
-    ]
-  }
-];

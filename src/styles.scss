@@ -1,5 +1,6 @@
 @use './reset.scss';
 @use '@angular/material' as mat;
+@import "tailwindcss";
 
 html {
   @include mat.theme((color: (primary: mat.$azure-palette,

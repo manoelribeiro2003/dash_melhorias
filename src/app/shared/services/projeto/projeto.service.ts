@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable, signal } from '@angular/core';
 import { Projeto } from '../../models/projeto/projeto.interface';
 import { ProjetoJson } from '../../models/projeto/projeto-json.interface';
+import { Tarefa } from '../../models/tarefa/tarefa.interface';
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProjetoService {
 
-    private apiUrl = 'http://localhost:3000';
+    private apiUrl = 'http://10.2.34.92:3000';
     private http = inject(HttpClient);
 
     private _projetos = signal<Projeto[]>([]);
@@ -117,7 +118,7 @@ export class ProjetoService {
             const dataInicio = projeto.dataInicio?.split('-').map(Number)
             const dataTermino = projeto.dataTermino?.split('-').map(Number)
 
-            const projetos = {
+            const projetos: Projeto = {
                 id: projeto.id,
                 nome: projeto.nome,
                 categoria: projeto.categoria,
@@ -127,7 +128,21 @@ export class ProjetoService {
                 orcamento: projeto.orcamento,
                 prioridade: projeto.prioridade,
                 criadoPor: projeto.criadoPor,
-                tarefas: projeto.tarefas,
+                tarefas: projeto.tarefas.map(tarefa => {
+
+                    const dataInicio = tarefa.dataInicio.split('-').map(Number)
+                    const dataTermino = tarefa.dataTermino.split('-').map(Number)
+                    const tarefas: Tarefa = {
+                        nome: tarefa.nome,
+                        ordem: tarefa.ordem,
+                        concluido: tarefa.concluido,
+                        dataInicio: dataInicio !== undefined ? new Date(dataInicio[0], dataInicio[1] - 1, dataInicio[2]) : undefined,
+                        dataTermino: dataTermino !== undefined ? new Date(dataTermino[0], dataTermino[1] - 1, dataTermino[2]) : undefined,
+                        id: tarefa.id
+                    }
+                    return tarefas
+
+                }),
                 tarefasConcluidas: projeto.tarefas.filter(tarefa => tarefa.concluido).length,
                 totalTarefas: projeto.tarefas.length,
                 criadoEm: new Date(projeto.createdAt),
@@ -139,6 +154,6 @@ export class ProjetoService {
             }
 
             return projetos;
-        }).sort();
+        })
     }
 }
