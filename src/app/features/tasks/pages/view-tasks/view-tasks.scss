@@ -33,3 +33,378 @@
 
     gap: 16px;
 }
+
+/* ================================================================
+   TABELA
+   ================================================================ */
+
+.tabela-projetos {
+    width: 100%;
+
+    background: #ffffff;
+
+    border-collapse: collapse;
+}
+
+
+/* ================================================================
+   HEADER
+   ================================================================ */
+
+.tabela-projetos .mat-mdc-header-row {
+    height: 52px;
+
+    background: #fafafa;
+}
+
+
+.tabela-projetos .mat-mdc-header-cell {
+    padding: 0 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    color: #6b7280;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* ================================================================
+   LINHAS
+   ================================================================ */
+
+.tabela-projetos .mat-mdc-row {
+    background: #ffffff;
+
+    transition: background-color 150ms ease;
+}
+
+
+.tabela-projetos .mat-mdc-row:hover {
+    background: #fafbfc;
+}
+
+
+/* ================================================================
+   CÉLULAS
+   ================================================================ */
+
+.tabela-projetos .mat-mdc-cell {
+    padding: 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+    border-left: 1px solid #e5e7eb;
+
+    vertical-align: top;
+
+    color: #374151;
+}
+
+
+.tabela-projetos .mat-mdc-row:last-child .mat-mdc-cell {
+    // border-bottom: none;
+}
+
+
+/* ================================================================
+   COLUNA PESSOA
+   ================================================================ */
+
+.coluna-pessoa {
+    width: 300px;
+
+    min-width: 350px;
+}
+
+
+/* ================================================================
+   PESSOA
+   ================================================================ */
+
+.pessoa {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 38px;
+}
+
+
+/* ================================================================
+   AVATAR
+   ================================================================ */
+
+.pessoa-avatar {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #ede9fe;
+
+    color: #6d28d9;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ================================================================
+   NOME
+   ================================================================ */
+
+.pessoa-nome {
+    display: block;
+
+    color: #1f2937;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    line-height: 20px;
+}
+
+
+/* ================================================================
+   COLUNA DE ATIVIDADES
+   ================================================================ */
+
+.coluna-atividades {
+    width: auto;
+}
+
+
+/* ================================================================
+   LISTA DE PROJETOS
+   ================================================================ */
+
+.lista-projetos {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    gap: 18px;
+}
+
+
+/* ================================================================
+   GRUPO DO PROJETO
+   ================================================================ */
+
+.projeto-grupo {
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+
+}
+
+.projeto-grupo:last-child {
+    border-bottom: none;
+    padding-bottom: 0px;
+}
+
+
+/* ================================================================
+   PROJETO
+   ================================================================ */
+
+.projeto {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 28px;
+
+    gap: 8px;
+
+    margin-bottom: 4px;
+}
+
+
+/* ================================================================
+   ÍCONE DO PROJETO
+   ================================================================ */
+
+.projeto-icon {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    font-size: 18px;
+
+    color: #6b7280;
+}
+
+
+/* ================================================================
+   NOME DO PROJETO
+   ================================================================ */
+
+.projeto-nome {
+    overflow: hidden;
+
+    color: #374151;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    line-height: 20px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ================================================================
+   ATIVIDADE
+   ================================================================ */
+
+.atividade {
+    display: grid;
+
+    /*
+   * Prazo | Ícone | Atividade
+   */
+    grid-template-columns: 70px 18px minmax(0, 1fr);
+
+    align-items: center;
+
+    column-gap: 9px;
+
+    min-height: 30px;
+
+    padding-left: 27px;
+}
+
+
+/* ================================================================
+   ÍCONE DA ATIVIDADE
+   ================================================================ */
+
+.atividade-icon {
+    width: 15px;
+    height: 15px;
+
+    font-size: 15px;
+
+    color: #9ca3af;
+}
+
+
+/* ================================================================
+   NOME DA ATIVIDADE
+   ================================================================ */
+
+.atividade-nome {
+    min-width: 0;
+
+    overflow: hidden;
+
+    color: #4b5563;
+
+    font-size: 13px;
+
+    font-weight: 400;
+
+    line-height: 20px;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* ================================================================
+   PRAZO
+   ================================================================ */
+
+.atividade-prazo {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    color: #6b7280;
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    line-height: 20px;
+
+    white-space: nowrap;
+}
+
+
+/* ================================================================
+   RESPONSIVIDADE
+   ================================================================ */
+
+@media (max-width: 900px) {
+
+    .tabela-projetos {
+        min-width: 700px;
+    }
+
+
+    .coluna-pessoa {
+        width: 190px;
+
+        min-width: 190px;
+    }
+
+
+    .tabela-projetos .mat-mdc-cell,
+    .tabela-projetos .mat-mdc-header-cell {
+        padding-left: 14px;
+
+        padding-right: 14px;
+    }
+
+
+    .atividade {
+        grid-template-columns:
+            18px minmax(0, 1fr) 60px;
+
+        column-gap: 7px;
+
+        padding-left: 22px;
+    }
+
+
+    .pessoa {
+        gap: 9px;
+    }
+
+
+    .pessoa-avatar {
+        width: 34px;
+        height: 34px;
+    }
+
+}

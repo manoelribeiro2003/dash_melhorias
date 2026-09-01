@@ -14,7 +14,6 @@ import { MatCardModule } from '@angular/material/card';
 import { groupBy } from '../../../../shared/utils/group-by';
 import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
 import { DatePipe } from '@angular/common';
-import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
 
 type CardValues = {
   icon: string,
@@ -27,7 +26,6 @@ type PessoaProjetos = {
   nome: string;
   projetos: Projeto[];
 };
-
 
 @Component({
   selector: 'app-view-tasks',
@@ -53,38 +51,14 @@ export class ViewTasks {
   private iconRegistry = inject(MatIconRegistry);
   private sanitizer = inject(DomSanitizer);
 
-  readonly projetos = this.projetosService.projetos().map(projetos => {
-
-    const projeto: Projeto = {
-      ...projetos,
-      tarefas: projetos.tarefas.filter(tarefa => !tarefa.concluido),
-    }
-
-    return projeto
-  }).filter(projeto => projeto.status !== 'Concluída' && projeto.status !== 'Não iniciado')
+  readonly projetos: Projeto[] = this.projetosService.projetos().map(projetos => ({
+    ...projetos,
+    tarefas: projetos.tarefas.filter(tarefa => !tarefa.concluido)
+  })).filter(projeto => projeto.status !== 'Concluída' && projeto.status !== 'Não iniciado')
 
   projetos_p_nome = groupBy(this.projetos, projeto => projeto.criadoPor.nome)
 
   dataSource: PessoaProjetos[] = Array.from(this.projetos_p_nome.entries()).map(([nome, projetos]) => ({ nome, projetos }));
-  displayedColumns = ['nome', 'prazo', 'projetos',]
-
-  columnsToDisplay = ['nome'];
-  columnsToDisplayWithExpand = [...this.columnsToDisplay, 'expand'];
-
-  expandedElement: PessoaProjetos | null = null; expandedProjeto: Projeto | null = null;
-  toggleRow(pessoa: PessoaProjetos): void {
-    if (this.expandedElement === pessoa) {
-      this.expandedElement = null;
-      this.expandedProjeto = null;
-      return;
-    }
-    this.expandedElement = pessoa;
-    this.expandedProjeto = null;
-  }
-  toggleProjeto(projeto: Projeto, event: Event): void {
-    event.stopPropagation(); 
-    this.expandedProjeto = this.expandedProjeto === projeto ? null : projeto;
-  }
 
   cardValues: CardValues[] = [
     { icon: "totalProjetos", title: "Tarefas da Semana", status: 'TotalDeProjetos' },
@@ -129,7 +103,5 @@ export class ViewTasks {
       )
     );
   }
-
-
 
 }
