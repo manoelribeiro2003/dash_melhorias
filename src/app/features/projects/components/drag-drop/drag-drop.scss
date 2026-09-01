@@ -1,24 +1,10 @@
 @use '@angular/material' as mat;
 $font-size: 14px;
-$grid-tabela: 40px 70px minmax(250px, 1fr) 140px 80px;
-
-.stages-container {
-  width: 100%;
-
-  // formatar o form field das etapas classe: name-col
-  @include mat.form-field-overrides((container-height: 30px,
-      container-vertical-padding: 8px,
-      outlined-focus-outline-width: 1px,
-      outlined-outline-color: #d1d5db,
-      container-text-size: $font-size ));
-
-}
+$grid-tabela: 40px 70px minmax(250px, 1fr) 240px 100px 80px;
 
 .table-header {
   display: grid;
   grid-template-columns: $grid-tabela;
-  // 40px 70px minmax(250px, 1fr) 160px 160px 140px 80px;
-
   gap: 12px;
   align-items: center;
   padding: 0 12px 12px;
@@ -26,6 +12,14 @@ $grid-tabela: 40px 70px minmax(250px, 1fr) 140px 80px;
   font-weight: 600;
   color: #4b5563;
   border-bottom: 1px solid #e5e7eb;
+
+  .header-acoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
 
 .drag-list {
@@ -44,6 +38,18 @@ $grid-tabela: 40px 70px minmax(250px, 1fr) 140px 80px;
   border-radius: 8px;
 
   transition: all 0.05s ease;
+
+  mat-form-field {
+    width: 100%;
+    height: 40px;
+    flex: 1;
+
+    @include mat.form-field-overrides((container-height: 40px,
+        container-vertical-padding: 10px,
+        outlined-focus-outline-width: 1px,
+        outlined-outline-color: #d1d5db,
+        container-text-size: 14px));
+  }
 
   &:hover {
     border-color: #d1d5db;

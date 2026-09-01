@@ -67,6 +67,12 @@ export class DialogNewProject {
       {
         nome: '',
         ordem: 1,
+        dataInicio: new Date(),
+        dataTermino: (() => {
+          const data = new Date;
+          data.setDate(data.getDate() + 4)
+          return data
+        })(),
         concluido: false,
       }
     ]

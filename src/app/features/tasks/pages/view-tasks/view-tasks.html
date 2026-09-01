@@ -7,7 +7,6 @@
     <div class="cards-container-status">
 
         @for (cardValue of cardValues; track cardValue) {
-
         <app-card-status-tasks [status]="cardValue.status" [value]="
                     cardValue.status === 'TotalDeProjetos'
                         ? projetos.length
@@ -19,9 +18,7 @@
                         ? projetos.filter(projeto => projeto.status == cardValue.status).length
                         : projetos.filter(projeto => projeto.atrasado == true).length
                 " [totalItens]="projetos.length" />
-
         }
-
     </div>
 
     <!-- TABELA-->
@@ -60,24 +57,20 @@
                                 @for (tarefa of projeto.tarefas; track tarefa.id) {
                                 <!-- ATIVIDADES DO PROJETO -->
                                 <div class="atividade">
-
                                     <!-- PRAZO -->
                                     <span class="atividade-prazo">
                                         {{ tarefa.dataInicio | date:'dd/MM' }} - {{ tarefa.dataTermino | date:'dd/MM' }}
                                     </span>
-
 
                                     <!-- ÍCONE -->
                                     <mat-icon class="atividade-icon">
                                         radio_button_unchecked
                                     </mat-icon>
 
-
                                     <!-- ATIVIDADE -->
                                     <span class="atividade-nome">
                                         {{ tarefa.nome }}
                                     </span>
-
                                 </div>
                                 }
                             </div>

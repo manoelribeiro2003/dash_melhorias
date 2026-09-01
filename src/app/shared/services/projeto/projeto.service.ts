@@ -30,7 +30,9 @@ export class ProjetoService {
                     .map((tarefa, index) => ({
                         nome: tarefa.nome?.trim() ?? '',
                         ordem: index + 1,
-                        concluido: tarefa.concluido
+                        concluido: tarefa.concluido,
+                        dataInicio: tarefa.dataInicio,
+                        dataTermino: tarefa.dataTermino,
                     }))
         }
 
@@ -71,15 +73,19 @@ export class ProjetoService {
             orcamento: projeto.orcamento,
             prioridade: projeto.prioridade,
             criadoPorId: projeto.criadoPor.id,
-            tarefas:
-                projeto.tarefas
-                    .filter(tarefa => tarefa.id !== undefined || tarefa.nome?.trim())
-                    .map((tarefa, index) => ({
+            tarefas: projeto.tarefas
+                .filter(tarefa => tarefa.id !== undefined || tarefa.nome?.trim())
+                .map((tarefa, index) => {
+                    const t: Tarefa = {
                         ...(tarefa.id !== undefined && { id: tarefa.id }),
                         nome: tarefa.nome?.trim() ?? '',
                         ordem: index + 1,
-                        concluido: tarefa.concluido
-                    }))
+                        concluido: tarefa.concluido,
+                        dataInicio: tarefa.dataInicio,
+                        dataTermino: tarefa.dataTermino
+                    };
+                    return t;
+                })
         }
 
         this.http.patch<ProjetoJson>(`${this.apiUrl}/projetos/${projeto.id}`, dados)
@@ -115,6 +121,9 @@ export class ProjetoService {
     private mapearProjetos(projetos: ProjetoJson[]): Projeto[] {
         return projetos.map(projeto => {
 
+            console.log(projeto);
+            
+
             const dataInicio = projeto.dataInicio?.split('-').map(Number)
             const dataTermino = projeto.dataTermino?.split('-').map(Number)
 
@@ -136,11 +145,11 @@ export class ProjetoService {
                         nome: tarefa.nome,
                         ordem: tarefa.ordem,
                         concluido: tarefa.concluido,
-                        dataInicio: dataInicio !== undefined ? new Date(dataInicio[0], dataInicio[1] - 1, dataInicio[2]) : undefined,
-                        dataTermino: dataTermino !== undefined ? new Date(dataTermino[0], dataTermino[1] - 1, dataTermino[2]) : undefined,
+                        dataInicio: new Date(dataInicio[0], dataInicio[1] - 1, dataInicio[2]),
+                        dataTermino: new Date(dataTermino[0], dataTermino[1] - 1, dataTermino[2]),
                         id: tarefa.id
                     }
-                    return tarefas
+                    return tarefas;
 
                 }),
                 tarefasConcluidas: projeto.tarefas.filter(tarefa => tarefa.concluido).length,

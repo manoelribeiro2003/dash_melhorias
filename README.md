@@ -53,9 +53,12 @@
 - Salvar os dados da tarefa no banco
 
 
-[x] - adicionei um matmenu para ver as opções que podem ser feitas sobre o projeto nessa tela
+[x] - adicionar um matmenu para ver as opções que podem ser feitas sobre o projeto nessa tela
 [x] - inserir o modal
 [x] - criar link para quando clicar no botão ver projeto ele abrir o modal
 [ ] - consertar o drag-drop da lista das etapas de modo que arraste apenas pelo botão drag
 [ ] - consertar o tamanho dos controles dentro do dialog
 [ ] - trazer os dados do projeto para o dialog
+
+--------------------MELHORIAS--------------------
+[ ] -   Mover botão  +Adicionar Tarefa do Drag And Drop Component para o card header alinhado na direita
