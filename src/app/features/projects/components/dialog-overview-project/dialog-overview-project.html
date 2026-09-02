@@ -95,7 +95,7 @@
     <mat-divider />
     <div class="div-etapas-projeto">
         <span class="label-etapas-projeto">Etapas do Projeto</span>
-        <app-drag-drop [tarefas]="projetoRecebido.tarefas" (tarefasAlteradas)="atualizarTarefas($event)" />
+        <app-drag-drop [tarefas]="projetoRecebido.tarefas" (tarefasEnviadas)="atualizarTarefas($event)" />
     </div>
 </mat-dialog-content>
 

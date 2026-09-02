@@ -121,9 +121,6 @@ export class ProjetoService {
     private mapearProjetos(projetos: ProjetoJson[]): Projeto[] {
         return projetos.map(projeto => {
 
-            console.log(projeto);
-            
-
             const dataInicio = projeto.dataInicio?.split('-').map(Number)
             const dataTermino = projeto.dataTermino?.split('-').map(Number)
 

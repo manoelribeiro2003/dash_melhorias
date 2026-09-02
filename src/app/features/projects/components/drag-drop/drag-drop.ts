@@ -1,6 +1,6 @@
 import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, input, output } from '@angular/core';
-import { FormControl, FormsModule } from '@angular/forms';
+import { Component, effect, input, output, signal } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
@@ -11,7 +11,10 @@ import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { v4 as uuidv4 } from 'uuid';
 
-const oi = ''
+type RangeForm = FormGroup<{
+  start: FormControl<Date | null>;
+  end: FormControl<Date | null>;
+}>;
 
 @Component({
   selector: 'app-drag-drop',
@@ -29,70 +32,335 @@ const oi = ''
     MatInputModule,
     FormsModule,
     MatDatepickerModule,
+    MatFormFieldModule, MatDatepickerModule, FormsModule, ReactiveFormsModule
   ],
 })
 export class DragDropComponent {
 
   readonly tarefas = input.required<Tarefa[]>();
-  readonly tarefasAlteradas = output<Tarefa[]>();
+
+  readonly tarefasEnviadas = output<Tarefa[]>();
 
 
+  /**
+   * Mantém um formulário independente para cada tarefa.
+   *
+   * id-10
+   * id-15
+   * temp-uuid...
+   */
+  readonly ranges = new Map<string, RangeForm>();
 
-  drop(event: CdkDragDrop<Tarefa[]>): void {
 
-    const tarefas = this.tarefas().map(tarefa => ({ ...tarefa }));
+  constructor() {
 
-    moveItemInArray(tarefas, event.previousIndex, event.currentIndex);
+    effect(() => {
 
-    const tarefasAtualizadas = tarefas.map((tarefa, index) => ({
-      ...tarefa,
-      ordem: index + 1
-    }));
+      const tarefas = this.tarefas();
 
-    this.tarefasAlteradas.emit(tarefasAtualizadas);
+      this.sincronizarRanges(tarefas);
+
+    });
+
   }
 
-  adicionarTarefa(): void {
 
-    const dataInicio = new Date();
-    const dataTermino = new Date();
-    dataTermino.setDate(dataTermino.getDate() + 4);
+  // ============================================================
+  // IDENTIDADE DA TAREFA
+  // ============================================================
 
-    const tarefas: Tarefa[] = [
-      ...this.tarefas(),
-      {
-        tempId: uuidv4(),
-        ordem: this.tarefas().length + 1,
-        nome: '',
-        dataInicio: dataInicio,
-        dataTermino: dataTermino,
-        concluido: false
-      }
-    ]
-    console.log(tarefas);
+  private getTarefaKey(tarefa: Tarefa): string {
 
-    this.tarefasAlteradas.emit(tarefas)
-  }
+    if (tarefa.id !== undefined) {
+      return `id-${tarefa.id}`;
+    }
 
-  atualizarTarefa(tarefa: Tarefa, alteracoes: Partial<Tarefa>): void {
-    const tarefas = this.tarefas().map(t =>
-      t === tarefa
-        ? { ...t, ...alteracoes }
-        : t
+    if (tarefa.tempId !== undefined) {
+      return `temp-${tarefa.tempId}`;
+    }
+
+    throw new Error(
+      'A tarefa precisa possuir id ou tempId.'
     );
 
-    this.tarefasAlteradas.emit(tarefas);
   }
 
-  excluirTarefa(tarefaExcluir: Tarefa): void {
 
-    const tarefas = this.tarefas()
-      .filter(tarefa => tarefa !== tarefaExcluir)
-      .map((tarefa, index) => ({
+  // ============================================================
+  // RANGE
+  // ============================================================
+
+  private criarRange(tarefa: Tarefa): RangeForm {
+
+    return new FormGroup({
+
+      start: new FormControl<Date | null>(
+        tarefa.dataInicio
+      ),
+
+      end: new FormControl<Date | null>(
+        tarefa.dataTermino
+      )
+
+    });
+
+  }
+
+
+  private sincronizarRanges(
+    tarefas: Tarefa[]
+  ): void {
+
+    const chavesAtuais = new Set<string>();
+
+
+    for (const tarefa of tarefas) {
+
+      const key = this.getTarefaKey(tarefa);
+
+      chavesAtuais.add(key);
+
+
+      if (!this.ranges.has(key)) {
+
+        this.ranges.set(
+          key,
+          this.criarRange(tarefa)
+        );
+
+      }
+
+    }
+
+
+    /**
+     * Remove os formulários de tarefas que
+     * não existem mais na lista.
+     */
+    for (const key of this.ranges.keys()) {
+
+      if (!chavesAtuais.has(key)) {
+
+        this.ranges.delete(key);
+
+      }
+
+    }
+
+  }
+
+
+  getRange(tarefa: Tarefa): RangeForm {
+
+    return this.ranges.get(
+      this.getTarefaKey(tarefa)
+    )!;
+
+  }
+
+
+  // ============================================================
+  // ATUALIZAR DATA DE INÍCIO
+  // ============================================================
+
+  atualizarDataInicio(
+    tarefa: Tarefa,
+    data: Date | null
+  ): void {
+
+    if (!data) {
+      return;
+    }
+
+
+    this.atualizarTarefa(
+      tarefa,
+      {
+        dataInicio: data
+      }
+    );
+
+  }
+
+
+  // ============================================================
+  // ATUALIZAR DATA DE TÉRMINO
+  // ============================================================
+
+  atualizarDataTermino(
+    tarefa: Tarefa,
+    data: Date | null
+  ): void {
+
+    if (!data) {
+      return;
+    }
+
+
+    this.atualizarTarefa(
+      tarefa,
+      {
+        dataTermino: data
+      }
+    );
+
+  }
+
+
+  // ============================================================
+  // ATUALIZAR TAREFA
+  // ============================================================
+
+  atualizarTarefa(
+    tarefaAtualizada: Tarefa,
+    alteracoes: Partial<Tarefa>
+  ): void {
+
+    const tarefasAtualizadas =
+      this.tarefas().map(tarefa => {
+
+        const mesmaTarefa =
+          tarefaAtualizada.id !== undefined
+            ? tarefa.id === tarefaAtualizada.id
+            : tarefa.tempId === tarefaAtualizada.tempId;
+
+
+        return mesmaTarefa
+          ? {
+            ...tarefa,
+            ...alteracoes
+          }
+          : tarefa;
+
+      });
+
+
+    this.tarefasEnviadas.emit(
+      tarefasAtualizadas
+    );
+
+  }
+
+
+  // ============================================================
+  // DRAG AND DROP
+  // ============================================================
+
+  drop(
+    event: CdkDragDrop<Tarefa[]>
+  ): void {
+
+    const tarefas =
+      this.tarefas().map(tarefa => ({
+        ...tarefa
+      }));
+
+
+    moveItemInArray(
+      tarefas,
+      event.previousIndex,
+      event.currentIndex
+    );
+
+
+    const tarefasAtualizadas =
+      tarefas.map((tarefa, index) => ({
         ...tarefa,
         ordem: index + 1
       }));
 
-    this.tarefasAlteradas.emit(tarefas);
+
+    this.tarefasEnviadas.emit(
+      tarefasAtualizadas
+    );
+
   }
+
+
+  // ============================================================
+  // ADICIONAR TAREFA
+  // ============================================================
+
+  adicionarTarefa(): void {
+
+    const tarefas = this.tarefas();
+
+
+    const dataInicio = new Date();
+
+
+    const dataTermino =
+      new Date(dataInicio);
+
+    dataTermino.setDate(
+      dataTermino.getDate() + 4
+    );
+
+
+    const novaTarefa: Tarefa = {
+
+      tempId: uuidv4(),
+
+      ordem: tarefas.length + 1,
+
+      nome: '',
+
+      concluido: false,
+
+      dataInicio,
+
+      dataTermino
+
+    };
+
+
+    const tarefasAtualizadas = [
+      ...tarefas,
+      novaTarefa
+    ];
+
+
+    this.tarefasEnviadas.emit(
+      tarefasAtualizadas
+    );
+
+  }
+
+
+  // ============================================================
+  // EXCLUIR TAREFA
+  // ============================================================
+
+  excluirTarefa(
+    tarefaExcluir: Tarefa
+  ): void {
+
+    const tarefas =
+      this.tarefas()
+        .filter(tarefa => {
+
+          if (tarefaExcluir.id !== undefined) {
+
+            return tarefa.id !== tarefaExcluir.id;
+
+          }
+
+          return tarefa.tempId !== tarefaExcluir.tempId;
+
+        });
+
+
+    const tarefasAtualizadas =
+      tarefas.map((tarefa, index) => ({
+        ...tarefa,
+        ordem: index + 1
+      }));
+
+
+    this.tarefasEnviadas.emit(
+      tarefasAtualizadas
+    );
+
+  }
+
 }
