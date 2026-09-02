@@ -17,6 +17,7 @@ import { UsuarioService } from '../../../../shared/services/usuario/usuario.serv
 import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
 import { Usuario } from '../../../../shared/models/usuario/usuario.interface';
 import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
+import { v4 as uuidv4 } from 'uuid';
 
 function obterSemanaAtual(): { inicio: Date; termino: Date } {
   const inicio = new Date();
@@ -26,7 +27,7 @@ function obterSemanaAtual(): { inicio: Date; termino: Date } {
 
   return {
     inicio,
-    termino
+    termino,
   };
 }
 
@@ -47,14 +48,14 @@ function obterSemanaAtual(): { inicio: Date; termino: Date } {
     MatSlideToggleModule,
     FormsModule,
     DragDropComponent,
-    MatSlideToggleModule
+    MatSlideToggleModule,
   ],
   templateUrl: './dialog-new-project.html',
   styleUrl: './dialog-new-project.scss',
 })
 export class DialogNewProject {
-  private usuariosService = inject(UsuarioService)
-  readonly usuarios = this.usuariosService.usuarios()
+  private usuariosService = inject(UsuarioService);
+  readonly usuarios = this.usuariosService.usuarios();
   private dialogRef = inject(MatDialogRef<DialogNewProject>);
   readonly projetosService = inject(ProjetoService);
 
@@ -65,17 +66,18 @@ export class DialogNewProject {
     prioridade: false,
     tarefas: [
       {
+        tempId: uuidv4(),
         nome: '',
         ordem: 1,
         dataInicio: new Date(),
         dataTermino: (() => {
-          const data = new Date;
-          data.setDate(data.getDate() + 4)
-          return data
+          const data = new Date();
+          data.setDate(data.getDate() + 4);
+          return data;
         })(),
         concluido: false,
-      }
-    ]
+      },
+    ],
   };
 
   compararUsuarios(usuario1: Usuario | null, usuario2: Usuario | null): boolean {
@@ -91,7 +93,7 @@ export class DialogNewProject {
   }
 
   salvarProjeto(): void {
-    this.projetosService.criarProjeto(this.novoProjeto)
+    this.projetosService.criarProjeto(this.novoProjeto);
 
     this.dialogRef.close();
   }

@@ -1,4 +1,10 @@
-import { CdkDrag, CdkDragDrop, CdkDragHandle, CdkDropList, moveItemInArray } from '@angular/cdk/drag-drop';
+import {
+  CdkDrag,
+  CdkDragDrop,
+  CdkDragHandle,
+  CdkDropList,
+  moveItemInArray,
+} from '@angular/cdk/drag-drop';
 import { Component, effect, input, output, signal } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -32,45 +38,30 @@ type RangeForm = FormGroup<{
     MatInputModule,
     FormsModule,
     MatDatepickerModule,
-    MatFormFieldModule, MatDatepickerModule, FormsModule, ReactiveFormsModule
+    MatFormFieldModule,
+    MatDatepickerModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
 })
 export class DragDropComponent {
-
   readonly tarefas = input.required<Tarefa[]>();
 
   readonly tarefasEnviadas = output<Tarefa[]>();
-
-
-  /**
-   * Mantém um formulário independente para cada tarefa.
-   *
-   * id-10
-   * id-15
-   * temp-uuid...
-   */
   readonly ranges = new Map<string, RangeForm>();
 
-
   constructor() {
-
     effect(() => {
-
       const tarefas = this.tarefas();
-
       this.sincronizarRanges(tarefas);
-
     });
-
   }
-
 
   // ============================================================
   // IDENTIDADE DA TAREFA
   // ============================================================
 
   private getTarefaKey(tarefa: Tarefa): string {
-
     if (tarefa.id !== undefined) {
       return `id-${tarefa.id}`;
     }
@@ -79,288 +70,152 @@ export class DragDropComponent {
       return `temp-${tarefa.tempId}`;
     }
 
-    throw new Error(
-      'A tarefa precisa possuir id ou tempId.'
-    );
-
+    throw new Error('A tarefa precisa possuir id ou tempId.');
   }
-
 
   // ============================================================
   // RANGE
   // ============================================================
 
   private criarRange(tarefa: Tarefa): RangeForm {
-
     return new FormGroup({
+      start: new FormControl<Date | null>(tarefa.dataInicio),
 
-      start: new FormControl<Date | null>(
-        tarefa.dataInicio
-      ),
-
-      end: new FormControl<Date | null>(
-        tarefa.dataTermino
-      )
-
+      end: new FormControl<Date | null>(tarefa.dataTermino),
     });
-
   }
 
-
-  private sincronizarRanges(
-    tarefas: Tarefa[]
-  ): void {
-
+  private sincronizarRanges(tarefas: Tarefa[]): void {
     const chavesAtuais = new Set<string>();
-
-
     for (const tarefa of tarefas) {
-
       const key = this.getTarefaKey(tarefa);
-
       chavesAtuais.add(key);
 
-
       if (!this.ranges.has(key)) {
-
-        this.ranges.set(
-          key,
-          this.criarRange(tarefa)
-        );
-
+        this.ranges.set(key, this.criarRange(tarefa));
       }
-
     }
-
 
     /**
      * Remove os formulários de tarefas que
      * não existem mais na lista.
      */
     for (const key of this.ranges.keys()) {
-
       if (!chavesAtuais.has(key)) {
-
         this.ranges.delete(key);
-
       }
-
     }
-
   }
-
 
   getRange(tarefa: Tarefa): RangeForm {
-
-    return this.ranges.get(
-      this.getTarefaKey(tarefa)
-    )!;
-
+    return this.ranges.get(this.getTarefaKey(tarefa))!;
   }
-
 
   // ============================================================
   // ATUALIZAR DATA DE INÍCIO
   // ============================================================
 
-  atualizarDataInicio(
-    tarefa: Tarefa,
-    data: Date | null
-  ): void {
-
+  atualizarDataInicio(tarefa: Tarefa, data: Date | null): void {
     if (!data) {
       return;
     }
 
-
-    this.atualizarTarefa(
-      tarefa,
-      {
-        dataInicio: data
-      }
-    );
-
+    this.atualizarTarefa(tarefa, { dataInicio: data });
   }
-
 
   // ============================================================
   // ATUALIZAR DATA DE TÉRMINO
   // ============================================================
 
-  atualizarDataTermino(
-    tarefa: Tarefa,
-    data: Date | null
-  ): void {
-
+  atualizarDataTermino(tarefa: Tarefa, data: Date | null): void {
     if (!data) {
       return;
     }
 
-
-    this.atualizarTarefa(
-      tarefa,
-      {
-        dataTermino: data
-      }
-    );
-
+    this.atualizarTarefa(tarefa, { dataTermino: data });
   }
-
 
   // ============================================================
   // ATUALIZAR TAREFA
   // ============================================================
 
-  atualizarTarefa(
-    tarefaAtualizada: Tarefa,
-    alteracoes: Partial<Tarefa>
-  ): void {
+  atualizarTarefa(tarefaAtualizada: Tarefa, alteracoes: Partial<Tarefa>): void {
+    const tarefasAtualizadas = this.tarefas().map((tarefa) => {
+      const mesmaTarefa =
+        tarefaAtualizada.id !== undefined
+          ? tarefa.id === tarefaAtualizada.id
+          : tarefa.tempId === tarefaAtualizada.tempId;
 
-    const tarefasAtualizadas =
-      this.tarefas().map(tarefa => {
+      return mesmaTarefa ? { ...tarefa, ...alteracoes } : tarefa;
+    });
 
-        const mesmaTarefa =
-          tarefaAtualizada.id !== undefined
-            ? tarefa.id === tarefaAtualizada.id
-            : tarefa.tempId === tarefaAtualizada.tempId;
-
-
-        return mesmaTarefa
-          ? {
-            ...tarefa,
-            ...alteracoes
-          }
-          : tarefa;
-
-      });
-
-
-    this.tarefasEnviadas.emit(
-      tarefasAtualizadas
-    );
-
+    this.tarefasEnviadas.emit(tarefasAtualizadas);
   }
-
 
   // ============================================================
   // DRAG AND DROP
   // ============================================================
 
-  drop(
-    event: CdkDragDrop<Tarefa[]>
-  ): void {
+  drop(event: CdkDragDrop<Tarefa[]>): void {
+    const tarefas = this.tarefas().map((tarefa) => ({
+      ...tarefa,
+    }));
 
-    const tarefas =
-      this.tarefas().map(tarefa => ({
-        ...tarefa
-      }));
+    moveItemInArray(tarefas, event.previousIndex, event.currentIndex);
 
+    const tarefasAtualizadas = tarefas.map((tarefa, index) => ({
+      ...tarefa,
+      ordem: index + 1,
+    }));
 
-    moveItemInArray(
-      tarefas,
-      event.previousIndex,
-      event.currentIndex
-    );
-
-
-    const tarefasAtualizadas =
-      tarefas.map((tarefa, index) => ({
-        ...tarefa,
-        ordem: index + 1
-      }));
-
-
-    this.tarefasEnviadas.emit(
-      tarefasAtualizadas
-    );
-
+    this.tarefasEnviadas.emit(tarefasAtualizadas);
   }
-
 
   // ============================================================
   // ADICIONAR TAREFA
   // ============================================================
 
   adicionarTarefa(): void {
-
     const tarefas = this.tarefas();
-
 
     const dataInicio = new Date();
 
+    const dataTermino = new Date(dataInicio);
 
-    const dataTermino =
-      new Date(dataInicio);
-
-    dataTermino.setDate(
-      dataTermino.getDate() + 4
-    );
-
+    dataTermino.setDate(dataTermino.getDate() + 4);
 
     const novaTarefa: Tarefa = {
-
       tempId: uuidv4(),
-
       ordem: tarefas.length + 1,
-
       nome: '',
-
       concluido: false,
-
       dataInicio,
-
-      dataTermino
-
+      dataTermino,
     };
 
+    const tarefasAtualizadas = [...tarefas, novaTarefa];
 
-    const tarefasAtualizadas = [
-      ...tarefas,
-      novaTarefa
-    ];
-
-
-    this.tarefasEnviadas.emit(
-      tarefasAtualizadas
-    );
-
+    this.tarefasEnviadas.emit(tarefasAtualizadas);
   }
-
 
   // ============================================================
   // EXCLUIR TAREFA
   // ============================================================
 
-  excluirTarefa(
-    tarefaExcluir: Tarefa
-  ): void {
+  excluirTarefa(tarefaExcluir: Tarefa): void {
+    const tarefas = this.tarefas().filter((tarefa) => {
+      if (tarefaExcluir.id !== undefined) {
+        return tarefa.id !== tarefaExcluir.id;
+      }
 
-    const tarefas =
-      this.tarefas()
-        .filter(tarefa => {
+      return tarefa.tempId !== tarefaExcluir.tempId;
+    });
 
-          if (tarefaExcluir.id !== undefined) {
+    const tarefasAtualizadas = tarefas.map((tarefa, index) => ({
+      ...tarefa,
+      ordem: index + 1,
+    }));
 
-            return tarefa.id !== tarefaExcluir.id;
-
-          }
-
-          return tarefa.tempId !== tarefaExcluir.tempId;
-
-        });
-
-
-    const tarefasAtualizadas =
-      tarefas.map((tarefa, index) => ({
-        ...tarefa,
-        ordem: index + 1
-      }));
-
-
-    this.tarefasEnviadas.emit(
-      tarefasAtualizadas
-    );
-
+    this.tarefasEnviadas.emit(tarefasAtualizadas);
   }
-
 }

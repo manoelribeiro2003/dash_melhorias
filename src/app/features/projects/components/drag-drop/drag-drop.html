@@ -1,5 +1,4 @@
 <div class="stages-container">
-
   <div class="table-header">
     <div class="header-drag"></div>
     <div class="header-ordem">Ordem</div>
@@ -10,121 +9,67 @@
   </div>
 
   <div cdkDropList class="drag-list" (cdkDropListDropped)="drop($event)">
+    @for (tarefa of tarefas(); track tarefa.id ?? tarefa.tempId) {
+      <div class="stage-row" cdkDrag>
+        <div class="drag-col" cdkDragHandle>
+          <mat-icon>drag_indicator</mat-icon>
+        </div>
 
-    @for (
-    tarefa of tarefas();
-    track tarefa.id ?? tarefa.tempId
-    ) {
+        <div class="order-col">{{ $index + 1 }}</div>
 
-    <div class="stage-row" cdkDrag>
+        <div class="name-col">
+          <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
+            <input
+              matInput
+              [ngModel]="tarefa.nome"
+              (ngModelChange)="atualizarTarefa(tarefa, { nome: $event })"
+              (keydown.enter)="$event.preventDefault(); adicionarTarefa()"
+            />
+          </mat-form-field>
+        </div>
 
-      <!-- Drag Handle -->
-      <div class="drag-col" cdkDragHandle>
-        <mat-icon>
-          drag_indicator
-        </mat-icon>
+        <div class="range-prazo">
+          <mat-form-field appearance="outline">
+            <mat-date-range-input [formGroup]="getRange(tarefa)" [rangePicker]="picker">
+              <input
+                matStartDate
+                formControlName="start"
+                placeholder="Início"
+                (dateChange)="atualizarDataInicio(tarefa, $event.value)"
+              />
+              <input
+                matEndDate
+                formControlName="end"
+                placeholder="Término"
+                (dateChange)="atualizarDataTermino(tarefa, $event.value)"
+              />
+            </mat-date-range-input>
+            <mat-datepicker-toggle matIconSuffix [for]="picker" />
+            <mat-date-range-picker #picker />
+          </mat-form-field>
+        </div>
+
+        <div class="status-col">
+          <mat-slide-toggle
+            [ngModel]="tarefa.concluido"
+            (ngModelChange)="atualizarTarefa(tarefa, { concluido: $event })"
+          />
+          <span>{{ tarefa.concluido ? 'Sim' : 'Não' }}</span>
+        </div>
+
+        <div class="actions-col">
+          <button
+            class="button-delete"
+            mat-icon-button
+            color="warn"
+            type="button"
+            (click)="excluirTarefa(tarefa)"
+          >
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </div>
       </div>
-
-
-      <!-- Ordem -->
-      <div class="order-col">
-        {{ $index + 1 }}
-      </div>
-
-
-      <!-- Nome -->
-      <div class="name-col">
-
-        <mat-form-field appearance="outline" subscriptSizing="dynamic" class="compact-field">
-
-          <input matInput [ngModel]="tarefa.nome" (ngModelChange)="
-              atualizarTarefa(
-                tarefa,
-                { nome: $event }
-              )
-            " (keydown.enter)="
-              $event.preventDefault();
-              adicionarTarefa()
-            ">
-
-        </mat-form-field>
-
-      </div>
-
-
-      <!-- Prazo -->
-      <div class="range-prazo">
-
-        <mat-form-field appearance="outline">
-
-          <mat-date-range-input [formGroup]="getRange(tarefa)" [rangePicker]="picker">
-
-            <!-- Início -->
-            <input matStartDate formControlName="start" placeholder="Início" (dateChange)="
-                atualizarDataInicio(
-                  tarefa,
-                  $event.value
-                )
-              ">
-
-
-            <!-- Término -->
-            <input matEndDate formControlName="end" placeholder="Término" (dateChange)="
-                atualizarDataTermino(
-                  tarefa,
-                  $event.value
-                )
-              ">
-
-          </mat-date-range-input>
-
-
-          <mat-datepicker-toggle matIconSuffix [for]="picker" />
-
-
-          <mat-date-range-picker #picker />
-
-        </mat-form-field>
-
-      </div>
-
-
-      <!-- Status -->
-      <div class="status-col">
-
-        <mat-slide-toggle [ngModel]="tarefa.concluido" (ngModelChange)="
-            atualizarTarefa(
-              tarefa,
-              {
-                concluido: $event
-              }
-            )
-          " />
-
-        <span>
-          {{ tarefa.concluido ? 'Sim' : 'Não' }}
-        </span>
-
-      </div>
-
-
-      <!-- Ações -->
-      <div class="actions-col">
-
-        <button class="button-delete" mat-icon-button color="warn" type="button" (click)="excluirTarefa(tarefa)">
-
-          <mat-icon>
-            delete_outline
-          </mat-icon>
-
-        </button>
-
-      </div>
-
-    </div>
-
     }
-
   </div>
   <div class="add-task">
     <button mat-stroked-button type="button" (click)="adicionarTarefa()">
