@@ -8,7 +8,6 @@
   background: #f7f9fc;
 }
 
-
 /* =========================================
    SIDENAV
 ========================================= */
@@ -21,19 +20,12 @@
 
   color: #ffffff;
 
-  background:
-    linear-gradient(
-      180deg,
-      #071a31 0%,
-      #081b32 55%,
-      #07182d 100%
-    );
+  background: linear-gradient(180deg, #071a31 0%, #081b32 55%, #07182d 100%);
 
   box-shadow: none;
 
   overflow: hidden;
 }
-
 
 /* =========================================
    LOGO
@@ -62,14 +54,9 @@
 
   border-radius: 8px;
 
-  background: linear-gradient(
-    135deg,
-    #7b35f5,
-    #4c1dcc
-  );
+  background: linear-gradient(135deg, #7b35f5, #4c1dcc);
 
-  box-shadow:
-    0 6px 18px rgba(80, 38, 200, 0.35);
+  box-shadow: 0 6px 18px rgba(80, 38, 200, 0.35);
 }
 
 .brand-logo mat-icon {
@@ -103,7 +90,6 @@
   font-size: 12px;
   line-height: 16px;
 }
-
 
 /* =========================================
    MENU
@@ -163,175 +149,166 @@
   color: #ffffff;
 }
 
-
 /* ITEM ATIVO */
 
 .menu-item.active {
   color: #ffffff;
 
-  background: linear-gradient(
-    90deg,
-    #5925db 0%,
-    #5422d3 100%
-  );
+  background: linear-gradient(90deg, #5925db 0%, #5422d3 100%);
 
-  box-shadow:
-    0 5px 14px rgba(67, 30, 183, 0.22);
+  box-shadow: 0 5px 14px rgba(67, 30, 183, 0.22);
 }
 
 .menu-item.active mat-icon {
   color: #ffffff;
 }
 
-
 /* =========================================
    ATALHOS
 ========================================= */
 
-.shortcuts {
-  margin: 28px 12px 0;
+// .shortcuts {
+//   margin: 28px 12px 0;
 
-  padding-top: 20px;
+//   padding-top: 20px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
+//   border-top: 1px solid rgba(255, 255, 255, 0.08);
+// }
 
-.section-title {
-  padding: 0 12px 12px;
+// .section-title {
+//   padding: 0 12px 12px;
 
-  color: #8798af;
+//   color: #8798af;
 
-  font-size: 11px;
-  font-weight: 500;
+//   font-size: 11px;
+//   font-weight: 500;
 
-  letter-spacing: 0.3px;
-}
+//   letter-spacing: 0.3px;
+// }
 
-.shortcut-item {
-  height: 36px;
+// .shortcut-item {
+//   height: 36px;
 
-  display: flex;
-  align-items: center;
+//   display: flex;
+//   align-items: center;
 
-  padding: 0 12px;
+//   padding: 0 12px;
 
-  color: #c4d0df;
+//   color: #c4d0df;
 
-  text-decoration: none;
+//   text-decoration: none;
 
-  font-size: 12px;
+//   font-size: 12px;
 
-  border-radius: 6px;
+//   border-radius: 6px;
 
-  transition:
-    background 150ms ease,
-    color 150ms ease;
-}
+//   transition:
+//     background 150ms ease,
+//     color 150ms ease;
+// }
 
-.shortcut-item mat-icon {
-  width: 18px;
-  height: 18px;
+// .shortcut-item mat-icon {
+//   width: 18px;
+//   height: 18px;
 
-  margin-right: 14px;
+//   margin-right: 14px;
 
-  font-size: 18px;
+//   font-size: 18px;
 
-  color: #aebdce;
-}
+//   color: #aebdce;
+// }
 
-.shortcut-item:hover {
-  color: #ffffff;
+// .shortcut-item:hover {
+//   color: #ffffff;
 
-  background: rgba(255, 255, 255, 0.05);
-}
+//   background: rgba(255, 255, 255, 0.05);
+// }
 
-.shortcut-item:hover mat-icon {
-  color: #ffffff;
-}
-
+// .shortcut-item:hover mat-icon {
+//   color: #ffffff;
+// }
 
 /* =========================================
    USUÁRIO
 ========================================= */
 
-.user-area {
-  position: absolute;
+// .user-area {
+//   position: absolute;
 
-  left: 12px;
-  right: 12px;
-  bottom: 18px;
+//   left: 12px;
+//   right: 12px;
+//   bottom: 18px;
 
-  display: flex;
-  align-items: center;
+//   display: flex;
+//   align-items: center;
 
-  padding-top: 18px;
+//   padding-top: 18px;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
+//   border-top: 1px solid rgba(255, 255, 255, 0.08);
+// }
 
-.user-avatar {
-  width: 38px;
-  height: 38px;
+// .user-avatar {
+//   width: 38px;
+//   height: 38px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
 
-  flex-shrink: 0;
+//   flex-shrink: 0;
 
-  border-radius: 50%;
+//   border-radius: 50%;
 
-  color: #ffffff;
+//   color: #ffffff;
 
-  font-size: 12px;
-  font-weight: 700;
+//   font-size: 12px;
+//   font-weight: 700;
 
-  background:
-    linear-gradient(
-      135deg,
-      #d8a77d,
-      #72513d
-    );
+//   background:
+//     linear-gradient(
+//       135deg,
+//       #d8a77d,
+//       #72513d
+//     );
 
-  border: 2px solid rgba(255, 255, 255, 0.15);
-}
+//   border: 2px solid rgba(255, 255, 255, 0.15);
+// }
 
-.user-info {
-  min-width: 0;
+// .user-info {
+//   min-width: 0;
 
-  margin-left: 10px;
-}
+//   margin-left: 10px;
+// }
 
-.user-name {
-  color: #ffffff;
+// .user-name {
+//   color: #ffffff;
 
-  font-size: 12px;
-  font-weight: 600;
+//   font-size: 12px;
+//   font-weight: 600;
 
-  white-space: nowrap;
-}
+//   white-space: nowrap;
+// }
 
-.user-role {
-  margin-top: 2px;
+// .user-role {
+//   margin-top: 2px;
 
-  color: #94a6bc;
+//   color: #94a6bc;
 
-  font-size: 10px;
+//   font-size: 10px;
 
-  white-space: nowrap;
-}
+//   white-space: nowrap;
+// }
 
-.user-arrow {
-  width: 18px;
-  height: 18px;
+// .user-arrow {
+//   width: 18px;
+//   height: 18px;
 
-  margin-left: auto;
+//   margin-left: auto;
 
-  color: #9badc2;
+//   color: #9badc2;
 
-  font-size: 18px;
-}
-
+//   font-size: 18px;
+// }
 
 /* =========================================
    CONTEÚDO
@@ -343,23 +320,18 @@
   background: #f7f9fc;
 }
 
-
 /* =========================================
    RESPONSIVO
 ========================================= */
 
 @media (max-width: 900px) {
-
   .app-sidenav {
     width: 220px;
   }
-
 }
 
 @media (max-width: 600px) {
-
   .app-sidenav {
     width: 260px;
   }
-
 }

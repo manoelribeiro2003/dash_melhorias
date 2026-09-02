@@ -1,28 +1,29 @@
 <mat-sidenav-container class="app-container">
-    <mat-sidenav #sidenav class="app-sidenav" mode="side" opened>
-        <div class="brand">
-            <div class="brand-logo">
-                <mat-icon>donut_large</mat-icon>
-            </div>
-            <div class="brand-info">
-                <div class="brand-name">
-                    ProGestão
-                </div>
-                <div class="brand-description">
-                    Gestão de Projetos
-                </div>
-            </div>
-        </div>
-        <nav class="main-menu">
-            @for (item of menuItems; track item.route) {
-            <a class="menu-item" [routerLink]="item.route" routerLinkActive="active" router
-                [routerLinkActiveOptions]="{ exact: item.exact}">
-                <mat-icon>{{ item.icon }}</mat-icon>
-                <span>{{ item.label }}</span>
-            </a>
-            }
-        </nav>
-        <!-- <div class="shortcuts">
+  <mat-sidenav #sidenav class="app-sidenav" mode="side" opened>
+    <div class="brand">
+      <div class="brand-logo">
+        <mat-icon>donut_large</mat-icon>
+      </div>
+      <div class="brand-info">
+        <div class="brand-name">ProGestão</div>
+        <div class="brand-description">Gestão de Projetos</div>
+      </div>
+    </div>
+    <nav class="main-menu">
+      @for (item of menuItems; track item.route) {
+        <a
+          class="menu-item"
+          [routerLink]="item.route"
+          routerLinkActive="active"
+          router
+          [routerLinkActiveOptions]="{ exact: item.exact }"
+        >
+          <mat-icon>{{ item.icon }}</mat-icon>
+          <span>{{ item.label }}</span>
+        </a>
+      }
+    </nav>
+    <!-- <div class="shortcuts">
             <div class="section-title">
                 ATALHOS
             </div>
@@ -48,9 +49,9 @@
             </div>
             <mat-icon class="user-arrow">keyboard_arrow_down</mat-icon>
         </div> -->
-    </mat-sidenav>
-    <mat-sidenav-content class="app-content">
-        <app-toobar [title]="title" [description]="description"/>
-        <router-outlet />
-    </mat-sidenav-content>
+  </mat-sidenav>
+  <mat-sidenav-content class="app-content">
+    <app-toobar [title]="title" [description]="description" />
+    <router-outlet />
+  </mat-sidenav-content>
 </mat-sidenav-container>
