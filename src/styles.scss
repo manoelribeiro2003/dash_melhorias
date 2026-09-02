@@ -1,18 +1,53 @@
 @use './reset.scss';
 @use '@angular/material' as mat;
-@import "tailwindcss";
+@use 'tailwindcss';
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/public/fonts/roboto/Roboto-300.woff2') format('woff2');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto/Roboto-400.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/roboto/Roboto-500.woff2') format('woff2');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/material-icons/MaterialIcons-Regular.woff2') format('woff2');
+}
 
 html {
-  @include mat.theme((color: (primary: mat.$azure-palette,
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
         tertiary: mat.$blue-palette,
       ),
       typography: Roboto,
       density: 0,
-    ));
+    )
+  );
 
-    @include mat.dialog-overrides((
-    container-color: #fff,
-    container-shape: 10px,
-    container-elevation-shadow: 0 12px 40px rgba(0, 0, 0, 0.35)
-  ));
+  @include mat.dialog-overrides(
+    (
+      container-color: #fff,
+      container-shape: 10px,
+      container-elevation-shadow: 0 12px 40px rgba(0, 0, 0, 0.35),
+    )
+  );
+
+  .mat-icon {
+    font-family: 'Material Icons' !important;
+  }
 }

@@ -1,22 +1,32 @@
 <div class="main">
-    <div class="app-card-status-container">
-        @for (cardValue of cardValues; track cardValue) {
-        <app-card-status-project
-            [status]="cardValue.status"
-            [value]="cardValue.status === 'TotalItens'
+  <div class="app-card-status-container">
+    @for (
+      cardValue of cardValues.filter(
+        (card) => !card.atrasado || projetos().some((projeto) => projeto.atrasado)
+      );
+      track cardValue
+    ) {
+      <app-card-status-project
+        [status]="cardValue.status"
+        [value]="
+          cardValue.status === 'TotalItens'
             ? projetos().length
             : cardValue.atrasado
-                ? projetos().filter(projeto => projeto.atrasado == true).length
-                : projetos().filter(projeto => projeto.status === cardValue.status).length"
-            [icon]="cardValue.icon" 
-            [title]="cardValue.title"
-            [itensConcluidos]=" !cardValue.atrasado
-            ? projetos().filter(projeto => projeto.status == cardValue.status).length
-            : projetos().filter(projeto => projeto.atrasado == true).length"
-            [totalItens]="projetos().length" />
-        }
-    </div>
-    <div class="app-projects-card-container">
-        <app-projects-card/>
-    </div>
+              ? projetos().filter((projeto) => projeto.atrasado).length
+              : projetos().filter((projeto) => projeto.status === cardValue.status).length
+        "
+        [icon]="cardValue.icon"
+        [title]="cardValue.title"
+        [itensConcluidos]="
+          !cardValue.atrasado
+            ? projetos().filter((projeto) => projeto.status === cardValue.status).length
+            : projetos().filter((projeto) => projeto.atrasado).length
+        "
+        [totalItens]="projetos().length"
+      />
+    }
+  </div>
+  <div class="app-projects-card-container">
+    <app-projects-card />
+  </div>
 </div>

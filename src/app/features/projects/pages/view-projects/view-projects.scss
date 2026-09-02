@@ -1,26 +1,27 @@
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    flex: 1;
-    padding-inline: 30px;
-    padding-top: 10px;
-    padding-bottom: 30px;
-    gap: 20px;
-    background-color: #F7FAFE;
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1;
+  padding-inline: 30px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  gap: 20px;
+  background-color: #f7fafe;
 }
 
-.app-card-status-container{
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    justify-content: space-between;
+.app-card-status-container {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: center;
+  gap: 3rem;
 }
-.app-projects-card-container{
-    flex: 1;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+.app-projects-card-container {
+  flex: 1;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-.card{
-    background-color: #fff;
+.card {
+  background-color: #fff;
 }

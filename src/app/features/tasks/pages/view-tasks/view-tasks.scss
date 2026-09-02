@@ -24,12 +24,9 @@
 
 .cards-container-status {
   display: flex;
-  flex-direction: row;
-
-  justify-content: center;
-
   flex: 1;
-
+  flex-direction: row;
+  justify-content: center;
   gap: 3rem;
 }
 
