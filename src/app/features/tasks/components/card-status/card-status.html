@@ -10,16 +10,21 @@
       </div>
     </div>
     @if (status() !== 'TotalItens') {
-    <div class="progress-container">
-      <span class="progress-percentage">{{ totalItens() > 0? ((itensConcluidos() / totalItens()) * 100).toFixed(0): 0}}% do Total</span>
-      <div class="progress-info">
-        <div class="progress-bar">
-          <div class="progress-fill" [style.width.%]="totalItens() > 0? (itensConcluidos() / totalItens()) * 100: 0">
+      <div class="progress-container">
+        <span class="progress-percentage"
+          >{{ totalItens() > 0 ? ((itensConcluidos() / totalItens()) * 100).toFixed(0) : 0 }}% do
+          Total</span
+        >
+        <div class="progress-info">
+          <div class="progress-bar">
+            <div
+              class="progress-fill"
+              [style.width.%]="totalItens() > 0 ? (itensConcluidos() / totalItens()) * 100 : 0"
+            ></div>
           </div>
+          <span class="progress-text">{{ itensConcluidos() }} / {{ totalItens() }}</span>
         </div>
-        <span class="progress-text">{{ itensConcluidos() }} / {{ totalItens() }}</span>
       </div>
-    </div>
     }
   </mat-card-content>
 </mat-card>

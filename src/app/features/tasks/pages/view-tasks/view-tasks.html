@@ -1,7 +1,10 @@
 <div class="main">
   <!-- CARDS DE STATUS -->
   <div class="cards-container-status">
-    @for (cardValue of cardValues; track cardValue) {
+    @for (
+      cardValue of cardValues.filter((card) => !card.atrasado || indicadores.atrasadas > 0);
+      track cardValue
+    ) {
       <app-card-status-tasks
         [status]="cardValue.status"
         [value]="

@@ -99,22 +99,26 @@ export class ViewTasks {
     ),
   );
 
-  protected readonly indicadores = (() => {
-    const total = this.tarefas.length;
-    const concluidas = this.tarefas.filter((tarefa) => tarefa.concluido).length;
-    const atrasadas = this.tarefas.filter(
-      (tarefa) => !tarefa.concluido && tarefa.dataTermino < this.segunda,
-    ).length;
-    const emAndamento = this.tarefas.filter(
-      (tarefa) => !tarefa.concluido && tarefa.dataTermino >= this.segunda,
-    ).length;
-    return {
-      total,
-      concluidas,
-      atrasadas,
-      emAndamento,
-    };
-  })();
+  protected indicadores = this.tarefas.reduce(
+    (acc, tarefa) => {
+      acc.total++;
+      if (tarefa.concluido) {
+        acc.concluidas++;
+      } else {
+        acc.emAndamento++;
+        if (tarefa.dataTermino < this.segunda) {
+          acc.atrasadas++;
+        }
+      }
+      return acc;
+    },
+    {
+      total: 0,
+      concluidas: 0,
+      atrasadas: 0,
+      emAndamento: 0,
+    },
+  );
 
   protected cardValues: CardValues[] = [
     { icon: 'totalProjetos', title: 'Tarefas da Semana', status: 'TotalItens' },
