@@ -29,7 +29,7 @@ export class ViewProjects {
   projetos = this.projetosService.projetos;
 
   cardValues: CardValues[] = [
-    {icon: "totalProjetos", title: "Total de Projetos", status: 'TotalDeProjetos'},
+    {icon: "totalProjetos", title: "Total de Projetos", status: 'TotalItens'},
     {icon: "emAndamento", title: "Em Andamento", status: 'Em andamento'},
     {icon: "concluidos", title: "Concluídos", status: 'Concluída' },
     {icon: "naoIniciados", title: "Não Iniciados", status: 'Não iniciado' },

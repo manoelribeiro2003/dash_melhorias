@@ -1,92 +1,101 @@
 <div class="main">
+  <!-- CARDS DE STATUS -->
+  <div class="cards-container-status">
+    @for (cardValue of cardValues; track cardValue) {
+      <app-card-status-tasks
+        [status]="cardValue.status"
+        [value]="
+          cardValue.status === 'TotalItens'
+            ? indicadores.total
+            : cardValue.status === 'Concluída'
+              ? indicadores.concluidas
+              : cardValue.atrasado
+                ? indicadores.atrasadas
+                : indicadores.emAndamento
+        "
+        [icon]="cardValue.icon"
+        [title]="cardValue.title"
+        [itensConcluidos]="indicadores.concluidas"
+        [totalItens]="indicadores.total"
+      />
+    }
+  </div>
 
-    <!-- =============================== -->
-    <!-- CARDS DE STATUS                  -->
-    <!-- =============================== -->
+  <!-- TABELA -->
 
-    <div class="cards-container-status">
+  <div class="container-table">
+    <table mat-table [dataSource]="dataSource" class="tabela-projetos">
+      <!-- PESSOA -->
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef class="coluna-pessoa">Pessoa</th>
+        <td mat-cell *matCellDef="let pessoaProjeto" class="coluna-pessoa">
+          <div class="pessoa">
+            <div class="pessoa-avatar">{{ pessoaProjeto.nome.charAt(0).toUpperCase() }}</div>
+            <span class="pessoa-nome">{{ pessoaProjeto.nome }}</span>
+          </div>
+        </td>
+      </ng-container>
 
-        @for (cardValue of cardValues; track cardValue) {
-        <app-card-status-tasks [status]="cardValue.status" [value]="
-                    cardValue.status === 'TotalDeProjetos'
-                        ? projetos.length
-                        : cardValue.atrasado
-                            ? projetos.filter(projeto => projeto.atrasado == true).length
-                            : projetos.filter(projeto => projeto.status === cardValue.status).length
-                " [icon]="cardValue.icon" [title]="cardValue.title" [itensConcluidos]="
-                    !cardValue.atrasado
-                        ? projetos.filter(projeto => projeto.status == cardValue.status).length
-                        : projetos.filter(projeto => projeto.atrasado == true).length
-                " [totalItens]="projetos.length" />
-        }
-    </div>
+      <!-- ATIVIDADES + PRAZO -->
+      <ng-container matColumnDef="atividades">
+        <th mat-header-cell *matHeaderCellDef class="coluna-atividades">Atividades da Semana</th>
+        <td mat-cell *matCellDef="let pessoaProjeto" class="coluna-atividades">
+          <div class="lista-projetos">
+            <!-- PROJETO -->
+            @for (projeto of pessoaProjeto.projetos; track projeto.id) {
+              <ng-container>
+                <div class="projeto-grupo">
+                  <!-- NOME DO PROJETO -->
+                  <div class="projeto">
+                    <mat-icon class="projeto-icon">folder</mat-icon>
+                    <span class="projeto-nome">{{ projeto.nome }}</span>
+                  </div>
 
-    <!-- TABELA-->
+                  @for (tarefa of projeto.tarefas; track tarefa.id) {
+                    <!-- ATIVIDADES DO PROJETO -->
+                    <div class="atividade">
+                      <!-- PRAZO -->
+                      <span class="atividade-prazo">
+                        {{ tarefa.dataTermino | date: 'dd/MM' }}
+                      </span>
 
-    <div class="container-table">
-        <table mat-table [dataSource]="dataSource" class="tabela-projetos">
-
-            <!-- PESSOA -->
-            <ng-container matColumnDef="nome">
-                <th mat-header-cell *matHeaderCellDef class="coluna-pessoa">Pessoa</th>
-                <td mat-cell *matCellDef="let pessoaProjeto" class="coluna-pessoa">
-                    <div class="pessoa">
-                        <div class="pessoa-avatar">{{ pessoaProjeto.nome.charAt(0).toUpperCase() }}</div>
-                        <span class="pessoa-nome">{{ pessoaProjeto.nome }}</span>
-                    </div>
-                </td>
-            </ng-container>
-
-            <!-- ATIVIDADES + PRAZO -->
-            <ng-container matColumnDef="atividades">
-                <th mat-header-cell *matHeaderCellDef class="coluna-atividades">Atividades da Semana</th>
-                <td mat-cell *matCellDef="let pessoaProjeto" class="coluna-atividades">
-                    <div class="lista-projetos">
-
-                        <!-- PROJETO -->
-                        @for (projeto of pessoaProjeto.projetos; track projeto.id) {
-                        <ng-container>
-                            <div class="projeto-grupo">
-
-                                <!-- NOME DO PROJETO -->
-                                <div class="projeto">
-                                    <mat-icon class="projeto-icon">folder</mat-icon>
-                                    <span class="projeto-nome">{{ projeto.nome }}</span>
-                                </div>
-
-                                @for (tarefa of projeto.tarefas; track tarefa.id) {
-                                <!-- ATIVIDADES DO PROJETO -->
-                                <div class="atividade">
-                                    <!-- PRAZO -->
-                                    <span class="atividade-prazo">
-                                        {{ tarefa.dataInicio | date:'dd/MM' }} - {{ tarefa.dataTermino | date:'dd/MM' }}
-                                    </span>
-
-                                    <!-- ÍCONE -->
-                                    <mat-icon class="atividade-icon">
-                                        radio_button_unchecked
-                                    </mat-icon>
-
-                                    <!-- ATIVIDADE -->
-                                    <span class="atividade-nome">
-                                        {{ tarefa.nome }}
-                                    </span>
-                                </div>
-                                }
-                            </div>
-                        </ng-container>
+                      <!-- ÍCONE -->
+                      <mat-icon
+                        class="atividade-icon"
+                        [ngClass]="
+                          tarefa.concluido
+                            ? 'concluida'
+                            : tarefa.dataTermino < segunda
+                              ? 'atrasada'
+                              : 'nao-concluida'
+                        "
+                      >
+                        @if (tarefa.concluido) {
+                          {{ 'check_circle' }}
+                        } @else if (tarefa.dataTermino < segunda) {
+                          {{ 'error' }}
+                        } @else {
+                          {{ 'play_circle' }}
                         }
+                      </mat-icon>
 
+                      <!-- ATIVIDADE -->
+                      <span class="atividade-nome">
+                        {{ tarefa.nome }}
+                      </span>
                     </div>
-                </td>
-            </ng-container>
+                  }
+                </div>
+              </ng-container>
+            }
+          </div>
+        </td>
+      </ng-container>
 
-            <!-- HEADER -->
-            <tr mat-header-row *matHeaderRowDef="['nome', 'atividades']"></tr>
-            <!-- ROW -->
-            <tr mat-row *matRowDef="let row;columns: ['nome', 'atividades']"></tr>
-
-        </table>
-    </div>
-
+      <!-- HEADER -->
+      <tr mat-header-row *matHeaderRowDef="['nome', 'atividades']"></tr>
+      <!-- ROW -->
+      <tr mat-row *matRowDef="let row; columns: ['nome', 'atividades']"></tr>
+    </table>
+  </div>
 </div>

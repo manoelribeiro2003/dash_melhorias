@@ -16,7 +16,6 @@
   box-sizing: border-box;
 }
 
-
 /* =========================================
    ÁREA DE SCROLL DA TABELA
    ========================================= */
@@ -35,7 +34,6 @@
 
   box-sizing: border-box;
 }
-
 
 /* =========================================
    TABELA
@@ -61,7 +59,6 @@
   box-sizing: border-box;
 }
 
-
 /* =========================================
    CABEÇALHO
    ========================================= */
@@ -85,7 +82,6 @@
   border-bottom: 1px solid #edf0f5;
 }
 
-
 /* =========================================
    LINHAS
    ========================================= */
@@ -99,7 +95,6 @@
 .project-row:hover {
   background-color: #fafbfc;
 }
-
 
 /* =========================================
    CÉLULAS
@@ -116,7 +111,6 @@
 
   box-sizing: border-box;
 }
-
 
 /* =========================================
    PROJETO
@@ -175,7 +169,6 @@
   white-space: nowrap;
 }
 
-
 /* =========================================
    RESPONSÁVEL
    ========================================= */
@@ -201,7 +194,6 @@
 
   white-space: nowrap;
 }
-
 
 /* =========================================
    STATUS
@@ -241,7 +233,6 @@
   background: #fef3c7;
 }
 
-
 /* =========================================
    DATAS
    ========================================= */
@@ -273,7 +264,6 @@
 
   background-color: #fd6161;
 }
-
 
 /* =========================================
    PROGRESSO
@@ -310,12 +300,7 @@
 
   border-radius: 999px;
 
-  background: linear-gradient(
-    90deg,
-    #a7e8c2 0%,
-    #4fbd7e 50%,
-    #24935c 100%
-  );
+  background: linear-gradient(90deg, #a7e8c2 0%, #4fbd7e 50%, #24935c 100%);
 
   transition: width 0.3s ease;
 }
@@ -327,7 +312,6 @@
 
   white-space: nowrap;
 }
-
 
 /* =========================================
    AÇÕES
@@ -351,7 +335,6 @@ mat-icon.mat-icon-open-dialog {
   color: var(--mat-sys-primary);
 }
 
-
 /* =========================================
    PAGINATOR
    ========================================= */
@@ -363,7 +346,6 @@ mat-paginator {
 
   box-sizing: border-box;
 }
-
 
 /* =========================================
    CONTAINER PRINCIPAL
@@ -385,7 +367,6 @@ mat-paginator {
   box-sizing: border-box;
 }
 
-
 /* =========================================
    CONTAINER DOS CARDS
    ========================================= */
@@ -393,8 +374,7 @@ mat-paginator {
 .cards-container {
   display: grid;
 
-  grid-template-columns:
-    repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 
   gap: 16px;
 
@@ -407,7 +387,6 @@ mat-paginator {
   box-sizing: border-box;
 }
 
-
 /*
  * IMPORTANTE:
  * Impede que um componente filho
@@ -419,7 +398,6 @@ mat-paginator {
 
   max-width: 100%;
 }
-
 
 /* =========================================
    TABLE CONTAINER
@@ -435,7 +413,6 @@ mat-paginator {
   box-sizing: border-box;
 }
 
-
 /* =========================================
    RESPONSIVIDADE DOS CARDS
    ========================================= */
@@ -445,54 +422,42 @@ mat-paginator {
  */
 
 @media (max-width: 1200px) {
-
   .cards-container {
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 
     gap: 14px;
   }
-
 }
-
 
 /*
  * Tablet
  */
 
 @media (max-width: 800px) {
-
   .cards-container {
-    grid-template-columns:
-      repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 
     gap: 12px;
   }
-
 }
-
 
 /*
  * Celular
  */
 
 @media (max-width: 500px) {
-
   .cards-container {
     grid-template-columns: 1fr;
 
     gap: 12px;
   }
-
 }
-
 
 /* =========================================
    TELAS MUITO PEQUENAS
    ========================================= */
 
 @media (max-width: 400px) {
-
   .project-header-cell {
     padding: 0 12px;
   }
@@ -500,5 +465,4 @@ mat-paginator {
   .project-data-cell {
     padding: 0 12px;
   }
-
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, effect, inject, input, signal, viewChild, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, inject, input, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
@@ -27,13 +27,12 @@ import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
     MatDividerModule,
     MatDialogModule,
     CurrencyPipe,
-    MatSortModule
+    MatSortModule,
   ],
   templateUrl: './table-projects.html',
   styleUrl: './table-projects.scss',
 })
 export class TableProjects implements AfterViewInit {
-
   readonly projetosService = inject(ProjetoService);
   readonly dataSource = new MatTableDataSource<Projeto>(this.projetosService.projetos());
   @ViewChild(MatPaginator) readonly paginator!: MatPaginator;
@@ -46,7 +45,7 @@ export class TableProjects implements AfterViewInit {
   constructor() {
     effect(() => {
       this.aplicarFiltros();
-    })
+    });
   }
 
   ngAfterViewInit(): void {
@@ -57,36 +56,26 @@ export class TableProjects implements AfterViewInit {
   private aplicarFiltros(): void {
     const projetos = this.projetosService.projetos();
 
-    this.dataSource.data = projetos.filter(projeto => {
-
+    this.dataSource.data = projetos.filter((projeto) => {
       const categoriaOk = !this.filtroCategoria() || projeto.categoria === this.filtroCategoria();
-      const statusOk =
-        !this.filtroStatus()
-          ? true
-          : this.filtroStatus() === 'Atrasado'
-            ? projeto.atrasado
-            : projeto.status === this.filtroStatus();
+      const statusOk = !this.filtroStatus()
+        ? true
+        : this.filtroStatus() === 'Atrasado'
+          ? projeto.atrasado
+          : projeto.status === this.filtroStatus();
 
       const usuarioOk =
-        this.filtroUsuario() === null ||
-        projeto.criadoPor?.id === this.filtroUsuario();
+        this.filtroUsuario() === null || projeto.criadoPor?.id === this.filtroUsuario();
 
       return categoriaOk && statusOk && usuarioOk;
-
     });
   }
 
-
-
-
-
-
   openDialogEdit(projeto: Projeto): void {
-
     const dialogRef = this.dialog.open(DialogOverviewProject, {
       width: '80vw',
       maxWidth: '1500px',
-      data: projeto
+      data: projeto,
     });
 
     dialogRef.afterClosed().subscribe((projetoRetornado: Projeto | undefined) => {
@@ -97,7 +86,6 @@ export class TableProjects implements AfterViewInit {
     });
   }
   openDialogDelete(projeto: Projeto): void {
-
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       width: '400px',
       data: {
@@ -105,8 +93,8 @@ export class TableProjects implements AfterViewInit {
         mensagem: 'Tem certeza que deseja excluir este projeto? Essa ação não pode ser desfeita.',
         textoCancelar: 'Cancelar',
         textoConfirmar: 'Excluir',
-        acao: 'exclusao'
-      }
+        acao: 'exclusao',
+      },
     });
 
     dialogRef.afterClosed().subscribe((resposta: boolean) => {
@@ -115,9 +103,6 @@ export class TableProjects implements AfterViewInit {
       }
     });
   }
-
-
-
 
   tableColumns: string[] = [
     'id',
@@ -144,7 +129,6 @@ export class TableProjects implements AfterViewInit {
     'tarefasConcluidas',
     'dataTermino',
     'orcamento',
-    'acoes'
+    'acoes',
   ];
-
 }

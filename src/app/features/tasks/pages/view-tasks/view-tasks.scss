@@ -3,35 +3,34 @@
 // ============================================
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
-    flex: 1;
+  flex: 1;
 
-    padding-inline: 30px;
-    padding-top: 10px;
-    padding-bottom: 30px;
+  padding-inline: 30px;
+  padding-top: 10px;
+  padding-bottom: 30px;
 
-    gap: 20px;
+  gap: 20px;
 
-    background-color: #f7fafe;
+  background-color: #f7fafe;
 }
-
 
 // ============================================
 // CARDS DE STATUS
 // ============================================
 
 .cards-container-status {
-    display: flex;
-    flex-direction: row;
+  display: flex;
+  flex-direction: row;
 
-    justify-content: space-evenly;
+  justify-content: space-evenly;
 
-    flex: 1;
+  flex: 1;
 
-    gap: 16px;
+  gap: 16px;
 }
 
 /* ================================================================
@@ -39,372 +38,350 @@
    ================================================================ */
 
 .tabela-projetos {
-    width: 100%;
+  width: 100%;
 
-    background: #ffffff;
+  background: #ffffff;
 
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
-
 
 /* ================================================================
    HEADER
    ================================================================ */
 
 .tabela-projetos .mat-mdc-header-row {
-    height: 52px;
+  height: 52px;
 
-    background: #fafafa;
+  background: #fafafa;
 }
-
 
 .tabela-projetos .mat-mdc-header-cell {
-    padding: 0 20px;
+  padding: 0 20px;
 
-    border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
 
-    color: #6b7280;
+  color: #6b7280;
 
-    font-size: 12px;
-    font-weight: 600;
+  font-size: 12px;
+  font-weight: 600;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
-
 
 /* ================================================================
    LINHAS
    ================================================================ */
 
 .tabela-projetos .mat-mdc-row {
-    background: #ffffff;
+  background: #ffffff;
 
-    transition: background-color 150ms ease;
+  transition: background-color 150ms ease;
 }
-
 
 .tabela-projetos .mat-mdc-row:hover {
-    background: #fafbfc;
+  background: #fafbfc;
 }
-
 
 /* ================================================================
    CÉLULAS
    ================================================================ */
 
 .tabela-projetos .mat-mdc-cell {
-    padding: 20px;
+  padding: 20px;
 
-    border-bottom: 1px solid #e5e7eb;
-    border-left: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  border-left: 1px solid #e5e7eb;
 
-    vertical-align: top;
+  vertical-align: top;
 
-    color: #374151;
+  color: #374151;
 }
-
 
 .tabela-projetos .mat-mdc-row:last-child .mat-mdc-cell {
-    // border-bottom: none;
+  // border-bottom: none;
 }
-
 
 /* ================================================================
    COLUNA PESSOA
    ================================================================ */
 
 .coluna-pessoa {
-    width: 300px;
+  width: 300px;
 
-    min-width: 350px;
+  min-width: 350px;
 }
-
 
 /* ================================================================
    PESSOA
    ================================================================ */
 
 .pessoa {
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 12px;
+  gap: 12px;
 
-    min-height: 38px;
+  min-height: 38px;
 }
-
 
 /* ================================================================
    AVATAR
    ================================================================ */
 
 .pessoa-avatar {
-    display: flex;
+  display: flex;
 
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 
-    width: 38px;
-    height: 38px;
+  width: 38px;
+  height: 38px;
 
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #ede9fe;
+  background: #ede9fe;
 
-    color: #6d28d9;
+  color: #6d28d9;
 
-    font-size: 13px;
+  font-size: 13px;
 
-    font-weight: 600;
+  font-weight: 600;
 }
-
 
 /* ================================================================
    NOME
    ================================================================ */
 
 .pessoa-nome {
-    display: block;
+  display: block;
 
-    color: #1f2937;
+  color: #1f2937;
 
-    font-size: 14px;
+  font-size: 14px;
 
-    font-weight: 600;
+  font-weight: 600;
 
-    line-height: 20px;
+  line-height: 20px;
 }
-
 
 /* ================================================================
    COLUNA DE ATIVIDADES
    ================================================================ */
 
 .coluna-atividades {
-    width: auto;
+  width: auto;
 }
-
 
 /* ================================================================
    LISTA DE PROJETOS
    ================================================================ */
 
 .lista-projetos {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    width: 100%;
+  width: 100%;
 
-    gap: 18px;
+  gap: 18px;
 }
-
 
 /* ================================================================
    GRUPO DO PROJETO
    ================================================================ */
 
 .projeto-grupo {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    width: 100%;
+  width: 100%;
 
-    border-bottom: 1px solid #e5e7eb;
-    padding-bottom: 10px;
-
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
 }
 
 .projeto-grupo:last-child {
-    border-bottom: none;
-    padding-bottom: 0px;
+  border-bottom: none;
+  padding-bottom: 0px;
 }
-
 
 /* ================================================================
    PROJETO
    ================================================================ */
 
 .projeto {
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    min-height: 28px;
+  min-height: 28px;
 
-    gap: 8px;
+  gap: 8px;
 
-    margin-bottom: 4px;
+  margin-bottom: 4px;
 }
-
 
 /* ================================================================
    ÍCONE DO PROJETO
    ================================================================ */
 
 .projeto-icon {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
 
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    font-size: 18px;
+  font-size: 18px;
 
-    color: #6b7280;
+  color: #6b7280;
 }
-
 
 /* ================================================================
    NOME DO PROJETO
    ================================================================ */
 
 .projeto-nome {
-    overflow: hidden;
+  overflow: hidden;
 
-    color: #374151;
+  color: #374151;
 
-    font-size: 13px;
+  font-size: 13px;
 
-    font-weight: 600;
+  font-weight: 600;
 
-    line-height: 20px;
+  line-height: 20px;
 
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
-
 
 /* ================================================================
    ATIVIDADE
    ================================================================ */
 
 .atividade {
-    display: grid;
+  display: grid;
 
-    /*
+  /*
    * Prazo | Ícone | Atividade
    */
-    grid-template-columns: 70px 18px minmax(0, 1fr);
+  grid-template-columns: 35px 18px minmax(0, 1fr);
 
-    align-items: center;
+  align-items: center;
 
-    column-gap: 9px;
+  column-gap: 9px;
 
-    min-height: 30px;
+  min-height: 30px;
 
-    padding-left: 27px;
+  padding-left: 27px;
 }
-
 
 /* ================================================================
    ÍCONE DA ATIVIDADE
    ================================================================ */
 
 .atividade-icon {
-    width: 15px;
-    height: 15px;
+  width: 15px;
+  height: 15px;
 
-    font-size: 15px;
+  font-size: 15px;
 
-    color: #9ca3af;
+  &.concluida {
+    color: #2F80ED;
+  }
+  &.nao-concluida {
+    color: #2dbe60;
+  }
+  &.atrasada {
+    color: #EF4444;
+  }
 }
-
 
 /* ================================================================
    NOME DA ATIVIDADE
    ================================================================ */
 
 .atividade-nome {
-    min-width: 0;
+  min-width: 0;
 
-    overflow: hidden;
+  overflow: hidden;
 
-    color: #4b5563;
+  color: #4b5563;
 
-    font-size: 13px;
+  font-size: 13px;
 
-    font-weight: 400;
+  font-weight: 400;
 
-    line-height: 20px;
+  line-height: 20px;
 
-    text-overflow: ellipsis;
+  text-overflow: ellipsis;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
-
 
 /* ================================================================
    PRAZO
    ================================================================ */
 
 .atividade-prazo {
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    justify-content: flex-start;
+  justify-content: flex-start;
 
-    color: #6b7280;
+  color: #6b7280;
 
-    font-size: 12px;
+  font-size: 12px;
 
-    font-weight: 500;
+  font-weight: 500;
 
-    line-height: 20px;
+  line-height: 20px;
 
-    white-space: nowrap;
+  white-space: nowrap;
 }
-
 
 /* ================================================================
    RESPONSIVIDADE
    ================================================================ */
 
 @media (max-width: 900px) {
+  .tabela-projetos {
+    min-width: 700px;
+  }
 
-    .tabela-projetos {
-        min-width: 700px;
-    }
+  .coluna-pessoa {
+    width: 190px;
 
+    min-width: 190px;
+  }
 
-    .coluna-pessoa {
-        width: 190px;
+  .tabela-projetos .mat-mdc-cell,
+  .tabela-projetos .mat-mdc-header-cell {
+    padding-left: 14px;
 
-        min-width: 190px;
-    }
+    padding-right: 14px;
+  }
 
+  .atividade {
+    grid-template-columns: 18px minmax(0, 1fr) 60px;
 
-    .tabela-projetos .mat-mdc-cell,
-    .tabela-projetos .mat-mdc-header-cell {
-        padding-left: 14px;
+    column-gap: 7px;
 
-        padding-right: 14px;
-    }
+    padding-left: 22px;
+  }
 
+  .pessoa {
+    gap: 9px;
+  }
 
-    .atividade {
-        grid-template-columns:
-            18px minmax(0, 1fr) 60px;
-
-        column-gap: 7px;
-
-        padding-left: 22px;
-    }
-
-
-    .pessoa {
-        gap: 9px;
-    }
-
-
-    .pessoa-avatar {
-        width: 34px;
-        height: 34px;
-    }
-
+  .pessoa-avatar {
+    width: 34px;
+    height: 34px;
+  }
 }

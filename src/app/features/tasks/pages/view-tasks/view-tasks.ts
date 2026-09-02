@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, NgModule } from '@angular/core';
 import { CardStatusTasks } from '../../components/card-status/card-status';
 import { ProjetoService } from '../../../../shared/services/projeto/projeto.service';
 import { MatIconModule, MatIconRegistry } from '@angular/material/icon';
@@ -13,14 +13,16 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatCardModule } from '@angular/material/card';
 import { groupBy } from '../../../../shared/utils/group-by';
 import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
+import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
 
 type CardValues = {
-  icon: string,
-  title: string,
-  status?: string,
-  atrasado?: boolean
-}
+  icon: string;
+  title: string;
+  status?: string;
+  atrasado?: boolean;
+};
 
 type PessoaProjetos = {
   nome: string;
@@ -40,68 +42,110 @@ type PessoaProjetos = {
     MatDialogModule,
     MatSortModule,
     MatCardModule,
-    DatePipe
+    DatePipe,
+    CommonModule,
   ],
   templateUrl: './view-tasks.html',
   styleUrl: './view-tasks.scss',
 })
 export class ViewTasks {
-
   private projetosService = inject(ProjetoService);
   private iconRegistry = inject(MatIconRegistry);
   private sanitizer = inject(DomSanitizer);
 
-  readonly projetos: Projeto[] = this.projetosService.projetos().map(projetos => ({
-    ...projetos,
-    tarefas: projetos.tarefas.filter(tarefa => !tarefa.concluido)
-  })).filter(projeto => projeto.status !== 'Concluída' && projeto.status !== 'Não iniciado')
+  // ====================== Filtros e inicialização dos projetos da semana ============================
+  protected hoje = new Date();
+  protected segunda: Date = (() => {
+    const segunda = new Date();
+    segunda.setDate(this.hoje.getDate() + (this.hoje.getDay() === 0 ? -6 : 1 - this.hoje.getDay()));
+    segunda.setHours(0, 0, 0, 0);
+    return segunda;
+  })();
 
-  projetos_p_nome = groupBy(this.projetos, projeto => projeto.criadoPor.nome)
+  protected sabado: Date = (() => {
+    const sabado = new Date(this.segunda);
+    sabado.setDate(this.segunda.getDate() + 5);
+    sabado.setHours(23, 59, 59, 999);
+    return sabado;
+  })();
+  // ---Nova Atribuição do array de projetos---
+  readonly projetos: Projeto[] = this.projetosService
+    .projetos()
+    .map((projeto) => ({
+      ...projeto,
+      tarefas: projeto.tarefas.filter((tarefa) => {
+        const dataTermino = new Date(tarefa.dataTermino);
+        if (tarefa.concluido) {
+          return dataTermino > this.segunda && dataTermino <= this.sabado;
+        }
+        return dataTermino <= this.sabado;
+      }),
+    }))
+    .filter((projeto) => projeto.status !== 'Concluída' && projeto.status !== 'Não iniciado');
 
-  dataSource: PessoaProjetos[] = Array.from(this.projetos_p_nome.entries()).map(([nome, projetos]) => ({ nome, projetos }));
+  // ====================== Data Source da Tabela ============================
+  private projetos_p_nome = groupBy(this.projetos, (projeto) => projeto.criadoPor.nome);
+  protected dataSource: PessoaProjetos[] = Array.from(this.projetos_p_nome.entries()).map(
+    ([nome, projetos]) => ({ nome, projetos }),
+  );
 
-  cardValues: CardValues[] = [
-    { icon: "totalProjetos", title: "Tarefas da Semana", status: 'TotalDeProjetos' },
-    { icon: "emAndamento", title: "Em Andamento", status: 'Em andamento' },
-    { icon: "concluidos", title: "Concluídas", status: 'Concluída' },
-    { icon: "naoIniciados", title: "Não Iniciadas", status: 'Não iniciado' },
-    { icon: "atrasado", title: "Atrasadas", status: '', atrasado: true },
-  ]
+  // ====================== Dados dos valores dos Cards ============================
+  protected tarefas = this.dataSource.flatMap((pessoaProjeto) =>
+    pessoaProjeto.projetos.flatMap((projeto) =>
+      projeto.tarefas.map((tarefa) => ({
+        ...tarefa,
+        projetoNome: projeto.nome,
+      })),
+    ),
+  );
 
+  protected readonly indicadores = (() => {
+    const total = this.tarefas.length;
+    const concluidas = this.tarefas.filter((tarefa) => tarefa.concluido).length;
+    const atrasadas = this.tarefas.filter(
+      (tarefa) => !tarefa.concluido && tarefa.dataTermino < this.segunda,
+    ).length;
+    const emAndamento = this.tarefas.filter(
+      (tarefa) => !tarefa.concluido && tarefa.dataTermino >= this.segunda,
+    ).length;
+    return {
+      total,
+      concluidas,
+      atrasadas,
+      emAndamento,
+    };
+  })();
+
+  protected cardValues: CardValues[] = [
+    { icon: 'totalProjetos', title: 'Tarefas da Semana', status: 'TotalItens' },
+    { icon: 'emAndamento', title: 'Em Andamento', status: 'Em andamento' },
+    { icon: 'concluidos', title: 'Concluídas', status: 'Concluída' },
+    // { icon: 'naoIniciados', title: 'Não Iniciadas', status: 'Não iniciado' },
+    { icon: 'atrasado', title: 'Atrasadas', status: '', atrasado: true },
+  ];
 
   constructor() {
     this.iconRegistry.addSvgIcon(
       'naoIniciados',
-      this.sanitizer.bypassSecurityTrustResourceUrl(
-        'dashboard/card-status/naoIniciados.svg'
-      )
+      this.sanitizer.bypassSecurityTrustResourceUrl('dashboard/card-status/naoIniciados.svg'),
     );
 
     this.iconRegistry.addSvgIcon(
       'concluidos',
-      this.sanitizer.bypassSecurityTrustResourceUrl(
-        'dashboard/card-status/concluidos.svg'
-      )
+      this.sanitizer.bypassSecurityTrustResourceUrl('dashboard/card-status/concluidos.svg'),
     );
 
     this.iconRegistry.addSvgIcon(
       'emAndamento',
-      this.sanitizer.bypassSecurityTrustResourceUrl(
-        'dashboard/card-status/emAndamento.svg'
-      )
+      this.sanitizer.bypassSecurityTrustResourceUrl('dashboard/card-status/emAndamento.svg'),
     );
     this.iconRegistry.addSvgIcon(
       'totalProjetos',
-      this.sanitizer.bypassSecurityTrustResourceUrl(
-        'dashboard/card-status/totalProjetos.svg'
-      )
+      this.sanitizer.bypassSecurityTrustResourceUrl('dashboard/card-status/totalProjetos.svg'),
     );
     this.iconRegistry.addSvgIcon(
       'atrasado',
-      this.sanitizer.bypassSecurityTrustResourceUrl(
-        'dashboard/card-status/atrasado.svg'
-      )
+      this.sanitizer.bypassSecurityTrustResourceUrl('dashboard/card-status/atrasado.svg'),
     );
   }
-
 }

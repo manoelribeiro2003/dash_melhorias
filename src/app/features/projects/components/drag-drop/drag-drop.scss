@@ -19,7 +19,6 @@ $grid-tabela: 40px 70px minmax(250px, 1fr) 240px 100px 80px;
     justify-content: center;
     align-items: center;
   }
-
 }
 
 .drag-list {
@@ -44,16 +43,20 @@ $grid-tabela: 40px 70px minmax(250px, 1fr) 240px 100px 80px;
     height: 40px;
     flex: 1;
 
-    @include mat.form-field-overrides((container-height: 40px,
+    @include mat.form-field-overrides(
+      (
+        container-height: 40px,
         container-vertical-padding: 10px,
         outlined-focus-outline-width: 1px,
         outlined-outline-color: #d1d5db,
-        container-text-size: 14px));
+        container-text-size: 14px,
+      )
+    );
   }
 
   &:hover {
     border-color: #d1d5db;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -117,7 +120,7 @@ $grid-tabela: 40px 70px minmax(250px, 1fr) 240px 100px 80px;
 
 .actions-col {
   .button-delete {
-    color: var(--mat-sys-error)
+    color: var(--mat-sys-error);
   }
 }
 
@@ -137,7 +140,6 @@ $grid-tabela: 40px 70px minmax(250px, 1fr) 240px 100px 80px;
 .cdk-drag-placeholder {
   opacity: 0;
 }
-
 
 .cdk-drag-animating {
   transition: none;

@@ -3,7 +3,7 @@
         @for (cardValue of cardValues; track cardValue) {
         <app-card-status-project
             [status]="cardValue.status"
-            [value]="cardValue.status === 'TotalDeProjetos'
+            [value]="cardValue.status === 'TotalItens'
             ? projetos().length
             : cardValue.atrasado
                 ? projetos().filter(projeto => projeto.atrasado == true).length
