@@ -68,10 +68,14 @@
     </div>
 
     <div class="inputs-projeto div-dois">
-      <div class="div-desc-projeto">
-        <mat-form-field appearance="outline" class="desc-projeto">
-          <mat-label>Descrição do Projeto</mat-label>
-          <textarea name="descricao" matInput disabled></textarea>
+      <div class="div-categoria">
+        <mat-form-field appearance="outline">
+          <mat-label>Categoria</mat-label>
+          <mat-select required name="categoria" [(ngModel)]="novoProjeto.categoria">
+            @for (cat of categorias; track cat) {
+              <mat-option [value]="cat">{{ cat }}</mat-option>
+            }
+          </mat-select>
         </mat-form-field>
       </div>
 

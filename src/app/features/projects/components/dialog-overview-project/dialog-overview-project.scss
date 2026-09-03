@@ -5,27 +5,27 @@
 // ==========================================
 
 .div-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
 }
 
 .div-title-header {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .title {
-    font-size: 25px;
-    font-weight: 500;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .description {
-    font-size: 15px;
-    color: rgb(101, 101, 101);
+  font-size: 15px;
+  color: rgb(101, 101, 101);
 }
 
 // ==========================================
@@ -33,103 +33,100 @@
 // ==========================================
 
 .inputs-projeto {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 20px;
+  // border: 1px solid black;
 
+  mat-form-field {
+    width: 100%;
+    height: 40px;
+    flex: 1;
+
+    @include mat.form-field-overrides(
+      (
+        container-height: 40px,
+        container-vertical-padding: 10px,
+        outlined-focus-outline-width: 1px,
+        outlined-outline-color: #d1d5db,
+        container-text-size: 14px,
+      )
+    );
+  }
+
+  .div-nome-projeto {
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    margin-bottom: 20px;
-    // border: 1px solid black;
+    flex: 2;
+  }
 
-    mat-form-field {
+  .responsavel {
+    display: flex;
+    flex: 1;
+  }
+
+  // ==========================================
+  // SEGUNDA LINHA
+  // ==========================================
+
+  &.div-dois {
+    align-items: flex-start;
+
+    // Categoria
+    .div-categoria {
+      display: flex;
+      flex: 1;
+
+      mat-form-field {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    // Orçamento
+    .div-orcamento {
+      display: flex;
+      flex: 1;
+
+      mat-form-field {
         width: 100%;
         height: 40px;
-        flex: 1;
-
-        @include mat.form-field-overrides((container-height: 40px,
-                container-vertical-padding: 10px,
-                outlined-focus-outline-width: 1px,
-                outlined-outline-color: #d1d5db,
-                container-text-size: 14px));
+      }
     }
 
-    .div-nome-projeto {
-        display: flex;
-        flex: 2;
+    // Status
+    .div-andamento {
+      display: flex;
+      flex: 1;
+
+      mat-form-field {
+        width: 100%;
+        height: 40px;
+      }
+
+      mat-icon.mat-icon-nao-iniciado {
+        color: #e09004;
+      }
+      mat-icon.mat-icon-em-andamento {
+        color: #2dbe60;
+      }
+      mat-icon.mat-icon-concluido {
+        color: #2f80ed;
+      }
     }
 
-    .responsavel {
-        display: flex;
-        flex: 1;
+    // Input de orçamento
+    input.right-align {
+      text-align: right;
     }
 
-    // ==========================================
-    // SEGUNDA LINHA
-    // ==========================================
-
-    &.div-dois {
-        align-items: flex-start;
-
-        // Descrição
-        .div-desc-projeto {
-            display: flex;
-            flex: 1;
-            height: 80px;
-
-            mat-form-field {
-                width: 100%;
-                height: 100%;
-            }
-
-            textarea {
-                height: 100%;
-                resize: vertical;
-            }
-        }
-
-        // Orçamento
-        .div-orcamento {
-            display: flex;
-            flex: 1;
-
-            mat-form-field {
-                width: 100%;
-                height: 40px;
-            }
-        }
-
-        // Status
-        .div-andamento {
-            display: flex;
-            flex: 1;
-
-            mat-form-field {
-                width: 100%;
-                height: 40px;
-            }
-
-            mat-icon.mat-icon-nao-iniciado{
-                color: #e09004
-            }
-            mat-icon.mat-icon-em-andamento{
-                color: #2DBE60
-            }
-            mat-icon.mat-icon-concluido{
-                color: #2F80ED
-            }
-        }
-
-        // Input de orçamento
-        input.right-align {
-            text-align: right;
-        }
-
-        input.right-align::-webkit-outer-spin-button,
-        input.right-align::-webkit-inner-spin-button {
-            display: none;
-        }
+    input.right-align::-webkit-outer-spin-button,
+    input.right-align::-webkit-inner-spin-button {
+      display: none;
     }
+  }
 }
 
 // ==========================================
@@ -137,16 +134,16 @@
 // ==========================================
 
 .div-etapas-projeto {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    padding-top: 0;
-    margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-top: 0;
+  margin-top: 25px;
 
-    .label-etapas-projeto {
-        font-size: 18px;
-        color: rgb(59, 59, 59);
-        font-weight: 500;
-        margin-bottom: 20px;
-    }
+  .label-etapas-projeto {
+    font-size: 18px;
+    color: rgb(59, 59, 59);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
 }

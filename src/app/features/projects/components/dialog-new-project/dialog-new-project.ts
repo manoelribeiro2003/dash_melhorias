@@ -54,10 +54,10 @@ function obterSemanaAtual(): { inicio: Date; termino: Date } {
   styleUrl: './dialog-new-project.scss',
 })
 export class DialogNewProject {
-  private usuariosService = inject(UsuarioService);
-  readonly usuarios = this.usuariosService.usuarios();
-  private dialogRef = inject(MatDialogRef<DialogNewProject>);
-  readonly projetosService = inject(ProjetoService);
+  private readonly usuariosService = inject(UsuarioService);
+  protected usuarios = this.usuariosService.usuarios();
+  private readonly dialogRef = inject(MatDialogRef<DialogNewProject>);
+  private readonly projetosService = inject(ProjetoService);
 
   readonly novoProjeto: Partial<Projeto> = {
     status: 'Não iniciado',
@@ -80,6 +80,18 @@ export class DialogNewProject {
     ],
   };
 
+  categorias = [
+    'Logística',
+    'Melhorias do Bimestre',
+    'MOI, MOA, MODS',
+    'MTM/Impressão 3D',
+    'Padronizações/Certificações',
+    'Pendências Fechamento de Indicadores',
+    'Programa de Melhorias e Projetos',
+    'RPA',
+    'SMED',
+  ];
+
   compararUsuarios(usuario1: Usuario | null, usuario2: Usuario | null): boolean {
     return usuario1?.id === usuario2?.id;
   }
@@ -94,7 +106,6 @@ export class DialogNewProject {
 
   salvarProjeto(): void {
     this.projetosService.criarProjeto(this.novoProjeto);
-
     this.dialogRef.close();
   }
 }

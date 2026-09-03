@@ -9,47 +9,63 @@ import { ProjetoService } from '../../../../shared/services/projeto/projeto.serv
 import { UsuarioService } from '../../../../shared/services/usuario/usuario.service';
 
 interface Status {
-  value: string
-  label: string
+  value: string;
+  label: string;
 }
 
 @Component({
   selector: 'app-projects-card',
-  imports: [MatCardModule, MatButtonModule, TableProjects, MatButtonToggleModule, MatFormFieldModule, MatSelectModule],
+  imports: [
+    MatCardModule,
+    MatButtonModule,
+    TableProjects,
+    MatButtonToggleModule,
+    MatFormFieldModule,
+    MatSelectModule,
+  ],
   templateUrl: './projects-card.html',
   styleUrl: './projects-card.scss',
 })
 export class ProjectsCard {
-
   readonly tasks = inject(ProjetoService);
-  readonly usuariosService = inject(UsuarioService)
+  readonly usuariosService = inject(UsuarioService);
   readonly status = signal<Status[]>([
     {
       value: '',
-      label: 'Todos'
+      label: 'Todos',
     },
     {
       value: 'Em andamento',
-      label: 'Em Andamento'
+      label: 'Em Andamento',
     },
     {
       value: 'Concluída',
-      label: 'Concluidos'
+      label: 'Concluidos',
     },
     {
       value: 'Não iniciado',
-      label: 'Não Iniciados'
+      label: 'Não Iniciados',
     },
     {
       value: 'Atrasado',
-      label: 'Atrasados'
-    }
+      label: 'Atrasados',
+    },
   ]);
-  categorias = [...new Set(this.tasks.projetos().map(p => p.categoria).filter(c => c !== null))]
-  readonly usuarios = this.usuariosService.usuarios()
-  
-  catSelecionada = model('')
+  // categorias = [...new Set(this.tasks.projetos().map(p => p.categoria).filter(c => c !== null))]
+  categorias = [
+    'Logística',
+    'Melhorias do Bimestre',
+    'MOI, MOA, MODS',
+    'MTM/Impressão 3D',
+    'Padronizações/Certificações',
+    'Pendências Fechamento de Indicadores',
+    'Programa de Melhorias e Projetos',
+    'RPA',
+    'SMED',
+  ];
+  readonly usuarios = this.usuariosService.usuarios();
+
+  catSelecionada = model('');
   statusSelecionado = model(null);
   readonly usuarioSelecionado = model<number | null>(null);
-  
 }

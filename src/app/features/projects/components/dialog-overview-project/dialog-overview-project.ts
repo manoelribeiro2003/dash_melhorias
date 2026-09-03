@@ -16,6 +16,8 @@ import { UsuarioService } from '../../../../shared/services/usuario/usuario.serv
 import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
 import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
 import { Usuario } from '../../../../shared/models/usuario/usuario.interface';
+import { ProjetoService } from '../../../../shared/services/projeto/projeto.service';
+import { groupBy } from '../../../../shared/utils/group-by';
 
 @Component({
   selector: 'app-dialog-project',
@@ -35,20 +37,38 @@ import { Usuario } from '../../../../shared/models/usuario/usuario.interface';
     MatSlideToggleModule,
     FormsModule,
 
-    DragDropComponent
+    DragDropComponent,
   ],
   templateUrl: './dialog-overview-project.html',
   styleUrl: './dialog-overview-project.scss',
 })
 export class DialogOverviewProject {
-  private dialogRef = inject(MatDialogRef<DialogOverviewProject>);
-  readonly data = inject<Projeto>(MAT_DIALOG_DATA);
+  private readonly dialogRef = inject(MatDialogRef<DialogOverviewProject>);
+  private readonly data = inject<Projeto>(MAT_DIALOG_DATA);
+  private readonly projetosService = inject(ProjetoService);
+  private readonly usuariosService = inject(UsuarioService);
 
-  private usuariosService = inject(UsuarioService)
-  readonly usuarios = this.usuariosService.usuarios()
+  readonly usuarios = this.usuariosService.usuarios();
+  protected readonly projetos = this.projetosService.projetos();
+
+  // protected readonly categorias = Array.from(
+  //   groupBy(this.projetos, (projeto) => projeto.categoria).keys(),
+  // );
+
+  categorias = [
+    'Logística',
+    'Melhorias do Bimestre',
+    'MOI, MOA, MODS',
+    'MTM/Impressão 3D',
+    'Padronizações/Certificações',
+    'Pendências Fechamento de Indicadores',
+    'Programa de Melhorias e Projetos',
+    'RPA',
+    'SMED',
+  ];
 
   readonly projetoRecebido: Projeto = {
-    ...this.data
+    ...this.data,
   };
 
   atualizarTarefas(tarefas: Tarefa[]): void {
@@ -65,7 +85,6 @@ export class DialogOverviewProject {
 
   compararUsuarios(usuario1: Usuario | null, usuario2: Usuario | null): boolean {
     return usuario1?.id === usuario2?.id;
+    
   }
-
 }
-
