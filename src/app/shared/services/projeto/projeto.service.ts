@@ -9,7 +9,7 @@ import { Tarefa } from '../../models/tarefa/tarefa.interface';
 })
 export class ProjetoService {
 
-    private apiUrl = 'http://10.2.34.92:3000';
+    private apiUrl = '/dash-melhorias/api';
     private http = inject(HttpClient);
 
     private _projetos = signal<Projeto[]>([]);

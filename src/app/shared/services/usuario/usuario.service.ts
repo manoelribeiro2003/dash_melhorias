@@ -6,7 +6,7 @@ import { Usuario } from "../../models/usuario/usuario.interface";
     providedIn: 'root'
 })
 export class UsuarioService {
-    private apiUrl = 'http://10.2.34.92:3000';
+    private apiUrl = '/dash-melhorias/api';
     private http = inject(HttpClient);
 
     private _usuarios = signal<Usuario[]>([]);
