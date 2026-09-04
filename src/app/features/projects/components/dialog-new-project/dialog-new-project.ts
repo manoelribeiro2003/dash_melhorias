@@ -97,6 +97,7 @@ export class DialogNewProject {
 
   salvarProjeto(): void {
     this.projetosService.criarProjeto(this.novoProjeto);
+    console.log(this.novoProjeto);
     this.dialogRef.close();
   }
 }

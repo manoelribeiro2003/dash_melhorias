@@ -37,6 +37,9 @@ export class ProjetoService {
         })),
     };
 
+    console.log(dados);
+    
+
     this.http.post<ProjetoJson>(`${this.apiUrl}/projetos/`, dados).subscribe({
       next: (projetoCriado) => {
         const projetoMapeado = this.mapearProjetos([projetoCriado])[0];
