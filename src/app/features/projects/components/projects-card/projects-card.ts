@@ -7,6 +7,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { ProjetoService } from '../../../../shared/services/projeto/projeto.service';
 import { UsuarioService } from '../../../../shared/services/usuario/usuario.service';
+import { categorias } from '../../../../shared/utils/categories';
 
 interface Status {
   value: string;
@@ -51,18 +52,9 @@ export class ProjectsCard {
       label: 'Atrasados',
     },
   ]);
-  // categorias = [...new Set(this.tasks.projetos().map(p => p.categoria).filter(c => c !== null))]
-  categorias = [
-    'Logística',
-    'Melhorias do Bimestre',
-    'MOI, MOA, MODS',
-    'MTM/Impressão 3D',
-    'Padronizações/Certificações',
-    'Pendências Fechamento de Indicadores',
-    'Programa de Melhorias e Projetos',
-    'RPA',
-    'SMED',
-  ];
+
+  categorias = categorias;
+
   readonly usuarios = this.usuariosService.usuarios();
 
   catSelecionada = model('');

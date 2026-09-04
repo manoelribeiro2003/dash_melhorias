@@ -75,13 +75,14 @@
             @for (cat of categorias; track cat) {
               <mat-option [value]="cat">{{ cat }}</mat-option>
             }
+            <mat-option value="Outros">Outros</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
 
       <div class="div-orcamento">
         <mat-form-field appearance="outline" floatLabel="always">
-          <mat-label>Orçamento</mat-label>
+          <mat-label>Ganhos da Melhoria</mat-label>
           <input
             matInput
             name="orcamento"

@@ -18,6 +18,7 @@ import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
 import { Usuario } from '../../../../shared/models/usuario/usuario.interface';
 import { ProjetoService } from '../../../../shared/services/projeto/projeto.service';
 import { groupBy } from '../../../../shared/utils/group-by';
+import { categorias } from '../../../../shared/utils/categories';
 
 @Component({
   selector: 'app-dialog-project',
@@ -55,17 +56,7 @@ export class DialogOverviewProject {
   //   groupBy(this.projetos, (projeto) => projeto.categoria).keys(),
   // );
 
-  categorias = [
-    'Logística',
-    'Melhorias do Bimestre',
-    'MOI, MOA, MODS',
-    'MTM/Impressão 3D',
-    'Padronizações/Certificações',
-    'Pendências Fechamento de Indicadores',
-    'Programa de Melhorias e Projetos',
-    'RPA',
-    'SMED',
-  ];
+  categorias = categorias;
 
   readonly projetoRecebido: Projeto = {
     ...this.data,
@@ -85,6 +76,5 @@ export class DialogOverviewProject {
 
   compararUsuarios(usuario1: Usuario | null, usuario2: Usuario | null): boolean {
     return usuario1?.id === usuario2?.id;
-    
   }
 }

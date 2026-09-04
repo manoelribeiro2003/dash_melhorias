@@ -18,6 +18,7 @@ import { Projeto } from '../../../../shared/models/projeto/projeto.interface';
 import { Usuario } from '../../../../shared/models/usuario/usuario.interface';
 import { Tarefa } from '../../../../shared/models/tarefa/tarefa.interface';
 import { v4 as uuidv4 } from 'uuid';
+import { categorias } from '../../../../shared/utils/categories';
 
 function obterSemanaAtual(): { inicio: Date; termino: Date } {
   const inicio = new Date();
@@ -80,17 +81,7 @@ export class DialogNewProject {
     ],
   };
 
-  categorias = [
-    'Logística',
-    'Melhorias do Bimestre',
-    'MOI, MOA, MODS',
-    'MTM/Impressão 3D',
-    'Padronizações/Certificações',
-    'Pendências Fechamento de Indicadores',
-    'Programa de Melhorias e Projetos',
-    'RPA',
-    'SMED',
-  ];
+  categorias = categorias;
 
   compararUsuarios(usuario1: Usuario | null, usuario2: Usuario | null): boolean {
     return usuario1?.id === usuario2?.id;

@@ -11,10 +11,13 @@
               Todos
             </mat-option>
             @for (categoria of categorias; track categoria) {
-            <mat-option [value]="categoria">
-              {{ categoria ?? 'Sem Categoria' }}
-            </mat-option>
+              <mat-option [value]="categoria">
+                {{ categoria ?? 'Sem Categoria' }}
+              </mat-option>
             }
+            <mat-option value="Outros">
+              Outros
+            </mat-option>
           </mat-select>
         </mat-form-field>
       </div>
